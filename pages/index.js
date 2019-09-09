@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Router from 'next/router';
 import WPAPI from 'wpapi';
 import Layout from '../components/Layout';
+import PageWrapper from '../components/PageWrapper';
 import Config from '../config';
-// import Graphic from '../components/Graphic';
+import Geometry from '../components/Geometry';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -99,8 +100,12 @@ class Index extends Component {
         </ul>
       );
     });
-    return <Layout {...this.props}>{/* <Graphic /> */}</Layout>;
+    return (
+      <Layout {...this.props}>
+        <Geometry />
+      </Layout>
+    );
   }
 }
 
-export default Index;
+export default PageWrapper(Index);
