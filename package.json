@@ -1,0 +1,28 @@
+{
+  "name": "kaiyros",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.6.1",
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "glob": "^7.1.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "9.0.5",
+    "postcss-easy-import": "^3.0.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-icons": "^3.7.0",
+    "react-share": "^3.0.1",
+    "styled-components": "^4.3.2",
+    "wpapi": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6"
+  }
+}
