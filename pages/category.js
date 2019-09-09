@@ -6,7 +6,6 @@ import Error from 'next/error';
 import WPAPI from 'wpapi';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
-import Menu from '../components/Menu';
 import Config from '../config';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
@@ -94,118 +93,124 @@ const FeaturedContent = styled.div`
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-class Category extends Component {
-  static async getInitialProps(context) {
-    const { slug } = context.query;
+const Category = ({ name }) => {
+  const [category, setCategory] = useState(null);
 
-    const categories = await wp
-      .categories()
-      .slug(slug)
-      .embed();
-
-    if (categories.length > 0) {
-      const posts = await wp
-        .posts()
-        .category(categories[0].id)
-        .embed();
-      return { categories, posts };
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch('/api/category');
+      const category = await res.json();
+      setCategory(category);
     }
+    getData();
+  }, []);
 
-    return { categories };
-  }
+  // static async getInitialProps(context) {
+  //   const { slug } = context.query;
 
-  render() {
-    const { categories, posts, headerMenu } = this.props;
-    if (categories.length === 0) return <Error statusCode={404} />;
+  //   const categories = await wp
+  //     .categories()
+  //     .slug(slug)
+  //     .embed();
 
-    // make array of sticky posts
-    const ftrposts = posts.filter(ftrpost => ftrpost.sticky === true);
+  //   if (categories.length > 0) {
+  //     const posts = await wp
+  //       .posts()
+  //       .category(categories[0].id)
+  //       .embed();
+  //     return { categories, posts };
+  //   }
 
-    // make array of non-sticky posts
-    const regposts = posts.filter(regpost => regpost.sticky !== true);
+  //   return { categories };
+  // }
 
-    const stickycontent = ftrposts.map(stickypost => {
-      const stickyImage =
-        stickypost._embedded['wp:featuredmedia'][0].media_details.sizes
-          .medium_large.source_url;
+  // render() {
+  //   const { categories, posts, headerMenu } = this.props;
+  //   if (categories.length === 0) return <Error statusCode={404} />;
 
-      const stickyMedia =
-        stickypost._embedded['wp:featuredmedia'][0].media_details.sizes.medium
-          .source_url;
+  //   // make array of sticky posts
+  //   const ftrposts = posts.filter(ftrpost => ftrpost.sticky === true);
 
-      return (
-        <FeaturedContent key={stickypost.id}>
-          <a href={`/post?slug=${stickypost.slug}&apiRoute=post`}>
-            <img src={stickyImage} alt="" />
-          </a>
-          <div className="content">
-            <div>
-              <Link
-                as={`/post/${stickypost.slug}`}
-                href={`/post?slug=${stickypost.slug}&apiRoute=post`}
-              >
-                <a className="title">{stickypost.title.rendered}</a>
-              </Link>
-            </div>
-            <DatePost datesrc={stickypost.date} />
-            <div
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{
-                __html: stickypost.excerpt.rendered
-              }}
-            />
-            <ShareButtons url={stickypost.link} media={stickyMedia} />
-          </div>
-        </FeaturedContent>
-      );
-    });
+  //   // make array of non-sticky posts
+  //   const regposts = posts.filter(regpost => regpost.sticky !== true);
 
-    const fposts = regposts.map(post => {
-      const featuredImage =
-        post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large
-          .source_url;
+  //   const stickycontent = ftrposts.map(stickypost => {
+  //     const stickyImage =
+  //       stickypost._embedded['wp:featuredmedia'][0].media_details.sizes
+  //         .medium_large.source_url;
 
-      const featuredMedia =
-        post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
-          .source_url;
+  //     const stickyMedia =
+  //       stickypost._embedded['wp:featuredmedia'][0].media_details.sizes.medium
+  //         .source_url;
 
-      return (
-        <CategoryPost key={post.id}>
-          <div className="postContent">
-            <div className="center">
-              <a href={`/post?slug=${post.slug}&apiRoute=post`}>
-                <img width="450" height="280" src={featuredImage} alt="" />
-              </a>
-            </div>
-            <div>
-              <Link
-                as={`/post/${post.slug}`}
-                href={`/post?slug=${post.slug}&apiRoute=post`}
-              >
-                <a className="title">{post.title.rendered}</a>
-              </Link>
-              <DatePost datesrc={post.date} />
-              <div
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: post.excerpt.rendered
-                }}
-              />
-            </div>
-          </div>
-          <ShareButtons url={post.link} media={featuredMedia} />
-        </CategoryPost>
-      );
-    });
+  //     return (
+  //       <FeaturedContent key={stickypost.id}>
+  //         <a href={`/post?slug=${stickypost.slug}&apiRoute=post`}>
+  //           <img src={stickyImage} alt="" />
+  //         </a>
+  //         <div className="content">
+  //           <div>
+  //             <Link
+  //               as={`/post/${stickypost.slug}`}
+  //               href={`/post?slug=${stickypost.slug}&apiRoute=post`}
+  //             >
+  //               <a className="title">{stickypost.title.rendered}</a>
+  //             </Link>
+  //           </div>
+  //           <DatePost datesrc={stickypost.date} />
+  //           <div
+  //             // eslint-disable-next-line react/no-danger
+  //             dangerouslySetInnerHTML={{
+  //               __html: stickypost.excerpt.rendered
+  //             }}
+  //           />
+  //           <ShareButtons url={stickypost.link} media={stickyMedia} />
+  //         </div>
+  //       </FeaturedContent>
+  //     );
+  //   });
 
-    console.log('categories menu', this.props.categoriesMenu);
-    console.log('cat', categories);
-    console.log('posts', posts);
+  //   const fposts = regposts.map(post => {
+  //     const featuredImage =
+  //       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large
+  //         .source_url;
 
-    return (
-      <Layout {...this.props}>
-        <Menu menu={headerMenu} />
-        <CategoryContainer>
+  //     const featuredMedia =
+  //       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
+  //         .source_url;
+
+  //     return (
+  //       <CategoryPost key={post.id}>
+  //         <div className="postContent">
+  //           <div className="center">
+  //             <a href={`/post?slug=${post.slug}&apiRoute=post`}>
+  //               <img width="450" height="280" src={featuredImage} alt="" />
+  //             </a>
+  //           </div>
+  //           <div>
+  //             <Link
+  //               as={`/post/${post.slug}`}
+  //               href={`/post?slug=${post.slug}&apiRoute=post`}
+  //             >
+  //               <a className="title">{post.title.rendered}</a>
+  //             </Link>
+  //             <DatePost datesrc={post.date} />
+  //             <div
+  //               // eslint-disable-next-line react/no-danger
+  //               dangerouslySetInnerHTML={{
+  //                 __html: post.excerpt.rendered
+  //               }}
+  //             />
+  //           </div>
+  //         </div>
+  //         <ShareButtons url={post.link} media={featuredMedia} />
+  //       </CategoryPost>
+  //     );
+  //   });
+
+  return (
+    <Layout {...this.props}>
+      {/* <CategoryContainer>
           <div className="categoryTitle">
             <div className="center">
               <img
@@ -219,10 +224,14 @@ class Category extends Component {
             <div>{stickycontent}</div>
             <div className="postLayout">{fposts}</div>
           </div>
-        </CategoryContainer>
-      </Layout>
-    );
-  }
-}
+        </CategoryContainer> */}
+    </Layout>
+  );
+  // }
+};
+
+Category.getInitialProps = async ({ query }) => {
+  return { name: query.name };
+};
 
 export default PageWrapper(Category);

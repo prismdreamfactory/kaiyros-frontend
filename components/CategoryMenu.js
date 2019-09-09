@@ -125,7 +125,7 @@ class CategoryMenu extends Component {
 
   render() {
     const { menuIsOpen } = this.state;
-    const { categoriesMenu } = this.props;
+    const { categories } = this.props;
 
     let visibility = 'hide';
 
@@ -142,7 +142,7 @@ class CategoryMenu extends Component {
                 <div className="close" />
               </Close>
 
-              {categoriesMenu.map(category => (
+              {categories.map(category => (
                 <div className="categoryEntry" key={category.id}>
                   <img
                     src={category.acf.image.sizes.thumbnail}

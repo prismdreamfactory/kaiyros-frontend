@@ -10,7 +10,7 @@ wp.menus = wp.registerRoute('menus/v1', '/menus/(?P<id>[a-zA-Z(-]+)');
 const PageWrapper = Comp =>
   class extends React.Component {
     static async getInitialProps(args) {
-      const [headerMenu, categoriesMenu, childProps] = await Promise.all([
+      const [headerMenu, categories, childProps] = await Promise.all([
         wp.menus().id('header-menu'),
         wp.categories(),
         Comp.getInitialProps(args)
@@ -18,7 +18,7 @@ const PageWrapper = Comp =>
 
       return {
         headerMenu,
-        categoriesMenu,
+        categories,
         ...(Comp.getInitialProps ? childProps : null)
       };
     }

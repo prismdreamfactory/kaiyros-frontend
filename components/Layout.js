@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 
 const LayoutStyle = styled.div`
-  font-family: sans-serif;
+  font-family: Helvetica, sans-serif;
 
   p {
     line-height: 1.6;
@@ -23,7 +23,6 @@ const Layout = props => {
     <LayoutStyle>
       <Header />
       <Nav {...props} />
-      {/* <CategoryMenu {...props} /> */}
       {children}
       <Footer />
     </LayoutStyle>
