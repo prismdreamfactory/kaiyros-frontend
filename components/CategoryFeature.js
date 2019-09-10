@@ -4,22 +4,20 @@ import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 
 const CategoryFeatureStyles = styled.div`
-  display: flex;
-  max-width: 2000px;
+  max-width: 1100px;
   margin: 1.5rem auto;
-  justify-content: space-evenly;
 
   .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1.5rem;
-    max-width: 540px;
   }
 
   .title {
     font-size: 1.5rem;
     text-transform: uppercase;
+    margin: 1rem 0;
+    display: block;
   }
 
   img {

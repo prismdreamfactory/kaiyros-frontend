@@ -16,6 +16,8 @@ const CategoryPostsStyles = styled.div`
   .title {
     font-size: 1.5rem;
     text-transform: uppercase;
+    margin: 1rem 0;
+    display: block;
   }
 `;
 
@@ -34,13 +36,12 @@ const CategoryPosts = props => {
     return (
       <CategoryPostsStyles key={post.id}>
         <div className="postContent">
-          <div className="center">
-            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
-              <a>
-                <img width="450" height="280" src={featuredImage} alt="" />
-              </a>
-            </Link>
-          </div>
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+            <a>
+              <img width="450" height="280" src={featuredImage} alt="" />
+            </a>
+          </Link>
+
           <div>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
               <a className="title">{post.title.rendered}</a>

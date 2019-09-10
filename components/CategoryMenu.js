@@ -58,7 +58,9 @@ const CategoryItem = styled.div`
   .social-icons {
     display: none;
     justify-content: center;
-    @media (min-width: 0px) and (max-width: 1024px) {
+    margin-top: 4rem;
+
+    @media (max-width: 1024px) {
       display: flex;
       justify-content: center;
     }

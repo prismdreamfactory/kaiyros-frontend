@@ -20,7 +20,7 @@ const CategoryContainer = styled.div`
     color: #000;
   }
   .categoryTitle {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,9 +67,8 @@ const Category = props => {
       <h1>{props.slug}</h1>
       <CategoryContainer>
         <div className="categoryTitle">
-          <div className="center">
-            <img src={category[0].acf.image.sizes.medium} alt="placeholder" />
-          </div>
+          <img src={category[0].acf.image.sizes.medium} alt="placeholder" />
+
           <h1 className="categoryHead">{category[0].name}</h1>
         </div>
         <div>
