@@ -24,20 +24,19 @@ const FooterNav = styled.div`
   }
 `;
 
-const Footer = () => (
-  <FooterNav>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-    <span>•</span>
-    <Link href="/contact">
-      <a>Contact</a>
-    </Link>
-    <span>•</span>
-    <Link href="/connect">
-      <a>Connect</a>
-    </Link>
-  </FooterNav>
-);
+const Footer = props => {
+  const { footerMenu } = props;
+  console.log('foot', footerMenu);
+  return (
+    <FooterNav>
+      {footerMenu.items.map(footerlink => (
+        <Link href={footerlink.url}>
+          <a>{footerlink.title}</a>
+        </Link>
+      ))}
+      <span>•</span>
+    </FooterNav>
+  );
+};
 
 export default Footer;
