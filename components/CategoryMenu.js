@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 
@@ -148,9 +149,12 @@ class CategoryMenu extends Component {
                     src={category.acf.image.sizes.thumbnail}
                     alt="placeholder"
                   />
-                  <a href={category.link} alt="">
-                    {category.name}
-                  </a>
+                  <Link
+                    as={`/category/${category.slug}`}
+                    href={`/category/${category.slug}`}
+                  >
+                    <a>{category.name}</a>
+                  </Link>
                 </div>
               ))}
 

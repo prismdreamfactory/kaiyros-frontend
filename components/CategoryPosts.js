@@ -41,10 +41,7 @@ const CategoryPosts = props => {
             </a>
           </div>
           <div>
-            <Link
-              as={`/post/${post.slug}`}
-              href={`/post?slug=${post.slug}&apiRoute=post`}
-            >
+            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
               <a className="title">{post.title.rendered}</a>
             </Link>
             <DatePost datesrc={post.date} />

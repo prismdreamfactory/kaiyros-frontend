@@ -46,9 +46,9 @@ const CategoryContainer = styled.div`
 `;
 
 const Category = props => {
-  const { categories, posts } = props;
+  const { category, posts } = props;
 
-  if (categories.length === 0) return <Error statusCode={404} />;
+  if (category.length === 0) return <Error statusCode={404} />;
 
   // // make array of sticky posts
   const stickyPosts = posts.filter(stickyPost => stickyPost.sticky === true);
@@ -64,9 +64,9 @@ const Category = props => {
       <CategoryContainer>
         <div className="categoryTitle">
           <div className="center">
-            <img src={categories[0].acf.image.sizes.medium} alt="placeholder" />
+            <img src={category[0].acf.image.sizes.medium} alt="placeholder" />
           </div>
-          <h1 className="categoryHead">{categories[0].name}</h1>
+          <h1 className="categoryHead">{category[0].name}</h1>
         </div>
         <div>
           <CategoryFeature posts={stickyPosts} />
@@ -83,17 +83,17 @@ const Category = props => {
 Category.getInitialProps = async ({ query }) => {
   const { slug } = query;
 
-  const categories = await wp
+  const category = await wp
     .categories()
     .slug(slug)
     .embed();
 
-  if (categories.length > 0) {
+  if (category.length > 0) {
     const posts = await wp
       .posts()
-      .category(categories[0].id)
+      .category(category[0].id)
       .embed();
-    return { categories, posts };
+    return { category, posts };
   }
 
   return { slug };
