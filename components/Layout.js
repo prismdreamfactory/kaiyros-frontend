@@ -6,6 +6,7 @@ import Nav from './Nav';
 
 const LayoutStyle = styled.div`
   font-family: courier, sans-serif;
+  margin: 0 2rem;
 
   p {
     line-height: 1.6;

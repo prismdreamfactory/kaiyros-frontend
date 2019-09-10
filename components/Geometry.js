@@ -8,6 +8,8 @@ import Link from 'next/link';
 const GeometryStyles = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0 3rem;
+  z-index: 0;
 
   @media (min-width: 1024px) {
     width: 50%;

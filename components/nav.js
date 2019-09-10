@@ -8,6 +8,8 @@ const NavStyles = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
+  position: relative;
+  z-index: 100;
 
   a {
     text-decoration: none;
@@ -39,13 +41,19 @@ const NavStyles = styled.div`
   .icons {
     display: flex;
     align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .mobile {
     display: none;
   }
 
-  @media (min-width: 0px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
+    margin-bottom: 5rem;
+
     h1 {
       font-size: 1.5rem;
       margin: 0;
@@ -65,14 +73,19 @@ const NavStyles = styled.div`
       width: 100%;
       background: #fff;
       top: 0;
+      left: 0;
+      justify-content: space-between;
+      padding: 1rem 2rem 1rem 1.25rem;
+      box-sizing: border-box;
     }
     .logo {
       width: 2rem;
+      left: 1rem;
     }
     .menu {
-      position: fixed;
       top: 1.5rem;
       right: 1rem;
+      z-index: 100;
     }
   }
 `;

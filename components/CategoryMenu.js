@@ -32,7 +32,6 @@ const CategoryContainer = styled.div`
   left: 0;
   transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
   overflow: scroll;
-  z-index: 1000;
   display: flex;
 `;
 

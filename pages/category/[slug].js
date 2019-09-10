@@ -43,7 +43,7 @@ const CategoryContainer = styled.div`
     grid-row-gap: 1.5rem;
   }
 
-  @media (min-width: 0px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     margin-top: 5rem;
     .postLayout {
       grid-template-columns: 1fr;

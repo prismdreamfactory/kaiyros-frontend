@@ -16,6 +16,9 @@ const SocialIconsStyles = styled.div`
   svg:hover {
     color: #2b9985;
   }
+
+  @media (max-width: 768px) {
+  }
 `;
 
 export const SocialIcons = () => {
@@ -26,21 +29,21 @@ export const SocialIcons = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaInstagram size="20px" />
+        <FaInstagram size="25px" />
       </a>
       <a
         href="https://twitter.com/kaiyros_27"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaTwitter size="20px" />
+        <FaTwitter size="25px" />
       </a>
       <a
         href="https://www.pinterest.com/kaiyros_27/?eq=kaiyros&etslf=4567"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaPinterest size="20px" />
+        <FaPinterest size="25px" />
       </a>
     </SocialIconsStyles>
   );
