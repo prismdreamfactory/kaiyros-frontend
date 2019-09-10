@@ -53,8 +53,6 @@ const Category = props => {
   // // make array of sticky posts
   const stickyPosts = posts.filter(stickyPost => stickyPost.sticky === true);
 
-  console.log(stickyPosts);
-
   // // make array of non-sticky posts
   const regPosts = posts.filter(regPost => regPost.sticky !== true);
 

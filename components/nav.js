@@ -14,10 +14,12 @@ const NavStyles = styled.div`
   h1 {
     text-transform: uppercase;
     margin-bottom: 0.3rem;
+    color: #000;
   }
   h1:hover {
     color: #2b9985;
   }
+
   h4 {
     text-transform: uppercase;
     margin-left: 8rem;

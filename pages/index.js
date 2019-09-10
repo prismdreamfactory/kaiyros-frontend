@@ -76,10 +76,7 @@ class Index extends Component {
       return (
         <ul key={post.slug}>
           <li>
-            <Link
-              as={`/post/${post.slug}`}
-              href={`/post?slug=${post.slug}&apiRoute=post`}
-            >
+            <Link href={`/post/${post.slug}`}>
               <a>{post.title.rendered}</a>
             </Link>
           </li>

@@ -41,8 +41,6 @@ const CategoryFeature = props => {
       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large
         .source_url;
 
-    console.log(stickyImage);
-
     const stickyMedia =
       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
         .source_url;
