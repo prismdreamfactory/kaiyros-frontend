@@ -14,6 +14,10 @@ const FooterNav = styled.div`
     color: rgba(0, 0, 0, 0.6);
   }
 
+  span {
+    padding: 0 0.75rem;
+  }
+
   @media (min-width: 0px) and (max-width: 1024px) {
     display: flex;
     justify-content: center;
@@ -23,11 +27,13 @@ const FooterNav = styled.div`
 const Footer = () => (
   <FooterNav>
     <Link href="/about">
-      <a>About • </a>
+      <a>About</a>
     </Link>
+    <span>•</span>
     <Link href="/contact">
-      <a>Contact • </a>
+      <a>Contact</a>
     </Link>
+    <span>•</span>
     <Link href="/connect">
       <a>Connect</a>
     </Link>
