@@ -13,7 +13,6 @@ const GeometryStyles = styled.div`
   z-index: 0;
 
   @media (min-width: 1024px) {
-    width: 50%;
     max-width: 80vh;
     margin: 0 auto;
   }
@@ -155,7 +154,7 @@ const GeometryStyles = styled.div`
 
 export const Geometry = () => {
   return (
-    <Tilt options={{ scale: 1, max: 5 }}>
+    <Tilt options={{ scale: 1, max: 5, perspective: 1000 }}>
       <GeometryStyles>
         <div className="content">
           <Link href={`/category/letters-to-human-family`}>

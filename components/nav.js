@@ -7,7 +7,6 @@ import CategoryMenu from './CategoryMenu';
 const NavStyles = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 1rem;
   position: relative;
   z-index: 100;
   margin-bottom: 2rem;
@@ -48,11 +47,11 @@ const NavStyles = styled.div`
     }
   }
 
-  .mobile {
+  .mobile--nav {
     display: none;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     margin-bottom: 5rem;
 
     h1 {
@@ -63,11 +62,11 @@ const NavStyles = styled.div`
     .kaiyros {
       display: none;
     }
-    .alignCenter {
+    .logo-link {
       display: flex;
       align-items: center;
     }
-    .mobile {
+    .mobile--nav {
       position: fixed;
       display: flex;
       align-items: center;
@@ -111,9 +110,9 @@ export const Nav = props => {
       </div>
 
       {/* mobile banner */}
-      <div className="mobile">
+      <div className="mobile--nav">
         <Link href="/">
-          <a className="alignCenter">
+          <a className="logo-link">
             <img
               className="logo"
               src="../static/images/KairosLogoSquare.svg"

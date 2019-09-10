@@ -26,11 +26,14 @@ const FooterNav = styled.div`
 
 const Footer = props => {
   const { footerMenu } = props;
-  console.log('foot', footerMenu);
+
   return (
     <FooterNav>
       {footerMenu.items.map(footerlink => (
-        <Link href={footerlink.url}>
+        <Link
+          href={`/${footerlink.title.toLowerCase()}`}
+          key={footerlink.title}
+        >
           <a>{footerlink.title}</a>
         </Link>
       ))}
