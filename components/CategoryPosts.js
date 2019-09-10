@@ -4,7 +4,6 @@ import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 
 const CategoryPostsStyles = styled.div`
-  max-width: 625px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

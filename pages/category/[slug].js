@@ -21,12 +21,18 @@ const CategoryContainer = styled.div`
   }
   .categoryTitle {
     margin-bottom: 4rem;
-  }
-  .center {
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 100px;
+    }
   }
+
   .categoryHead {
+    margin-left: 2rem;
     text-align: center;
   }
   .postLayout {
