@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Tilt from 'react-tilt';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -107,7 +108,7 @@ const GeometryStyles = styled.div`
     left: 44%;
   }
 
-  .rotate:hover {
+  /* .rotate:hover {
     -webkit-animation-name: spin;
     -webkit-animation-duration: 15s;
     -webkit-animation-iteration-count: infinite;
@@ -149,105 +150,107 @@ const GeometryStyles = styled.div`
     to {
       transform: rotate(360deg);
     }
-  }
+  } */
 `;
 
 export const Geometry = () => {
   return (
-    <GeometryStyles>
-      <div className="content">
-        <Link href={`/category/letters-to-human-family`}>
-          <a>
-            <img
-              className="rotate shape1"
-              src="../static/images/sacredgeo1.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href={`/category/letters-to-human-family`}>
-          <a className="text text1">
-            Letters to <br /> Human Family
-          </a>
-        </Link>
-        <Link href={`/category/science-of-spirit`}>
-          <a>
-            <img
-              className="rotate shape shape2"
-              src="../static/images/sacredgeo2.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href={`/category/science-of-spirit`}>
-          <a className="text text2">Science of Spirit</a>
-        </Link>
-        <Link href={`/category/social-impact`}>
-          <a>
-            <img
-              className="rotate shape shape3"
-              src="../static/images/sacredgeo3.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href={`/category/social-impact`}>
-          <a className="text text3">Social Impact</a>
-        </Link>
-        <Link href="/category/human-tech">
-          <a>
-            <img
-              className="rotate shape shape4"
-              src="../static/images/sacredgeo4.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href="/category/human-tech">
-          <a className="text text4">Human Tech</a>
-        </Link>
-        <Link href="/category/integrative-mental-health">
-          <a>
-            <img
-              className="rotate shape shape5"
-              src="../static/images/sacredgeo5.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href="/category/integrative-mental-health">
-          <a className="text text5">
-            Integrative <br /> Mental Health
-          </a>
-        </Link>
-        <Link href="/category/metaphysics-of-healing">
-          <a>
-            <img
-              className="rotate shape shape6"
-              src="../static/images/sacredgeo6.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href="/category/metaphysics-of-healing">
-          <a className="text text6">
-            Metaphysics of <br /> Healing
-          </a>
-        </Link>
-        <Link href="/category/practical-self">
-          <a>
-            <img
-              className="shape shape7"
-              src="../static/images/sacredgeo7.svg"
-              alt=""
-            />
-          </a>
-        </Link>
-        <Link href="/category/practical-self">
-          <a className="text text7">Practical Self</a>
-        </Link>
-      </div>
-    </GeometryStyles>
+    <Tilt options={{ scale: 1, max: 5 }}>
+      <GeometryStyles>
+        <div className="content">
+          <Link href={`/category/letters-to-human-family`}>
+            <a>
+              <img
+                className="rotate shape1"
+                src="../static/images/sacredgeo1.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href={`/category/letters-to-human-family`}>
+            <a className="text text1">
+              Letters to <br /> Human Family
+            </a>
+          </Link>
+          <Link href={`/category/science-of-spirit`}>
+            <a>
+              <img
+                className="rotate shape shape2"
+                src="../static/images/sacredgeo2.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href={`/category/science-of-spirit`}>
+            <a className="text text2">Science of Spirit</a>
+          </Link>
+          <Link href={`/category/social-impact`}>
+            <a>
+              <img
+                className="rotate shape shape3"
+                src="../static/images/sacredgeo3.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href={`/category/social-impact`}>
+            <a className="text text3">Social Impact</a>
+          </Link>
+          <Link href="/category/human-tech">
+            <a>
+              <img
+                className="rotate shape shape4"
+                src="../static/images/sacredgeo4.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href="/category/human-tech">
+            <a className="text text4">Human Tech</a>
+          </Link>
+          <Link href="/category/integrative-mental-health">
+            <a>
+              <img
+                className="rotate shape shape5"
+                src="../static/images/sacredgeo5.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href="/category/integrative-mental-health">
+            <a className="text text5">
+              Integrative <br /> Mental Health
+            </a>
+          </Link>
+          <Link href="/category/metaphysics-of-healing">
+            <a>
+              <img
+                className="rotate shape shape6"
+                src="../static/images/sacredgeo6.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href="/category/metaphysics-of-healing">
+            <a className="text text6">
+              Metaphysics of <br /> Healing
+            </a>
+          </Link>
+          <Link href="/category/practical-self">
+            <a>
+              <img
+                className="shape shape7"
+                src="../static/images/sacredgeo7.svg"
+                alt=""
+              />
+            </a>
+          </Link>
+          <Link href="/category/practical-self">
+            <a className="text text7">Practical Self</a>
+          </Link>
+        </div>
+      </GeometryStyles>
+    </Tilt>
   );
 };
 
