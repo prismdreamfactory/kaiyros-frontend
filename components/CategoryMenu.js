@@ -9,18 +9,17 @@ const CategoryList = styled.div`
   max-width: 1100px;
 
   .hide {
-    transform: translate3d(100vw, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
 
   .show {
-    transform: translate3d(70vw, 0, 0);
+    transform: translate3d(0, 0, 0);
     overflow: hidden;
     justify-content: center;
-    max-width: 30%;
+    max-width: 500px;
 
-    @media (min-width: 0px) and (max-width: 1024px) {
-      transform: translate3d(0vw, 0, 0);
-      max-width: none;
+    @media (max-width: 1024px) {
+      max-width: 100%;
     }
   }
 `;
@@ -31,7 +30,7 @@ const CategoryContainer = styled.div`
   background-color: #eee;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
   overflow: scroll;
   display: flex;
@@ -41,20 +40,24 @@ const CategoryItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 1.5rem;
+
   a {
     text-decoration: none;
     cursor: pointer;
     color: #000;
-  }
-  img {
-    width: 15%;
-    padding: 0 1rem;
-  }
-  .categoryEntry {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    width: 15%;
+    padding: 0;
+  }
+
+  span {
+    margin-left: 1rem;
   }
 
   .social-icons {
@@ -103,20 +106,7 @@ class CategoryMenu extends Component {
 
           <CategoryItem>
             <div>
-              {categories.map(category => (
-                <div className="categoryEntry" key={category.id}>
-                  <img
-                    src={category.acf.image.sizes.thumbnail}
-                    alt="placeholder"
-                  />
-                  <Link
-                    as={`/category/${category.slug}`}
-                    href={`/category/${category.slug}`}
-                  >
-                    <a>{category.name}</a>
-                  </Link>
-                </div>
-              ))}
+              {categories.map(category => this.renderCategoryLinks(category))}
 
               <div className="social-icons">
                 <SocialIcons />
@@ -128,6 +118,17 @@ class CategoryMenu extends Component {
       </CategoryList>
     );
   }
+
+  renderCategoryLinks = category => {
+    return (
+      <Link href={`/category/${category.slug}`} key={category.id}>
+        <a>
+          <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
+          <span>{category.name}</span>
+        </a>
+      </Link>
+    );
+  };
 }
 
 export default CategoryMenu;
