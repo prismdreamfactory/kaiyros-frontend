@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 import CategoryMenu from './CategoryMenu';
@@ -78,29 +79,33 @@ export const Nav = props => {
   return (
     <NavStyles>
       <div className="kaiyros">
-        <a href="/">
-          <div className="title">
+        <Link href="/">
+          <a>
+            <div className="title">
+              <img
+                className="logo"
+                src="../static/images/KairosLogoSquare.svg"
+                alt=""
+              />
+              <h1>Kaiyros.net</h1>
+            </div>
+          </a>
+        </Link>
+        <h4>Connecting the :Dots: of Human Potential</h4>
+      </div>
+
+      {/* mobile banner */}
+      <div className="mobile">
+        <Link href="/">
+          <a className="alignCenter">
             <img
               className="logo"
               src="../static/images/KairosLogoSquare.svg"
               alt=""
             />
             <h1>Kaiyros.net</h1>
-          </div>
-        </a>
-        <h4>Connecting the :Dots: of Human Potential</h4>
-      </div>
-
-      {/* mobile banner */}
-      <div className="mobile">
-        <a className="alignCenter" href="/">
-          <img
-            className="logo"
-            src="../static/images/KairosLogoSquare.svg"
-            alt=""
-          />
-          <h1>Kaiyros.net</h1>
-        </a>
+          </a>
+        </Link>
         <div className="menu">
           <CategoryMenu {...props} />
         </div>
