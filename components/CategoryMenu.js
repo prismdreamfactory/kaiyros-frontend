@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
+import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
+import CloseIcon from '../microcomponents/CloseIcon';
 
 const CategoryList = styled.div`
   .hide {
@@ -12,7 +14,7 @@ const CategoryList = styled.div`
     transform: translate3d(62vw, 0, 0);
     overflow: hidden;
     justify-content: center;
-    max-width: 500px;
+    max-width: 40%;
 
     @media (min-width: 0px) and (max-width: 1024px) {
       transform: translate3d(0vw, 0, 0);
@@ -63,50 +65,6 @@ const CategoryItem = styled.div`
   }
 `;
 
-const Open = styled.a`
-  /* position: fixed;
-  top: 2rem;
-  right: 2rem; */
-  cursor: pointer;
-
-  div {
-    width: 35px;
-    height: 3px;
-    background-color: black;
-    margin: 6px 0;
-  }
-`;
-
-const Close = styled.a`
-  display: flex;
-  justify-content: flex-end;
-
-  .close {
-    padding: 0 1rem;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .close:before {
-    content: '';
-    height: 40px;
-    border-left: 2px solid #000;
-    position: absolute;
-    transform: rotate(-45deg);
-    left: 28px;
-  }
-  .close:after {
-    content: '';
-    height: 40px;
-    border-left: 2px solid #000;
-    position: absolute;
-    transform: rotate(45deg);
-    left: 28px;
-  }
-`;
-
 class CategoryMenu extends Component {
   state = {
     menuIsOpen: false
@@ -139,9 +97,7 @@ class CategoryMenu extends Component {
         <CategoryContainer className={visibility}>
           <CategoryItem>
             <div>
-              <Close onClick={this.handleCloseMenu}>
-                <div className="close" />
-              </Close>
+              <CloseIcon handleClick={this.handleCloseMenu} />
 
               {categories.map(category => (
                 <div className="categoryEntry" key={category.id}>
@@ -164,11 +120,7 @@ class CategoryMenu extends Component {
             </div>
           </CategoryItem>
         </CategoryContainer>
-        <Open onClick={this.handleOpenMenu}>
-          <div />
-          <div />
-          <div />
-        </Open>
+        <HamburgerMenuIcon handleClick={this.handleOpenMenu} />
       </CategoryList>
     );
   }
