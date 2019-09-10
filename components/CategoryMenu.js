@@ -11,10 +11,10 @@ const CategoryList = styled.div`
   }
 
   .show {
-    transform: translate3d(62vw, 0, 0);
+    transform: translate3d(70vw, 0, 0);
     overflow: hidden;
     justify-content: center;
-    max-width: 40%;
+    max-width: 30%;
 
     @media (min-width: 0px) and (max-width: 1024px) {
       transform: translate3d(0vw, 0, 0);
@@ -26,7 +26,7 @@ const CategoryList = styled.div`
 const CategoryContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #ccc;
+  background-color: #eee;
   position: fixed;
   top: 0;
   left: 0;
@@ -53,9 +53,10 @@ const CategoryItem = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    margin-left: 2rem;
   }
 
-  .stuff {
+  .social-icons {
     display: none;
     justify-content: center;
     @media (min-width: 0px) and (max-width: 1024px) {
@@ -95,10 +96,10 @@ class CategoryMenu extends Component {
     return (
       <CategoryList>
         <CategoryContainer className={visibility}>
+          <CloseIcon handleClick={this.handleCloseMenu} />
+
           <CategoryItem>
             <div>
-              <CloseIcon handleClick={this.handleCloseMenu} />
-
               {categories.map(category => (
                 <div className="categoryEntry" key={category.id}>
                   <img
@@ -114,7 +115,7 @@ class CategoryMenu extends Component {
                 </div>
               ))}
 
-              <div className="stuff">
+              <div className="social-icons">
                 <SocialIcons />
               </div>
             </div>

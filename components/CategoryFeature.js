@@ -22,6 +22,13 @@ const CategoryFeatureStyles = styled.div`
     text-transform: uppercase;
   }
 
+  img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
   @media (min-width: 0px) and (max-width: 1024px) {
     flex-direction: column;
     img {

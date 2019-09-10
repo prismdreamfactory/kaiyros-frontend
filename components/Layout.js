@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 
 const LayoutStyle = styled.div`
-  font-family: Helvetica, sans-serif;
+  font-family: courier, sans-serif;
 
   p {
     line-height: 1.6;

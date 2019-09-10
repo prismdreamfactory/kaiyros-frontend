@@ -7,12 +7,14 @@ import CategoryMenu from './CategoryMenu';
 const NavStyles = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 1rem;
 
   a {
     text-decoration: none;
   }
   h1 {
     text-transform: uppercase;
+    margin: 0;
     margin-bottom: 0.3rem;
     color: #000;
   }
@@ -22,23 +24,21 @@ const NavStyles = styled.div`
 
   h4 {
     text-transform: uppercase;
-    margin-left: 8rem;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0.5rem 6rem;
   }
   .title {
     display: flex;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
     align-items: flex-end;
   }
   .logo {
-    width: 4rem;
-    border: 1px solid #000;
-    margin: 0.7rem;
+    width: 2.5rem;
     padding: 0.3rem;
   }
   .icons {
     display: flex;
     align-items: center;
-    padding: 1.5rem;
   }
 
   .mobile {
@@ -89,7 +89,7 @@ export const Nav = props => {
                 src="../static/images/KairosLogoSquare.svg"
                 alt=""
               />
-              <h1>Kaiyros.net</h1>
+              <h1>Kaiyros</h1>
             </div>
           </a>
         </Link>

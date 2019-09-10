@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const HamburgerMenuIconStyles = styled.a`
   cursor: pointer;
   div {
-    width: 35px;
-    height: 3px;
+    width: 36px;
+    height: 2px;
     background-color: black;
-    margin: 6px 0;
+    margin: 7px 0;
   }
 `;
 

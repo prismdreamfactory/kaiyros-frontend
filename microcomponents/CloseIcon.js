@@ -2,20 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CloseIconStyles = styled.a`
-  display: flex;
-  justify-content: flex-end;
-
   .close {
-    padding: 0 1rem;
-    width: 40px;
-    height: 40px;
-    position: relative;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
     cursor: pointer;
   }
 
   .close:before {
     content: '';
-    height: 40px;
+    height: 36px;
     border-left: 2px solid #000;
     position: absolute;
     transform: rotate(-45deg);
@@ -23,7 +21,7 @@ const CloseIconStyles = styled.a`
   }
   .close:after {
     content: '';
-    height: 40px;
+    height: 36px;
     border-left: 2px solid #000;
     position: absolute;
     transform: rotate(45deg);
