@@ -36,9 +36,11 @@ const CategoryPosts = props => {
       <CategoryPostsStyles key={post.id}>
         <div className="postContent">
           <div className="center">
-            <a href={`/post?slug=${post.slug}&apiRoute=post`}>
-              <img width="450" height="280" src={featuredImage} alt="" />
-            </a>
+            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+              <a>
+                <img width="450" height="280" src={featuredImage} alt="" />
+              </a>
+            </Link>
           </div>
           <div>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>

@@ -19,8 +19,6 @@ const LayoutStyle = styled.div`
 const Layout = props => {
   const { children } = props;
 
-  console.log(props);
-
   return (
     <LayoutStyle>
       <Header />

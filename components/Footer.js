@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const FooterNav = styled.div`
@@ -21,9 +22,15 @@ const FooterNav = styled.div`
 
 const Footer = () => (
   <FooterNav>
-    <a href="/page/about">About • </a>
-    <a href="/page/contact">Contact • </a>
-    <a href="/page/connect">Connect</a>
+    <Link href="/about">
+      <a>About • </a>
+    </Link>
+    <Link href="/contact">
+      <a>Contact • </a>
+    </Link>
+    <Link href="/connect">
+      <a>Connect</a>
+    </Link>
   </FooterNav>
 );
 

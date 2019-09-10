@@ -49,15 +49,14 @@ const CategoryFeature = props => {
 
     return (
       <CategoryFeatureStyles key={post.id}>
-        <a href={`/post?slug=${post.slug}&apiRoute=post`}>
-          <img src={stickyImage} alt="" />
-        </a>
+        <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+          <a>
+            <img src={stickyImage} alt="" />
+          </a>
+        </Link>
         <div className="content">
           <div>
-            <Link
-              as={`/post/${post.slug}`}
-              href={`/post?slug=${post.slug}&apiRoute=post`}
-            >
+            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
               <a className="title">{post.title.rendered}</a>
             </Link>
           </div>
