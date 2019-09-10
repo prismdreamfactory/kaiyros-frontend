@@ -10,6 +10,7 @@ const NavStyles = styled.div`
   margin: 0 1rem;
   position: relative;
   z-index: 100;
+  margin-bottom: 2rem;
 
   a {
     text-decoration: none;

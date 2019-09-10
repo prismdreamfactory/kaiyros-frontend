@@ -6,6 +6,8 @@ import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
 
 const CategoryList = styled.div`
+  max-width: 1100px;
+
   .hide {
     transform: translate3d(100vw, 0, 0);
   }
@@ -24,8 +26,8 @@ const CategoryList = styled.div`
 `;
 
 const CategoryContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #eee;
   position: fixed;
   top: 0;
