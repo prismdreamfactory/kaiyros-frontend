@@ -4,7 +4,7 @@ import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
 import { CategoryNav } from './CategoryNav';
 
-const CategoryList = styled.div`
+const CategoryMenuDisplay = styled.div`
   max-width: 1100px;
 
   .hide {
@@ -21,7 +21,7 @@ const CategoryList = styled.div`
   }
 `;
 
-const CategoryContainer = styled.div`
+const CategoryMenuStyles = styled.div`
   width: 100%;
   height: 100%;
   background-color: #eee;
@@ -63,14 +63,14 @@ class CategoryMenu extends Component {
     }
 
     return (
-      <CategoryList>
-        <CategoryContainer className={visibility}>
+      <CategoryMenuDisplay>
+        <CategoryMenuStyles className={visibility}>
           <CloseIcon handleClick={this.handleCloseMenu} />
 
           <CategoryNav categories={categories} {...this.props} />
-        </CategoryContainer>
+        </CategoryMenuStyles>
         <HamburgerMenuIcon handleClick={this.handleOpenMenu} />
-      </CategoryList>
+      </CategoryMenuDisplay>
     );
   }
 }
