@@ -37,9 +37,9 @@ const CloseIconStyles = styled.a`
   }
 `;
 
-const CloseIcon = props => {
+const CloseIcon = ({ onClick }) => {
   return (
-    <CloseIconStyles onClick={props.handleClick}>
+    <CloseIconStyles onClick={onClick}>
       <div className="close" />
     </CloseIconStyles>
   );

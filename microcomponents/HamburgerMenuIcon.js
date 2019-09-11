@@ -16,9 +16,9 @@ const HamburgerMenuIconStyles = styled.a`
   }
 `;
 
-const HamburgerMenuIcon = props => {
+const HamburgerMenuIcon = ({ onClick }) => {
   return (
-    <HamburgerMenuIconStyles onClick={props.handleClick}>
+    <HamburgerMenuIconStyles onClick={onClick}>
       <div />
       <div />
       <div />

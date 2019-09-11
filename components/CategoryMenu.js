@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
@@ -35,44 +35,19 @@ const CategoryMenuStyles = styled.div`
   max-width: 500px;
 `;
 
-class CategoryMenu extends Component {
-  state = {
-    menuIsOpen: false
-  };
+const CategoryMenu = props => {
+  const [menuIsOpen, openMenu] = useState(false);
 
-  handleOpenMenu = () => {
-    this.setState(prevState => ({
-      menuIsOpen: !prevState.menuIsOpen
-    }));
-  };
+  return (
+    <CategoryMenuDisplay>
+      <CategoryMenuStyles className={menuIsOpen ? 'show' : 'hide'}>
+        <CloseIcon onClick={() => openMenu(false)} />
 
-  handleCloseMenu = () => {
-    this.setState(prevState => ({
-      menuIsOpen: !prevState.menuIsOpen
-    }));
-  };
-
-  render() {
-    const { menuIsOpen } = this.state;
-    const { categories } = this.props;
-
-    let visibility = 'hide';
-
-    if (menuIsOpen) {
-      visibility = 'show';
-    }
-
-    return (
-      <CategoryMenuDisplay>
-        <CategoryMenuStyles className={visibility}>
-          <CloseIcon handleClick={this.handleCloseMenu} />
-
-          <CategoryNav {...this.props} />
-        </CategoryMenuStyles>
-        <HamburgerMenuIcon handleClick={this.handleOpenMenu} />
-      </CategoryMenuDisplay>
-    );
-  }
-}
+        <CategoryNav {...props} />
+      </CategoryMenuStyles>
+      <HamburgerMenuIcon onClick={() => openMenu(true)} />
+    </CategoryMenuDisplay>
+  );
+};
 
 export default CategoryMenu;
