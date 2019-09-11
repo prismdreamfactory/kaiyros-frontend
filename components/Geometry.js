@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
+import ReactTooltip from 'react-tooltip';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -141,13 +142,91 @@ const GeometryStyles = styled.div`
   }
 `;
 
+const chakras = [
+  {
+    placement: 'right',
+    url: 'letters-to-human-family',
+    image: 'sacredgeo1.svg',
+    title: 'Letters to Human Family',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'right',
+    url: 'science-of-spirit',
+    image: 'sacredgeo2.svg',
+    title: 'Science of Spirit',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'left',
+    url: 'social-impact',
+    image: 'sacredgeo3.svg',
+    title: 'Social Impact',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'right',
+    url: 'human-tech',
+    image: 'sacredgeo4.svg',
+    title: 'Human Tech',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'right',
+    url: 'integrative-mental-health',
+    image: 'sacredgeo5.svg',
+    title: 'Integrative Mental Health',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'left',
+    url: 'metaphysics-of-healing',
+    image: 'sacredgeo6.svg',
+    title: 'Metaphysics of Healing',
+    text: 'This is a letter to humanity'
+  },
+  {
+    placement: 'right',
+    url: 'practical-self',
+    image: 'sacredgeo7.svg',
+    title: 'Practical Self',
+    text: 'This is a letter to humanity'
+  }
+];
+
 export const Geometry = () => {
+  const renderChakras = items =>
+    items.map((item, index) => {
+      const { placement, url, image, title, text } = item;
+
+      return (
+        <div key={url}>
+          <Link href={`/category/${url}`}>
+            <a className={`shape shape${index + 1}`} data-tip data-for={url}>
+              <img
+                className={index === 0 ? '' : 'rotate'}
+                src={`../static/images/${image}`}
+                alt="{title}"
+              />
+              <span className="text">{title}</span>
+            </a>
+          </Link>
+
+          <ReactTooltip id={url} type="dark" effect="solid" place={placement}>
+            <p>{text}</p>
+          </ReactTooltip>
+        </div>
+      );
+    });
+
   return (
     <Tilt options={{ scale: 1, max: 5, perspective: 850 }}>
       <GeometryStyles>
         <div className="content">
-          <Link href={`/category/letters-to-human-family`}>
-            <a className="shape shape1">
+          {renderChakras(chakras)}
+
+          {/* <Link href={`/category/letters-to-human-family`}>
+            <a className="shape shape1" data-tip data-for="letters">
               <img
                 // className="rotate"
                 src="../static/images/sacredgeo1.svg"
@@ -156,6 +235,10 @@ export const Geometry = () => {
               <span className="text">Letters to Human Family</span>
             </a>
           </Link>
+
+          <ReactTooltip id="letters" type="dark" effect="solid">
+            <p>This is a letter to humaniy</p>
+          </ReactTooltip>
 
           <Link href={`/category/science-of-spirit`}>
             <a className="shape shape2">
@@ -216,7 +299,7 @@ export const Geometry = () => {
               />
               <span>Practical Self</span>
             </a>
-          </Link>
+          </Link> */}
         </div>
       </GeometryStyles>
     </Tilt>
