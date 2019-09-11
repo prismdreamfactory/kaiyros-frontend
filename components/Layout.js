@@ -12,8 +12,12 @@ const LayoutStyle = styled.div`
     line-height: 1.6;
   }
 
-  a:hover {
-    color: #2b9985;
+  a {
+    transition: 0.4s ease;
+
+    &:hover {
+      color: #2b9985;
+    }
   }
 `;
 

@@ -129,7 +129,7 @@ const GeometryStyles = styled.div`
 
 export const Geometry = () => {
   return (
-    <Tilt options={{ scale: 1, max: 5, perspective: 750 }}>
+    <Tilt options={{ scale: 1, max: 5, perspective: 850 }}>
       <GeometryStyles>
         <div className="content">
           <Link href={`/category/letters-to-human-family`}>
