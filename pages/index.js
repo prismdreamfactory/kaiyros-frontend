@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Config from '../config';
 import Geometry from '../components/Geometry';
+import Particles from 'react-particles-js';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -100,6 +101,42 @@ class Index extends Component {
     return (
       <Layout {...this.props}>
         <Geometry />
+        <Particles
+          style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
+          params={{
+            particles: {
+              number: {
+                value: 50,
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              color: {
+                value: '#000000'
+              },
+              size: {
+                value: 2
+              },
+              line_linked: {
+                color: '#000000',
+                opacity: 0.2,
+                width: 1
+              },
+              opacity: {
+                value: 0.1
+              }
+            },
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: 'repulse'
+                }
+              }
+            }
+          }}
+        />
       </Layout>
     );
   }
