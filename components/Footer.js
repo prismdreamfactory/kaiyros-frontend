@@ -33,18 +33,35 @@ const Footer = props => {
   const { footerMenu } = props;
 
   const renderDivider = <span>•</span>;
+  console.log('item', footerMenu);
 
   return (
     <FooterNav>
       {footerMenu.items.map((item, index) => {
         const slug = item.title.toLowerCase();
+        const url = item.url;
+
+        const isExternalLink = item.type === 'custom';
+
+        function FooterLinks() {
+          if (!isExternalLink) {
+            return (
+              <Link target="_blank" as={`/${slug}`} href={`/page/${slug}`}>
+                <a>{item.title}</a>
+              </Link>
+            );
+          }
+          return (
+            <a href={url} target="_blank">
+              {item.title}
+            </a>
+          );
+        }
 
         return (
           <div key={item.title}>
             {index ? renderDivider : ''}
-            <Link as={`/${slug}`} href={`/page/${slug}`}>
-              <a>{item.title}</a>
-            </Link>
+            <FooterLinks {...props} />
           </div>
         );
       })}
