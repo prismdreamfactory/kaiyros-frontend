@@ -21,10 +21,10 @@ const GeometryStyles = styled.div`
 
   @media (max-width: 768px) {
     position: fixed;
-    top: 25%;
+    top: 25vh;
     left: 0;
     right: 0;
-    opacity: 0.15;
+    opacity: 0.05;
     pointer-events: none;
     z-index: -1;
   }

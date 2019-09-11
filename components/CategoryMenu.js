@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
 import { CategoryNav } from './CategoryNav';
+import Footer from './Footer';
+import SocialIcons from '../microcomponents/SocialIcons';
 
 const CategoryMenuDisplay = styled.div`
   max-width: 1100px;
@@ -33,6 +35,20 @@ const CategoryMenuStyles = styled.div`
   display: flex;
   justify-content: center;
   max-width: 500px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+`;
+
+const CategoryNavStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
 `;
 
 const CategoryMenu = props => {
@@ -43,7 +59,15 @@ const CategoryMenu = props => {
       <CategoryMenuStyles className={menuIsOpen ? 'show' : 'hide'}>
         <CloseIcon onClick={() => openMenu(false)} />
 
-        <CategoryNav {...props} />
+        <CategoryNavStyles>
+          <CategoryNav {...props} />
+
+          <Footer {...props} />
+
+          <div className="social-icons">
+            <SocialIcons />
+          </div>
+        </CategoryNavStyles>
       </CategoryMenuStyles>
       <HamburgerMenuIcon onClick={() => openMenu(true)} />
     </CategoryMenuDisplay>

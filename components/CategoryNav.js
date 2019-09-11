@@ -1,14 +1,10 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import SocialIcons from '../microcomponents/SocialIcons';
-import Footer from '../components/Footer';
 
 export const CategoryNav = props => {
-  const CategoryItem = styled.div`
+  const CategoryNavStyles = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 1.5rem;
 
     a {
       text-decoration: none;
@@ -27,11 +23,6 @@ export const CategoryNav = props => {
     .category-title {
       margin-left: 1rem;
     }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-    }
   `;
 
   const renderCategoryLinks = category => {
@@ -46,17 +37,8 @@ export const CategoryNav = props => {
   };
 
   return (
-    <CategoryItem>
-      <div>
-        {props.categories.map(category => renderCategoryLinks(category))}
-        <div>
-          <Footer {...props} />
-        </div>
-
-        <div className="social-icons">
-          <SocialIcons />
-        </div>
-      </div>
-    </CategoryItem>
+    <CategoryNavStyles>
+      {props.categories.map(category => renderCategoryLinks(category))}
+    </CategoryNavStyles>
   );
 };
