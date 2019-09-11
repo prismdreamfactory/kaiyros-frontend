@@ -9,6 +9,11 @@ const HamburgerMenuIconStyles = styled.a`
     background-color: black;
     margin: 7px 0;
   }
+  :hover {
+    div {
+      background-color: #2b9985;
+    }
+  }
 `;
 
 const HamburgerMenuIcon = props => {

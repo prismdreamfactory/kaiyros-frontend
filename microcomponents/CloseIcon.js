@@ -2,6 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CloseIconStyles = styled.a`
+  :hover {
+    .close:before {
+      border-left: 2px solid #2b9985;
+    }
+    .close:after {
+      border-left: 2px solid #2b9985;
+    }
+  }
   .close {
     width: 36px;
     height: 36px;
