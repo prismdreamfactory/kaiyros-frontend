@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const FooterNav = styled.div`
+const FooterNav = styled.footer`
   padding: 2.5rem;
   a {
     text-decoration: none;
@@ -17,6 +17,9 @@ const FooterNav = styled.div`
   span {
     padding: 0 0.75rem;
   }
+
+  display: flex;
+  justify-content: center;
 
   @media (min-width: 0px) and (max-width: 1024px) {
     display: flex;
