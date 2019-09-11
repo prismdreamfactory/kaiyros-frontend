@@ -78,22 +78,22 @@ const GeometryStyles = styled.div`
     }
   }
 
-  /* .rotate:hover {
+  .rotate {
     -webkit-animation-name: spin;
-    -webkit-animation-duration: 15s;
+    -webkit-animation-duration: 60s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     -moz-animation-name: spin;
-    -moz-animation-duration: 15s;
+    -moz-animation-duration: 60s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
     -ms-animation-name: spin;
-    -ms-animation-duration: 15s;
+    -ms-animation-duration: 60s;
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
 
     animation-name: spin;
-    animation-duration: 15s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
@@ -120,7 +120,7 @@ const GeometryStyles = styled.div`
     to {
       transform: rotate(360deg);
     }
-  } */
+  }
 `;
 
 export const Geometry = () => {
@@ -130,45 +130,72 @@ export const Geometry = () => {
         <div className="content">
           <Link href={`/category/letters-to-human-family`}>
             <a className="shape shape1">
-              <img src="../static/images/sacredgeo1.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo1.svg"
+                alt=""
+              />
               <span className="text">Letters to Human Family</span>
             </a>
           </Link>
 
           <Link href={`/category/science-of-spirit`}>
             <a className="shape shape2">
-              <img src="../static/images/sacredgeo2.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo2.svg"
+                alt=""
+              />
               <span>Science of Spirit</span>
             </a>
           </Link>
-
           <Link href={`/category/social-impact`}>
             <a className="shape shape3">
-              <img src="../static/images/sacredgeo3.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo3.svg"
+                alt=""
+              />
               <span>Social Impact</span>
             </a>
           </Link>
           <Link href="/category/human-tech">
             <a className="shape shape4">
-              <img src="../static/images/sacredgeo4.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo4.svg"
+                alt=""
+              />
               <span>Human Tech</span>
             </a>
           </Link>
           <Link href="/category/integrative-mental-health">
             <a className="shape shape5">
-              <img src="../static/images/sacredgeo5.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo5.svg"
+                alt=""
+              />
               <span>Integrative Mental Health</span>
             </a>
           </Link>
           <Link href="/category/metaphysics-of-healing">
             <a className="shape shape6">
-              <img src="../static/images/sacredgeo6.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo6.svg"
+                alt=""
+              />
               <span>Metaphysics of Healing</span>
             </a>
           </Link>
           <Link href="/category/practical-self">
             <a className="shape shape7">
-              <img src="../static/images/sacredgeo7.svg" alt="" />
+              <img
+                className="rotate"
+                src="../static/images/sacredgeo7.svg"
+                alt=""
+              />
               <span>Practical Self</span>
             </a>
           </Link>

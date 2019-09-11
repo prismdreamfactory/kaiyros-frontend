@@ -57,7 +57,7 @@ const CategoryItem = styled.div`
     padding: 0;
   }
 
-  span {
+  .category-title {
     margin-left: 1rem;
   }
 
@@ -122,7 +122,7 @@ class CategoryMenu extends Component {
       <Link href={`/category/${category.slug}`} key={category.id}>
         <a>
           <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
-          <span>{category.name}</span>
+          <span className="category-title">{category.name}</span>
         </a>
       </Link>
     );
