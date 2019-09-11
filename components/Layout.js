@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import Nav from './Nav';
+import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
   font-family: courier, sans-serif;
@@ -26,6 +27,7 @@ const Layout = props => {
 
   return (
     <LayoutStyle>
+      <Favicon url="../static/favicon.ico" />
       <Header />
       <Nav {...props} />
       {children}
