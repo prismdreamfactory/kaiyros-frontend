@@ -9,12 +9,24 @@ import Tilt from 'react-tilt';
 const GeometryStyles = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 3rem;
+  padding: 0 1rem;
   z-index: 0;
+  opacity: 1;
 
   @media (min-width: 1024px) {
     max-width: 80vh;
     margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    right: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
   }
 
   a {
@@ -74,8 +86,10 @@ const GeometryStyles = styled.div`
   span {
     position: absolute;
     display: flex;
+    justify-content: center;
     text-align: center;
     background-color: #fff;
+    width: 100%;
 
     @media (max-width: 767px) {
       display: none;

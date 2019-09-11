@@ -23,7 +23,7 @@ const FooterNav = styled.footer`
     padding: 0 0.75rem;
   }
 
-  @media (min-width: 0px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     display: flex;
     justify-content: center;
   }
