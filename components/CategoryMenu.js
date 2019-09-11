@@ -67,7 +67,7 @@ class CategoryMenu extends Component {
         <CategoryMenuStyles className={visibility}>
           <CloseIcon handleClick={this.handleCloseMenu} />
 
-          <CategoryNav categories={categories} {...this.props} />
+          <CategoryNav {...this.props} />
         </CategoryMenuStyles>
         <HamburgerMenuIcon handleClick={this.handleOpenMenu} />
       </CategoryMenuDisplay>
