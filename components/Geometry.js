@@ -149,7 +149,7 @@ export const Geometry = () => {
           <Link href={`/category/letters-to-human-family`}>
             <a className="shape shape1">
               <img
-                className="rotate"
+                // className="rotate"
                 src="../static/images/sacredgeo1.svg"
                 alt=""
               />

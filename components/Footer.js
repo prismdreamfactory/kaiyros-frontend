@@ -36,14 +36,18 @@ const Footer = props => {
 
   return (
     <FooterNav>
-      {footerMenu.items.map((item, index) => (
-        <div key={item.title}>
-          {index ? renderDivider : ''}
-          <Link href={`/${item.title.toLowerCase()}`}>
-            <a>{item.title}</a>
-          </Link>
-        </div>
-      ))}
+      {footerMenu.items.map((item, index) => {
+        const slug = item.title.toLowerCase();
+
+        return (
+          <div key={item.title}>
+            {index ? renderDivider : ''}
+            <Link as={`/${slug}`} href={`/page/${slug}`}>
+              <a>{item.title}</a>
+            </Link>
+          </div>
+        );
+      })}
     </FooterNav>
   );
 };
