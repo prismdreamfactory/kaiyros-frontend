@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
+import Footer from '../components/Footer';
 
 const CategoryList = styled.div`
   max-width: 1100px;
@@ -61,14 +62,8 @@ const CategoryItem = styled.div`
   }
 
   .social-icons {
-    display: none;
+    display: flex;
     justify-content: center;
-    margin-top: 4rem;
-
-    @media (max-width: 1024px) {
-      display: flex;
-      justify-content: center;
-    }
   }
 `;
 
@@ -107,6 +102,9 @@ class CategoryMenu extends Component {
           <CategoryItem>
             <div>
               {categories.map(category => this.renderCategoryLinks(category))}
+              <div>
+                <Footer {...this.props} />
+              </div>
 
               <div className="social-icons">
                 <SocialIcons />
