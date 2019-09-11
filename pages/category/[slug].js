@@ -44,8 +44,8 @@ const CategoryContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto auto;
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 1.5rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
   }
 
   @media (max-width: 1024px) {

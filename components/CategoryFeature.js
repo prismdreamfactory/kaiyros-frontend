@@ -27,7 +27,7 @@ const CategoryFeatureStyles = styled.div`
     object-fit: cover;
   }
 
-  @media (min-width: 0px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     img {
       width: 100%;
