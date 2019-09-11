@@ -27,17 +27,22 @@ const FooterNav = styled.div`
 const Footer = props => {
   const { footerMenu } = props;
 
+  const renderLink = item => (
+    <Link href={`/${item.title.toLowerCase()}`} key={item.title}>
+      <a>{item.title}</a>
+    </Link>
+  );
+
+  const divider = <span>•</span>;
+
   return (
     <FooterNav>
-      {footerMenu.items.map(footerlink => (
-        <Link
-          href={`/${footerlink.title.toLowerCase()}`}
-          key={footerlink.title}
-        >
-          <a>{footerlink.title}</a>
-        </Link>
+      {footerMenu.items.map((item, index) => (
+        <div>
+          {index ? divider : ''}
+          {renderLink(item)}
+        </div>
       ))}
-      <span>•</span>
     </FooterNav>
   );
 };
