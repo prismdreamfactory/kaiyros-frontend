@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
-import SocialIcons from '../microcomponents/SocialIcons';
 import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
-import Footer from '../components/Footer';
+import { CategoryNav } from './CategoryNav';
 
 const CategoryList = styled.div`
   max-width: 1100px;
@@ -16,8 +14,6 @@ const CategoryList = styled.div`
   .show {
     transform: translate3d(0, 0, 0);
     overflow: hidden;
-    justify-content: center;
-    max-width: 500px;
 
     @media (max-width: 1024px) {
       max-width: 100%;
@@ -35,36 +31,8 @@ const CategoryContainer = styled.div`
   transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
   overflow: scroll;
   display: flex;
-`;
-
-const CategoryItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 1.5rem;
-
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    color: #000;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-
-  img {
-    width: 15%;
-    padding: 0;
-  }
-
-  .category-title {
-    margin-left: 1rem;
-  }
-
-  .social-icons {
-    display: flex;
-    justify-content: center;
-  }
+  justify-content: center;
+  max-width: 500px;
 `;
 
 class CategoryMenu extends Component {
@@ -99,34 +67,12 @@ class CategoryMenu extends Component {
         <CategoryContainer className={visibility}>
           <CloseIcon handleClick={this.handleCloseMenu} />
 
-          <CategoryItem>
-            <div>
-              {categories.map(category => this.renderCategoryLinks(category))}
-              <div>
-                <Footer {...this.props} />
-              </div>
-
-              <div className="social-icons">
-                <SocialIcons />
-              </div>
-            </div>
-          </CategoryItem>
+          <CategoryNav categories={categories} {...this.props} />
         </CategoryContainer>
         <HamburgerMenuIcon handleClick={this.handleOpenMenu} />
       </CategoryList>
     );
   }
-
-  renderCategoryLinks = category => {
-    return (
-      <Link href={`/category/${category.slug}`} key={category.id}>
-        <a>
-          <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
-          <span className="category-title">{category.name}</span>
-        </a>
-      </Link>
-    );
-  };
 }
 
 export default CategoryMenu;
