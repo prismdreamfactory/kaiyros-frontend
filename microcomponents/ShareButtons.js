@@ -11,17 +11,20 @@ const ShareStyle = styled.div`
   display: flex;
   justify-content: flex-end;
 
+  path {
+    fill: #000;
+  }
+
   .button {
     cursor: pointer;
     rect {
-      fill: #000;
+      fill: #fff;
     }
     :hover {
-      rect {
+      path {
         fill: #2b9985;
       }
     }
-    margin-right: 0.3rem;
   }
 `;
 
@@ -31,12 +34,12 @@ export const ShareButtons = props => {
     <ShareStyle>
       <div className="button">
         <TwitterShareButton url={url}>
-          <TwitterIcon size={32} borderRadius={10} />
+          <TwitterIcon size={45} />
         </TwitterShareButton>
       </div>
       <div className="button">
         <PinterestShareButton url={url} media={media}>
-          <PinterestIcon size={32} borderRadius={10} />
+          <PinterestIcon size={45} />
         </PinterestShareButton>
       </div>
     </ShareStyle>
