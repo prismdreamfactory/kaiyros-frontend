@@ -120,11 +120,14 @@ class Index extends Component {
               },
               line_linked: {
                 color: '#000000',
-                opacity: 0.2,
+                opacity: 0.15,
                 width: 1
               },
               opacity: {
                 value: 0.1
+              },
+              move: {
+                speed: 1
               }
             },
             interactivity: {

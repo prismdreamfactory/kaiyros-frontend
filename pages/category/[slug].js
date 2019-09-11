@@ -70,26 +70,26 @@ const CategoryContainer = styled.div`
   }
   @-moz-keyframes spin {
     from {
-      -moz-transform: rotate(0deg);
+      -moz-transform: rotate3d(0deg);
     }
     to {
-      -moz-transform: rotate(360deg);
+      -moz-transform: rotate3d(0, 0, 1, 360deg);
     }
   }
   @-webkit-keyframes spin {
     from {
-      -webkit-transform: rotate(0deg);
+      -webkit-transform: rotate3d(0deg);
     }
     to {
-      -webkit-transform: rotate(360deg);
+      -webkit-transform: rotate3d(0, 0, 1, 360deg);
     }
   }
   @keyframes spin {
     from {
-      transform: rotate(0deg);
+      transform: rotate3d(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate3d(0, 0, 1, 360deg);
     }
   }
 `;
