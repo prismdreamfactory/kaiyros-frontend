@@ -24,15 +24,20 @@ const CategoryContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
 
     img {
       width: 100%;
       max-width: 100px;
+
+      @media (max-width: 768px) {
+        max-width: 50px;
+      }
     }
   }
 
   .categoryHead {
-    margin-left: 2rem;
+    margin-left: 1rem;
     text-align: center;
   }
   .postLayout {
@@ -50,40 +55,12 @@ const CategoryContainer = styled.div`
     }
   }
   .rotate {
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 60s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spin;
-    -moz-animation-duration: 60s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spin;
-    -ms-animation-duration: 60s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-
     animation-name: spin;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
-  @-moz-keyframes spin {
-    from {
-      -moz-transform: rotate3d(0deg);
-    }
-    to {
-      -moz-transform: rotate3d(0, 0, 1, 360deg);
-    }
-  }
-  @-webkit-keyframes spin {
-    from {
-      -webkit-transform: rotate3d(0deg);
-    }
-    to {
-      -webkit-transform: rotate3d(0, 0, 1, 360deg);
-    }
-  }
+
   @keyframes spin {
     from {
       transform: rotate3d(0deg);

@@ -2,18 +2,29 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import WPAPI from 'wpapi';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Config from '../config';
 import Geometry from '../components/Geometry';
 import Particles from 'react-particles-js';
+import { CategoryNav } from '../components/CategoryNav';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-const headerImageStyle = {
-  marginTop: 50,
-  marginBottom: 50
-};
+const ParticlesStyles = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const CategoryNavDisplay = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 
 const tokenExpired = () => {
   if (process.browser) {
@@ -72,77 +83,71 @@ class Index extends Component {
 
   render() {
     const { id } = this.state;
-    const { posts, pages, headerMenu, page } = this.props;
-    const fposts = posts.map(post => {
-      return (
-        <ul key={post.slug}>
-          <li>
-            <Link href={`/post/${post.slug}`}>
-              <a>{post.title.rendered}</a>
-            </Link>
-          </li>
-        </ul>
-      );
-    });
-    const fpages = pages.map(ipage => {
-      return (
-        <ul key={ipage.slug}>
-          <li>
-            <Link
-              as={`/page/${ipage.slug}`}
-              href={`/post?slug=${ipage.slug}&apiRoute=page`}
-            >
-              <a>{ipage.title.rendered}</a>
-            </Link>
-          </li>
-        </ul>
-      );
-    });
+    const { posts, pages, headerMenu, page, categories } = this.props;
+
     return (
       <Layout {...this.props}>
         <Geometry />
-        <Particles
-          style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
-          params={{
-            particles: {
-              number: {
-                value: 50,
-                density: {
-                  enable: true,
-                  value_area: 800
+
+        <CategoryNavDisplay>
+          <CategoryNav {...this.props} />
+        </CategoryNavDisplay>
+
+        <ParticlesStyles>
+          <Particles
+            style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
+            params={{
+              particles: {
+                number: {
+                  value: 50,
+                  density: {
+                    enable: true,
+                    value_area: 800
+                  }
+                },
+                color: {
+                  value: '#000000'
+                },
+                size: {
+                  value: 2
+                },
+                line_linked: {
+                  color: '#000000',
+                  opacity: 0.15,
+                  width: 1
+                },
+                opacity: {
+                  value: 0.1
+                },
+                move: {
+                  speed: 1
                 }
               },
-              color: {
-                value: '#000000'
-              },
-              size: {
-                value: 2
-              },
-              line_linked: {
-                color: '#000000',
-                opacity: 0.15,
-                width: 1
-              },
-              opacity: {
-                value: 0.1
-              },
-              move: {
-                speed: 1
-              }
-            },
-            interactivity: {
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: 'repulse'
+              interactivity: {
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: 'repulse'
+                  }
                 }
               }
-            }
-          }}
-        />
+            }}
+          />
+        </ParticlesStyles>
       </Layout>
     );
   }
+
+  renderCategoryLinks = category => {
+    return (
+      <Link href={`/category/${category.slug}`} key={category.id}>
+        <a>
+          <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
+          <span className="category-title">{category.name}</span>
+        </a>
+      </Link>
+    );
+  };
 }
 
 export default PageWrapper(Index);
