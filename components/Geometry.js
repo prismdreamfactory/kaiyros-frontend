@@ -21,6 +21,10 @@ const GeometryStyles = styled.div`
     text-decoration: none;
     font-size: 1.6vh;
     color: #000;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .content {
@@ -125,7 +129,7 @@ const GeometryStyles = styled.div`
 
 export const Geometry = () => {
   return (
-    <Tilt options={{ scale: 1, max: 5, perspective: 1000 }}>
+    <Tilt options={{ scale: 1, max: 5, perspective: 750 }}>
       <GeometryStyles>
         <div className="content">
           <Link href={`/category/letters-to-human-family`}>
