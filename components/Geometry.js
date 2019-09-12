@@ -1,7 +1,7 @@
 // Geometry.js
 // renders sacred geometry design for site navigation
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
@@ -118,58 +118,60 @@ const chakras = [
   {
     placement: 'right',
     url: 'letters-to-human-family',
-    image: 'sacredgeo1.svg',
     title: 'Letters to Human Family',
-    text: 'This is a letter to humanity'
+    text:
+      'words to family, words of comfort, philosophy, inner dialogue, faith, stream of consciousness, pure expression, Connection to God, Pure divination through surrender and conscious navigation'
   },
   {
-    placement: 'right',
+    placement: 'top',
     url: 'science-of-spirit',
-    image: 'sacredgeo2.svg',
     title: 'Science of Spirit',
-    text: 'This is a letter to humanity'
+    text:
+      '"science and nonduality, quantum, entanglement, morphic resonance field, schumann resonance, what happens to our body and brain when we: a.,b.,c., etc.'
   },
   {
-    placement: 'left',
+    placement: 'top',
     url: 'social-impact',
-    image: 'sacredgeo3.svg',
     title: 'Social Impact',
-    text: 'This is a letter to humanity'
+    text:
+      'NPO, NGO, culture, art, music, race, gender, politics, systemic institutions, organization of people groups, societal labels, counter culture'
   },
   {
-    placement: 'right',
+    placement: 'bottom',
     url: 'human-tech',
-    image: 'sacredgeo4.svg',
     title: 'Human Tech',
-    text: 'This is a letter to humanity'
+    text:
+      'addiction, depression, anxiety, paranoia, wellness, balance, joy, acceptance, gratitude'
   },
   {
-    placement: 'right',
+    placement: 'bottom',
     url: 'integrative-mental-health',
-    image: 'sacredgeo5.svg',
-    title: 'Integrative Mental Health',
-    text: 'This is a letter to humanity'
+    title: 'Conscious Tech',
+    text:
+      'A.I., Consciousness Hacking, P.E.A.C.E. Museum, Psyche x Technology, HeartMath, biometric tech, bioenergetic tech, NES Health?, AR/VR'
   },
   {
-    placement: 'left',
+    placement: 'bottom',
     url: 'metaphysics-of-healing',
-    image: 'sacredgeo6.svg',
     title: 'Metaphysics of Healing',
     text: 'This is a letter to humanity'
   },
   {
-    placement: 'right',
+    placement: 'bottom',
     url: 'practical-self',
-    image: 'sacredgeo7.svg',
     title: 'Practical Self',
     text: 'This is a letter to humanity'
   }
 ];
 
 export const Geometry = () => {
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  });
+
   const renderChakras = items =>
     items.map((item, index) => {
-      const { placement, url, image, title, text } = item;
+      const { placement, url, title, text } = item;
 
       return (
         <div key={url}>
@@ -177,14 +179,14 @@ export const Geometry = () => {
             <a className={`shape shape${index + 1}`} data-tip data-for={url}>
               <img
                 className={index === 0 ? '' : 'rotate'}
-                src={`../static/images/${image}`}
+                src={`../static/images/sacredgeo${index + 1}.svg`}
                 alt="{title}"
               />
               <span className="text">{title}</span>
             </a>
           </Link>
 
-          <ReactTooltip id={url} type="dark" effect="solid" place={placement}>
+          <ReactTooltip id={url} type="dark" effect="float" place={placement}>
             <p>{text}</p>
           </ReactTooltip>
         </div>
@@ -194,85 +196,7 @@ export const Geometry = () => {
   return (
     <Tilt options={{ scale: 1, max: 5, perspective: 850 }}>
       <GeometryStyles>
-        <div className="content">
-          {renderChakras(chakras)}
-
-          {/* <Link href={`/category/letters-to-human-family`}>
-            <a className="shape shape1" data-tip data-for="letters">
-              <img
-                // className="rotate"
-                src="../static/images/sacredgeo1.svg"
-                alt=""
-              />
-              <span className="text">Letters to Human Family</span>
-            </a>
-          </Link>
-
-          <ReactTooltip id="letters" type="dark" effect="solid">
-            <p>This is a letter to humaniy</p>
-          </ReactTooltip>
-
-          <Link href={`/category/science-of-spirit`}>
-            <a className="shape shape2">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo2.svg"
-                alt=""
-              />
-              <span>Science of Spirit</span>
-            </a>
-          </Link>
-          <Link href={`/category/social-impact`}>
-            <a className="shape shape3">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo3.svg"
-                alt=""
-              />
-              <span>Social Impact</span>
-            </a>
-          </Link>
-          <Link href="/category/human-tech">
-            <a className="shape shape4">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo4.svg"
-                alt=""
-              />
-              <span>Human Tech</span>
-            </a>
-          </Link>
-          <Link href="/category/integrative-mental-health">
-            <a className="shape shape5">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo5.svg"
-                alt=""
-              />
-              <span>Integrative Mental Health</span>
-            </a>
-          </Link>
-          <Link href="/category/metaphysics-of-healing">
-            <a className="shape shape6">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo6.svg"
-                alt=""
-              />
-              <span>Metaphysics of Healing</span>
-            </a>
-          </Link>
-          <Link href="/category/practical-self">
-            <a className="shape shape7">
-              <img
-                className="rotate"
-                src="../static/images/sacredgeo7.svg"
-                alt=""
-              />
-              <span>Practical Self</span>
-            </a>
-          </Link> */}
-        </div>
+        <div className="content">{renderChakras(chakras)}</div>
       </GeometryStyles>
     </Tilt>
   );
