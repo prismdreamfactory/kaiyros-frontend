@@ -165,10 +165,6 @@ const chakras = [
 ];
 
 export const Geometry = () => {
-  useEffect(() => {
-    ReactTooltip.rebuild();
-  });
-
   const renderChakras = items =>
     items.map((item, index) => {
       const { placement, url, title, text } = item;
