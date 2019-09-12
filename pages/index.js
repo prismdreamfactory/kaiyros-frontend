@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import Router from 'next/router';
+// import Router from 'next/router';
 import WPAPI from 'wpapi';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -26,65 +26,25 @@ const CategoryNavDisplay = styled.div`
   }
 `;
 
-const tokenExpired = () => {
-  if (process.browser) {
-    localStorage.removeItem(Config.AUTH_TOKEN);
-  }
-  wp.setHeaders('Authorization', '');
-  Router.push('/login');
-};
-
 class Index extends Component {
-  state = {
-    id: ''
-  };
-
   static async getInitialProps() {
     try {
-      const [page, posts, pages] = await Promise.all([
-        wp
-          .pages()
-          .slug('welcome')
-          .embed()
-          .then(data => {
-            return data[0];
-          }),
+      const [posts, pages] = await Promise.all([
         wp.posts().embed(),
         wp.pages().embed()
       ]);
 
-      return { page, posts, pages };
+      return { posts, pages };
     } catch (err) {
-      if (err.data.status === 403) {
-        tokenExpired();
-      }
+      // if (err.data.status === 403) {
+      // tokenExpired();
+      // }
     }
 
     return null;
   }
 
-  componentDidMount() {
-    const token = localStorage.getItem(Config.AUTH_TOKEN);
-    if (token) {
-      wp.setHeaders('Authorization', `Bearer ${token}`);
-      wp.users()
-        .me()
-        .then(data => {
-          const { id } = data;
-          this.setState({ id });
-        })
-        .catch(err => {
-          if (err.data.status === 403) {
-            tokenExpired();
-          }
-        });
-    }
-  }
-
   render() {
-    const { id } = this.state;
-    const { posts, pages, headerMenu, page, categories } = this.props;
-
     return (
       <Layout {...this.props}>
         <Geometry />
