@@ -22,7 +22,6 @@
     "react-particles-js": "^2.7.0",
     "react-share": "^3.0.1",
     "react-tilt": "^0.1.4",
-    "react-tooltip": "^3.11.1",
     "styled-components": "^4.3.2",
     "wpapi": "^1.2.1"
   },
