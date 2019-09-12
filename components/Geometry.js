@@ -5,7 +5,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
-import ReactTooltip from 'react-tooltip';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -165,10 +164,6 @@ const chakras = [
 ];
 
 export const Geometry = () => {
-  useEffect(() => {
-    ReactTooltip.rebuild();
-  });
-
   const renderChakras = items =>
     items.map((item, index) => {
       const { placement, url, title, text } = item;
@@ -176,7 +171,7 @@ export const Geometry = () => {
       return (
         <div key={url}>
           <Link href={`/category/${url}`}>
-            <a className={`shape shape${index + 1}`} data-tip data-for={url}>
+            <a className={`shape shape${index + 1}`}>
               <img
                 className={index === 0 ? '' : 'rotate'}
                 src={`../static/images/sacredgeo${index + 1}.svg`}
@@ -185,10 +180,6 @@ export const Geometry = () => {
               <span className="text">{title}</span>
             </a>
           </Link>
-
-          <ReactTooltip id={url} type="dark" effect="float" place={placement}>
-            <p>{text}</p>
-          </ReactTooltip>
         </div>
       );
     });
