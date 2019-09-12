@@ -33,7 +33,6 @@ const Footer = props => {
   const { footerMenu } = props;
 
   const renderDivider = <span>•</span>;
-  console.log('item', footerMenu);
 
   return (
     <FooterNav>
@@ -46,7 +45,7 @@ const Footer = props => {
         function FooterLinks() {
           if (!isExternalLink) {
             return (
-              <Link target="_blank" as={`/${slug}`} href={`/page/${slug}`}>
+              <Link as={`/${slug}`} href={`/page/${slug}`}>
                 <a>{item.title}</a>
               </Link>
             );
@@ -61,7 +60,7 @@ const Footer = props => {
         return (
           <div key={item.title}>
             {index ? renderDivider : ''}
-            <FooterLinks {...props} />
+            <FooterLinks />
           </div>
         );
       })}
