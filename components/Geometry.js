@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -124,48 +125,48 @@ const GeometryStyles = styled.div`
 
 const chakras = [
   {
-    placement: 'right',
+    placement: 'right-start',
     url: 'letters-to-human-family',
     title: 'Letters to Human Family',
     text:
       'words to family, words of comfort, philosophy, inner dialogue, faith, stream of consciousness, pure expression, Connection to God, Pure divination through surrender and conscious navigation'
   },
   {
-    placement: 'top',
+    placement: 'left-start',
     url: 'science-of-spirit',
     title: 'Science of Spirit',
     text:
       '"science and nonduality, quantum, entanglement, morphic resonance field, schumann resonance, what happens to our body and brain when we: a.,b.,c., etc.'
   },
   {
-    placement: 'top',
+    placement: 'right-start',
     url: 'social-impact',
     title: 'Social Impact',
     text:
       'NPO, NGO, culture, art, music, race, gender, politics, systemic institutions, organization of people groups, societal labels, counter culture'
   },
   {
-    placement: 'bottom',
+    placement: 'left-start',
     url: 'human-tech',
     title: 'Human Tech',
     text:
       'addiction, depression, anxiety, paranoia, wellness, balance, joy, acceptance, gratitude'
   },
   {
-    placement: 'bottom',
+    placement: 'right-end',
     url: 'integrative-mental-health',
     title: 'Conscious Tech',
     text:
       'A.I., Consciousness Hacking, P.E.A.C.E. Museum, Psyche x Technology, HeartMath, biometric tech, bioenergetic tech, NES Health?, AR/VR'
   },
   {
-    placement: 'bottom',
+    placement: 'right-start',
     url: 'metaphysics-of-healing',
     title: 'Metaphysics of Healing',
     text: 'This is a letter to humanity'
   },
   {
-    placement: 'bottom',
+    placement: 'right',
     url: 'practical-self',
     title: 'Practical Self',
     text: 'This is a letter to humanity'
@@ -181,11 +182,13 @@ export const Geometry = () => {
         <div key={url}>
           <Link href={`/category/${url}`}>
             <a className={`shape shape${index + 1}`}>
-              <img
-                className={index === 0 ? '' : 'rotate'}
-                src={`../static/images/sacredgeo${index + 1}.svg`}
-                alt="{title}"
-              />
+              <Tooltip title={text} placement={placement}>
+                <img
+                  className={index === 0 ? '' : 'rotate'}
+                  src={`../static/images/sacredgeo${index + 1}.svg`}
+                  alt="{title}"
+                />
+              </Tooltip>
               <span className="text">{title}</span>
             </a>
           </Link>
