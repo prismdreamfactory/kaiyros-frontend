@@ -39,6 +39,14 @@ const GeometryStyles = styled.div`
     }
   }
 
+  img {
+    /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
+    box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082;
+    /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
+
+    border-radius: 50%;
+  }
+
   .content {
     position: relative;
     background-image: url('../static/images/frame.svg');
@@ -90,6 +98,7 @@ const GeometryStyles = styled.div`
     text-align: center;
     background-color: #fff;
     width: 100%;
+    margin-top: 1.1rem;
 
     @media (max-width: 767px) {
       display: none;
