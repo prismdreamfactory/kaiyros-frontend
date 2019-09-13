@@ -1,5 +1,5 @@
 // let wpUrl = 'http://localhost:8080/wp-json';
-let wpUrl = 'http://api.kaiyros.net/wp-json';
+let wpUrl = 'https://api.kaiyros.net/wp-json';
 
 // If we're running on Docker, use the WordPress container hostname instead of localhost.
 if (process.env.HOME === '/home/node') {
