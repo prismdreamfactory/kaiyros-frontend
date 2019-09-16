@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import {
   TwitterShareButton,
   PinterestShareButton,
+  EmailShareButton,
   TwitterIcon,
-  PinterestIcon
+  PinterestIcon,
+  EmailIcon
 } from 'react-share';
 
 const ShareStyle = styled.div`
@@ -41,6 +43,11 @@ export const ShareButtons = props => {
         <PinterestShareButton url={url} media={media}>
           <PinterestIcon size={45} />
         </PinterestShareButton>
+      </div>
+      <div className="button">
+        <EmailShareButton>
+          <EmailIcon size={45} />
+        </EmailShareButton>
       </div>
     </ShareStyle>
   );

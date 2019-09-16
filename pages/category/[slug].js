@@ -29,6 +29,8 @@ const CategoryContainer = styled.div`
     img {
       width: 100%;
       max-width: 100px;
+      /* box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 8px 13px #4b0082;
+      border-radius: 50%; */
 
       @media (max-width: 768px) {
         max-width: 50px;
