@@ -28,8 +28,8 @@ const PageStyle = styled.div`
 const Page = props => {
   const { page } = props;
 
-  const pageTitle = props.page[0].title.rendered;
-  const pageContent = props.page[0].content.rendered;
+  const pageTitle = page[0].title.rendered;
+  const pageContent = page[0].content.rendered;
 
   if (!pageTitle) return <Error statusCode={404} />;
 
