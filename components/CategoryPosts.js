@@ -26,7 +26,7 @@ const CategoryPosts = props => {
 
   const categoryPosts = posts.map(post => {
     const featuredImage =
-      post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large
+      post._embedded['wp:featuredmedia'][0].media_details.sizes.large
         .source_url;
 
     const featuredMedia =
