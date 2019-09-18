@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   TwitterShareButton,
@@ -32,6 +32,11 @@ const ShareStyle = styled.div`
 
 export const ShareButtons = props => {
   const { url, media } = props;
+  const [href, setHref] = useState('');
+
+  useEffect(() => {
+    setHref(window.location.href);
+  });
   return (
     <ShareStyle>
       <div className="button">
@@ -45,8 +50,8 @@ export const ShareButtons = props => {
         </PinterestShareButton>
       </div>
       <div className="button">
-        <EmailShareButton url={url}>
-          <EmailIcon size={45} />
+        <EmailShareButton url={href}>
+          <EmailIcon size={45} openWindow={true} />
         </EmailShareButton>
       </div>
     </ShareStyle>
