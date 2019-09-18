@@ -50,8 +50,8 @@ export const ShareButtons = props => {
         </PinterestShareButton>
       </div>
       <div className="button">
-        <EmailShareButton url={href}>
-          <EmailIcon size={45} openWindow={true} />
+        <EmailShareButton url={href} openWindow={true}>
+          <EmailIcon size={45} />
         </EmailShareButton>
       </div>
     </ShareStyle>
