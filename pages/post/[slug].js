@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Error from 'next/error';
 import WPAPI from 'wpapi';
@@ -7,6 +7,7 @@ import Layout from '../../components/Layout';
 import PageWrapper from '../../components/PageWrapper';
 import { DatePost } from '../../microcomponents/DatePost';
 import { ShareButtons } from '../../microcomponents/ShareButtons';
+import Disqus from 'disqus-react';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -38,6 +39,21 @@ const PostStyle = styled.div`
 const Post = props => {
   const { post } = props;
 
+  const [postUrl, setUrl] = useState('');
+
+  useEffect(() => {
+    setUrl(window.location.href);
+  });
+
+  const disqusShortname = 'kaiyros';
+  const disqusConfig = {
+    url: postUrl,
+    identifier: post.id,
+    title: post.title.rendered
+  };
+
+  console.log('post', props);
+
   if (!post.title) return <Error statusCode={404} />;
 
   const featuredImage =
@@ -61,6 +77,10 @@ const Post = props => {
           dangerouslySetInnerHTML={{
             __html: post.content.rendered
           }}
+        />
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
         />
       </PostStyle>
     </Layout>
