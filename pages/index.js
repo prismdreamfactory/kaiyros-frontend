@@ -14,7 +14,7 @@ const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 const ParticlesStyles = styled.div`
   @media (max-width: 768px) {
-    display: none;
+    /* display: none; */
   }
 `;
 
@@ -59,7 +59,7 @@ class Index extends Component {
             params={{
               particles: {
                 number: {
-                  value: 50,
+                  value: 70,
                   density: {
                     enable: true,
                     value_area: 800

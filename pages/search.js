@@ -17,6 +17,10 @@ const SearchContainer = styled.div`
     text-decoration: none;
     color: #000;
   }
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
   .postLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;

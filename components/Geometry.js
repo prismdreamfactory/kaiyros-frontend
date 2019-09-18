@@ -195,7 +195,7 @@ export const Geometry = () => {
               <audio>
                 <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
               </audio>
-              <span className="text">{title}</span>
+              <span>{title}</span>
             </a>
           </Link>
         </div>
