@@ -59,8 +59,7 @@ const Post = props => {
 
   if (!post.title) return <Error statusCode={404} />;
 
-  const featuredImage =
-    post._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
+  const featuredImage = post._embedded['wp:featuredmedia'][0].source_url;
 
   const shareImage =
     post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;

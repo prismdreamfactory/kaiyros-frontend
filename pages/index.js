@@ -47,7 +47,7 @@ class Index extends Component {
   render() {
     return (
       <Layout {...this.props}>
-        <Geometry />
+        <Geometry {...this.props} />
 
         <CategoryNavDisplay>
           <CategoryNav {...this.props} />
