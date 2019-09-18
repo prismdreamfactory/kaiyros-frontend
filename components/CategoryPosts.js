@@ -11,6 +11,10 @@ const CategoryPostsStyles = styled.div`
   img {
     width: 100%;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: 200px;
+    }
   }
 
   .title {

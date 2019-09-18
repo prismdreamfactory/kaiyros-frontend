@@ -6,6 +6,11 @@ export const CategoryNav = props => {
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 812px) and (orientation: landscape) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
     a {
       text-decoration: none;
       cursor: pointer;
@@ -13,6 +18,10 @@ export const CategoryNav = props => {
       display: flex;
       align-items: center;
       margin-bottom: 1.5rem;
+
+      @media (max-width: 812px) and (orientation: landscape) {
+        width: 25%;
+      }
     }
 
     img {
