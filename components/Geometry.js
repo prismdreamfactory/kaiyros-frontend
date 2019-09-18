@@ -205,9 +205,9 @@ export const Geometry = props => {
                   />
                 </Tooltip>
               </MuiThemeProvider>
-              <audio>
+              {/* <audio>
                 <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
-              </audio>
+              </audio> */}
               <span>{title}</span>
             </a>
           </Link>

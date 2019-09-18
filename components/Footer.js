@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const FooterNav = styled.footer`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 1rem 0;
   a {
     text-decoration: none;

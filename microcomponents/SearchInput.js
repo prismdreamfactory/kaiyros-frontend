@@ -43,7 +43,6 @@ const SearchInput = () => {
     <SearchInputStyles>
       <form onSubmit={handleSubmit}>
         <TextField
-          type="search"
           placeholder="Search"
           value={input}
           onChange={e => handleInput(e.target.value)}

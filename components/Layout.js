@@ -21,7 +21,7 @@ const LayoutStyle = styled.div`
     }
   }
 
-  ::placeholder {
+  input::placeholder {
     font-family: courier, sans-serif;
   }
 `;

@@ -20,6 +20,7 @@ const ParticlesStyles = styled.div`
 
 const CategoryNavDisplay = styled.div`
   display: none;
+  padding: 2rem 0;
 
   @media (max-width: 768px) {
     display: block;
