@@ -60,8 +60,6 @@ const Post = props => {
     title: post.title.rendered
   };
 
-  console.log('post', props);
-
   if (!post.title) return <Error statusCode={404} />;
 
   const featuredImage = post._embedded['wp:featuredmedia'][0].source_url;

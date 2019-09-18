@@ -38,7 +38,6 @@ const SearchContainer = styled.div`
 `;
 
 const Search = props => {
-  console.log(props);
   const { search } = props;
   return (
     <Layout {...props}>
@@ -55,7 +54,6 @@ const Search = props => {
 
 Search.getInitialProps = async ({ query }) => {
   const { q } = query;
-  console.log('query', q);
 
   const search = await wp
     .posts()
