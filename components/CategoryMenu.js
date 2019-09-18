@@ -35,7 +35,7 @@ const CategoryMenuStyles = styled.div`
   overflow: scroll;
   display: flex;
   justify-content: center;
-  max-width: 500px;
+  max-width: 480px;
   padding: 1.5rem;
   box-sizing: border-box;
 `;
