@@ -139,17 +139,18 @@ const theme = createMuiTheme({
 
 export const Geometry = props => {
   const { categories } = props;
+  console.log('geo', props);
 
   const renderChakras = () =>
     categories.map((category, index) => {
       const placement = category.acf.placement;
       const title = category.name;
-      const url = category.acf.url;
       const text = category.acf.text;
+      const slug = category.slug;
 
       return (
-        <div key={category.slug}>
-          <Link href={`/category/${url}`}>
+        <div key={slug}>
+          <Link href={`/category/${slug}`}>
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
                 <Tooltip title={text} placement={placement}>
