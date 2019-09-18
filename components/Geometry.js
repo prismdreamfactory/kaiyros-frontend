@@ -127,56 +127,6 @@ const GeometryStyles = styled.div`
   }
 `;
 
-const chakras = [
-  {
-    placement: 'right-start',
-    url: 'letters-to-human-family',
-    title: 'Letters to Human Family',
-    text:
-      'words to family, words of comfort, philosophy, inner dialogue, faith, stream of consciousness, pure expression, Connection to God, Pure divination through surrender and conscious navigation'
-  },
-  {
-    placement: 'left-start',
-    url: 'science-of-spirit',
-    title: 'Science of Spirit',
-    text:
-      '"science and nonduality, quantum, entanglement, morphic resonance field, schumann resonance, what happens to our body and brain when we: a.,b.,c., etc.'
-  },
-  {
-    placement: 'right-start',
-    url: 'social-impact',
-    title: 'Social Impact',
-    text:
-      'NPO, NGO, culture, art, music, race, gender, politics, systemic institutions, organization of people groups, societal labels, counter culture'
-  },
-  {
-    placement: 'left-start',
-    url: 'human-tech',
-    title: 'Human Tech',
-    text:
-      'addiction, depression, anxiety, paranoia, wellness, balance, joy, acceptance, gratitude'
-  },
-  {
-    placement: 'right-end',
-    url: 'integrative-mental-health',
-    title: 'Conscious Tech',
-    text:
-      'A.I., Consciousness Hacking, P.E.A.C.E. Museum, Psyche x Technology, HeartMath, biometric tech, bioenergetic tech, NES Health?, AR/VR'
-  },
-  {
-    placement: 'right-start',
-    url: 'metaphysics-of-healing',
-    title: 'Metaphysics of Healing',
-    text: 'This is a letter to humanity'
-  },
-  {
-    placement: 'right',
-    url: 'practical-self',
-    title: 'Practical Self',
-    text: 'This is a letter to humanity'
-  }
-];
-
 const theme = createMuiTheme({
   overrides: {
     MuiTooltip: {
@@ -188,12 +138,17 @@ const theme = createMuiTheme({
 });
 
 export const Geometry = props => {
-  const renderChakras = items =>
-    items.map((item, index) => {
-      const { placement, url, title, text } = item;
+  const { categories } = props;
+
+  const renderChakras = () =>
+    categories.map((category, index) => {
+      const placement = category.acf.placement;
+      const title = category.name;
+      const url = category.acf.url;
+      const text = category.acf.text;
 
       return (
-        <div key={url}>
+        <div key={category.slug}>
           <Link href={`/category/${url}`}>
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
@@ -205,9 +160,9 @@ export const Geometry = props => {
                   />
                 </Tooltip>
               </MuiThemeProvider>
-              {/* <audio>
+              <audio>
                 <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
-              </audio> */}
+              </audio>
               <span>{title}</span>
             </a>
           </Link>
@@ -218,7 +173,7 @@ export const Geometry = props => {
   return (
     <Tilt options={{ scale: 1, max: 5, perspective: 850 }}>
       <GeometryStyles>
-        <div className="content">{renderChakras(chakras)}</div>
+        <div className="content">{renderChakras()}</div>
       </GeometryStyles>
     </Tilt>
   );
