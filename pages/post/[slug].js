@@ -34,6 +34,9 @@ const PostStyle = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+  .disqus {
+    margin: 2rem 0;
+  }
 `;
 
 const Post = props => {
@@ -78,10 +81,12 @@ const Post = props => {
             __html: post.content.rendered
           }}
         />
-        <Disqus.DiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig}
-        />
+        <div className="disqus">
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </div>
       </PostStyle>
     </Layout>
   );
