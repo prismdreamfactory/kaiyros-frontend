@@ -20,6 +20,11 @@ const PostStyle = styled.div`
     color: #2b9985;
     text-decoration: none;
   }
+  h1 {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+  }
 
   margin: auto;
   img {

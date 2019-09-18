@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
 import Tooltip from '@material-ui/core/Tooltip';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -176,6 +177,16 @@ const chakras = [
   }
 ];
 
+const theme = createMuiTheme({
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        fontSize: '0.9rem'
+      }
+    }
+  }
+});
+
 export const Geometry = props => {
   console.log('geo', props);
 
@@ -187,13 +198,15 @@ export const Geometry = props => {
         <div key={url}>
           <Link href={`/category/${url}`}>
             <a className={`shape shape${index + 1}`}>
-              <Tooltip title={text} placement={placement}>
-                <img
-                  className={index === 0 ? '' : 'rotate'}
-                  src={`../static/images/sacredgeo${index + 1}.svg`}
-                  alt="{title}"
-                />
-              </Tooltip>
+              <MuiThemeProvider theme={theme}>
+                <Tooltip title={text} placement={placement}>
+                  <img
+                    className={index === 0 ? '' : 'rotate'}
+                    src={`../static/images/sacredgeo${index + 1}.svg`}
+                    alt="{title}"
+                  />
+                </Tooltip>
+              </MuiThemeProvider>
               <audio>
                 <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
               </audio>
