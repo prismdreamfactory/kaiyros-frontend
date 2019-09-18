@@ -139,7 +139,6 @@ const theme = createMuiTheme({
 
 export const Geometry = props => {
   const { categories } = props;
-  console.log('geo', props);
 
   const renderChakras = () =>
     categories.map((category, index) => {
