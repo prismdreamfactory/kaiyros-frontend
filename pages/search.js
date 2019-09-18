@@ -27,6 +27,10 @@ const SearchContainer = styled.div`
     grid-auto-rows: auto auto;
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
   .searchHead {
     text-align: center;
@@ -39,7 +43,7 @@ const Search = props => {
   return (
     <Layout {...props}>
       <SearchContainer>
-        <h1 className="searchHead">Search Results for {props.q}</h1>
+        <h1 className="searchHead">Search results for {props.q}</h1>
 
         <div className="postLayout">
           <CategoryPosts posts={search} />

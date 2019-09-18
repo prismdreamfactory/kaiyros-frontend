@@ -15,12 +15,15 @@ const SearchInputStyles = styled.div`
     height: 18px;
   }
 
-  a {
+  button {
+    margin-left: 1rem;
     cursor: pointer;
-  }
+    border: none;
+    background-color: transparent;
 
-  form {
-    margin-right: 1rem;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
 
@@ -45,10 +48,10 @@ const SearchInput = () => {
           value={input}
           onChange={e => handleInput(e.target.value)}
         />
+        <button type="submit">
+          <FaSearch />
+        </button>
       </form>
-      <a>
-        <FaSearch />
-      </a>
     </SearchInputStyles>
   );
 };

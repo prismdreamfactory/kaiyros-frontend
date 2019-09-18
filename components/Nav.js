@@ -118,7 +118,7 @@ export const Nav = props => {
               src="../static/images/KairosLogoSquare.svg"
               alt=""
             />
-            <h1>Kaiyros.net</h1>
+            <h1>Kaiyros</h1>
           </a>
         </Link>
         <div className="menu">
