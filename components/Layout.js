@@ -20,6 +20,10 @@ const LayoutStyle = styled.div`
       color: #2b9985;
     }
   }
+
+  ::placeholder {
+    font-family: courier, sans-serif;
+  }
 `;
 
 const Layout = props => {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 import CategoryMenu from './CategoryMenu';
+import SearchInput from '../microcomponents/SearchInput';
 
 const NavStyles = styled.div`
   display: flex;
@@ -126,6 +127,7 @@ export const Nav = props => {
       </div>
 
       <div className="icons">
+        <SearchInput />
         <SocialIcons />
         <CategoryMenu {...props} />
       </div>

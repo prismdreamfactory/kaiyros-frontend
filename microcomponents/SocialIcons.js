@@ -12,8 +12,8 @@ const SocialIconsStyles = styled.div`
   svg {
     color: #000;
     margin-right: 1.25rem;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 
   svg:hover {
@@ -22,13 +22,13 @@ const SocialIconsStyles = styled.div`
 
   @media (max-width: 768px) {
     svg {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
     }
   }
 `;
 
-export const SocialIcons = () => {
+const SocialIcons = () => {
   return (
     <SocialIconsStyles>
       <a

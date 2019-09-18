@@ -5,6 +5,7 @@ import CloseIcon from '../microcomponents/CloseIcon';
 import { CategoryNav } from './CategoryNav';
 import Footer from './Footer';
 import SocialIcons from '../microcomponents/SocialIcons';
+import SearchInput from '../microcomponents/SearchInput';
 
 const CategoryMenuDisplay = styled.div`
   max-width: 1100px;
@@ -44,6 +45,12 @@ const CategoryNavStyles = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  .search {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+  }
+
   .social-icons {
     display: flex;
     justify-content: center;
@@ -63,6 +70,10 @@ const CategoryMenu = props => {
           <CategoryNav {...props} />
 
           <Footer {...props} />
+
+          <div className="search">
+            <SearchInput />
+          </div>
 
           <div className="social-icons">
             <SocialIcons />
