@@ -1,7 +1,7 @@
 // Geometry.js
 // renders sacred geometry design for site navigation
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
@@ -45,9 +45,9 @@ const GeometryStyles = styled.div`
     position: relative;
     z-index: 1;
     /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
-    /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
+    box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082;
     /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
-    box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082;
+    /* box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082; */
 
     border-radius: 50%;
   }
@@ -147,8 +147,24 @@ export const Geometry = props => {
       const text = category.acf.text;
       const slug = category.slug;
 
+      const [playAudio, renderAudio] = useState(false);
+      let audio;
+      if (playAudio) {
+        audio = (
+          <audio autoPlay={true} loop={true}>
+            <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
+          </audio>
+        );
+      } else {
+        audio = '';
+      }
+
       return (
-        <div key={slug}>
+        <div
+          key={slug}
+          onMouseEnter={() => renderAudio(true)}
+          onMouseLeave={() => renderAudio(false)}
+        >
           <Link href={`/category/${slug}`}>
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
@@ -160,9 +176,7 @@ export const Geometry = props => {
                   />
                 </Tooltip>
               </MuiThemeProvider>
-              <audio>
-                <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
-              </audio>
+              {audio}
               <span>{title}</span>
             </a>
           </Link>
