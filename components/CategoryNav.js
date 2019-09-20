@@ -26,7 +26,7 @@ export const CategoryNav = props => {
     }
 
     img {
-      width: 15%;
+      width: 13%;
       padding: 0;
     }
 

@@ -39,8 +39,10 @@ const CategoryContainer = styled.div`
   }
 
   .categoryHead {
+    font-size: 1.7rem;
     margin-left: 1rem;
     text-align: center;
+    text-transform: capitalize;
   }
   .postLayout {
     display: grid;
