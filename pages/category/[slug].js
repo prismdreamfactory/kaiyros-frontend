@@ -40,12 +40,12 @@ const CategoryContainer = styled.div`
 
   .category {
     margin-left: 1rem;
+    text-transform: capitalize;
   }
   .categoryHead {
     font-size: 1.7rem;
     margin: 0.5rem 0;
     text-align: center;
-    text-transform: capitalize;
   }
   .postLayout {
     display: grid;
