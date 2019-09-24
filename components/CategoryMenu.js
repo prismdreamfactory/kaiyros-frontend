@@ -67,7 +67,7 @@ const CategoryMenu = props => {
         <CloseIcon onClick={() => openMenu(false)} />
 
         <CategoryNavStyles>
-          <CategoryNav {...props} />
+          <CategoryNav {...props} displaySubtitle />
 
           <Footer {...props} isCenter />
 

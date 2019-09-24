@@ -38,9 +38,12 @@ const CategoryContainer = styled.div`
     }
   }
 
+  .category {
+    margin-left: 1rem;
+  }
   .categoryHead {
     font-size: 1.7rem;
-    margin-left: 1rem;
+    margin: 0.5rem 0;
     text-align: center;
     text-transform: capitalize;
   }
@@ -96,8 +99,10 @@ const Category = props => {
             src={category[0].acf.image.sizes.medium}
             alt="placeholder"
           />
-
-          <h1 className="categoryHead">{category[0].name}</h1>
+          <div className="category">
+            <h1 className="categoryHead">{category[0].name}</h1>
+            <span>{category[0].description}</span>
+          </div>
         </div>
         <div>
           <CategoryFeature posts={stickyPosts} />

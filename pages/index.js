@@ -51,7 +51,7 @@ class Index extends Component {
         <Geometry {...this.props} />
 
         <CategoryNavDisplay>
-          <CategoryNav {...this.props} displaySubtitle />
+          <CategoryNav {...this.props} />
         </CategoryNavDisplay>
 
         <ParticlesStyles>
