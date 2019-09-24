@@ -20,6 +20,11 @@ const SocialIconsStyles = styled.div`
     color: #2b9985;
   }
 
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
     svg {
       width: 20px;
@@ -28,7 +33,7 @@ const SocialIconsStyles = styled.div`
   }
 `;
 
-const SocialIcons = () => {
+const SocialIcons = props => {
   return (
     <SocialIconsStyles>
       <a

@@ -69,7 +69,7 @@ const CategoryMenu = props => {
         <CategoryNavStyles>
           <CategoryNav {...props} />
 
-          <Footer {...props} />
+          <Footer {...props} isCenter />
 
           <div className="search">
             <SearchInput />

@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
 const FooterNav = styled.footer`
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem 0;
   a {
     text-decoration: none;
     text-transform: uppercase;
@@ -17,10 +14,19 @@ const FooterNav = styled.footer`
 
   div {
     display: flex;
+    padding: 1rem 0;
   }
 
   span {
     padding: 0 0.75rem;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .end {
+    justify-content: flex-end;
   }
 
   @media (max-width: 1024px) {
@@ -31,39 +37,48 @@ const FooterNav = styled.footer`
 
 const Footer = props => {
   const { footerMenu } = props;
-
   const renderDivider = <span>•</span>;
+
+  const [center, setCenter] = useState(false);
+
+  if (props.isCenter === true) {
+    useEffect(() => {
+      setCenter(true);
+    });
+  }
 
   return (
     <FooterNav>
-      {footerMenu.items.map((item, index) => {
-        const slug = item.title.toLowerCase();
-        const url = item.url;
+      <div className={center ? 'center' : 'end'}>
+        {footerMenu.items.map((item, index) => {
+          const slug = item.title.toLowerCase();
+          const url = item.url;
 
-        const isExternalLink = item.type === 'custom';
+          const isExternalLink = item.type === 'custom';
 
-        function FooterLinks() {
-          if (!isExternalLink) {
+          function FooterLinks() {
+            if (!isExternalLink) {
+              return (
+                <Link as={`/${slug}`} href={`/page/${slug}`}>
+                  <a>{item.title}</a>
+                </Link>
+              );
+            }
             return (
-              <Link as={`/${slug}`} href={`/page/${slug}`}>
-                <a>{item.title}</a>
-              </Link>
+              <a href={url} target="_blank">
+                {item.title}
+              </a>
             );
           }
-          return (
-            <a href={url} target="_blank">
-              {item.title}
-            </a>
-          );
-        }
 
-        return (
-          <div key={item.title}>
-            {index ? renderDivider : ''}
-            <FooterLinks />
-          </div>
-        );
-      })}
+          return (
+            <div key={item.title}>
+              {index ? renderDivider : ''}
+              <FooterLinks />
+            </div>
+          );
+        })}
+      </div>
     </FooterNav>
   );
 };

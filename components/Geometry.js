@@ -152,7 +152,7 @@ export const Geometry = props => {
       if (playAudio) {
         audio = (
           <audio autoPlay={true} loop={true}>
-            <source src="../static/sounds/isoAlpha.mp3" type="audio/mp3" />
+            <source src="../static/sounds/sound-9.mp3" type="audio/mp3" />
           </audio>
         );
       } else {
