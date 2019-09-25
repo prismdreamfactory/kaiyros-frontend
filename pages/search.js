@@ -21,6 +21,11 @@ const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
   }
+  .query {
+    color: #2b9885;
+    text-decoration: underline;
+    padding-left: 1rem;
+  }
   .postLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -42,7 +47,10 @@ const Search = props => {
   return (
     <Layout {...props}>
       <SearchContainer>
-        <h1 className="searchHead">Search results for {props.q}</h1>
+        <h1 className="searchHead">
+          Search results for
+          <span className="query">{props.q}</span>
+        </h1>
 
         <div className="postLayout">
           <CategoryPosts posts={search} />

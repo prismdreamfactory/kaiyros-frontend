@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const DateStyle = styled.p`
+const DateStyle = styled.span`
   font-size: 1rem;
 `;
 
