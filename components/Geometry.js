@@ -6,7 +6,12 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
 import Tooltip from '@material-ui/core/Tooltip';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  withStyles
+} from '@material-ui/core/styles';
+import Typist from 'react-typist';
 
 const GeometryStyles = styled.div`
   display: flex;
@@ -33,7 +38,8 @@ const GeometryStyles = styled.div`
 
   a {
     text-decoration: none;
-    font-size: 1.6vh;
+    font-size: 1.23rem;
+    font-weight: 1000;
     color: #000;
 
     &:hover {
@@ -45,9 +51,9 @@ const GeometryStyles = styled.div`
     position: relative;
     z-index: 1;
     /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
-    box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082;
+    /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
     /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
-    /* box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082; */
+    box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082;
 
     border-radius: 50%;
   }
@@ -112,7 +118,7 @@ const GeometryStyles = styled.div`
 
   .rotate {
     animation-name: spin;
-    animation-duration: 60s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
@@ -137,6 +143,15 @@ const theme = createMuiTheme({
   }
 });
 
+const LightTooltip = withStyles(theme => ({
+  tooltip: {
+    backgroundColor: theme.palette.common.white,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    fontSize: 11
+  }
+}))(Tooltip);
+
 export const Geometry = props => {
   const { categories } = props;
 
@@ -144,8 +159,17 @@ export const Geometry = props => {
     categories.map((category, index) => {
       const placement = category.acf.placement;
       const title = category.name;
-      const text = category.acf.text;
       const slug = category.slug;
+      const image = category.acf.image.sizes.thumbnail;
+      const cursor = {
+        hideWhenDone: true,
+        hideWhenDoneDelay: 100
+      };
+      const text = (
+        <Typist avgTypingDelay={0} stdTypingDelay={0} cursor={cursor}>
+          {category.acf.text}
+        </Typist>
+      );
 
       const [playAudio, renderAudio] = useState(false);
       let audio;
@@ -168,13 +192,13 @@ export const Geometry = props => {
           <Link href={`/category/${slug}`}>
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
-                <Tooltip title={text} placement={placement}>
+                <LightTooltip title={text} placement={placement}>
                   <img
-                    className={index === 0 ? '' : 'rotate'}
-                    src={`../static/images/sacredgeo${index + 1}.svg`}
+                    className={index === 6 ? '' : 'rotate'}
+                    src={image}
                     alt="{title}"
                   />
-                </Tooltip>
+                </LightTooltip>
               </MuiThemeProvider>
               {audio}
               <span>{title}</span>

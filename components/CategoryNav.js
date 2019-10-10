@@ -42,6 +42,22 @@ export const CategoryNav = props => {
       margin-left: 1rem;
       font-size: 0.75rem;
     }
+
+    .rotate {
+      animation-name: spin;
+      animation-duration: 30s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate3d(0deg);
+      }
+      to {
+        transform: rotate3d(0, 0, 1, 360deg);
+      }
+    }
   `;
 
   const renderCategoryLinks = category => {
@@ -52,11 +68,16 @@ export const CategoryNav = props => {
         setSubtitle(true);
       });
     }
+    console.log(category);
 
     return (
       <Link href={`/category/${category.slug}`} key={category.id}>
         <a>
-          <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
+          <img
+            className={category.id === 1 ? '' : 'rotate'}
+            src={category.acf.image.sizes.thumbnail}
+            alt="placeholder"
+          />
           <div>
             <span className="category-title">{category.name}</span>
             {subtitle === true && (

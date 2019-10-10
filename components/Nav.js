@@ -16,7 +16,7 @@ const NavStyles = styled.div`
     text-decoration: none;
   }
   h1 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 0;
     margin-bottom: 0.3rem;
     color: #000;
@@ -26,9 +26,8 @@ const NavStyles = styled.div`
   }
 
   h4 {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    margin: 0.5rem 0 0.5rem 6rem;
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.5rem 9rem;
   }
   .title {
     display: flex;
@@ -103,11 +102,11 @@ export const Nav = props => {
                 src="../static/images/KairosLogoSquare.svg"
                 alt=""
               />
-              <h1>Kaiyros</h1>
+              <h1>Kaiyros Publications</h1>
             </div>
           </a>
         </Link>
-        <h4>Connecting the :Dots: of Human Potential</h4>
+        <h4>the Art of Human Experience</h4>
       </div>
 
       <div className="mobile--nav">

@@ -14,7 +14,7 @@ const wp = new WPAPI({ endpoint: Config.apiUrl });
 const PostStyle = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 900px;
 
   a {
     color: #2b9985;
@@ -53,7 +53,7 @@ const Post = props => {
     setUrl(window.location.href);
   });
 
-  const disqusShortname = 'kaiyros';
+  const disqusShortname = 'kaiyros-publications';
   const disqusConfig = {
     url: postUrl,
     identifier: post.id,

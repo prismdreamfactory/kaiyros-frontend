@@ -22,6 +22,16 @@ const CategoryNavDisplay = styled.div`
   display: none;
   padding: 2rem 0;
 
+  img {
+    position: relative;
+    z-index: 1;
+    /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
+    /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
+    /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
+    box-shadow: 0 0 5px 4px #fff, 0 0 5px 6px #2b9985, 0 0 4px 8px #4b0082;
+    border-radius: 50%;
+  }
+
   @media (max-width: 768px) {
     display: block;
   }
@@ -74,14 +84,14 @@ class Index extends Component {
                 },
                 line_linked: {
                   color: '#000000',
-                  opacity: 0.15,
+                  opacity: 0.25,
                   width: 1
                 },
                 opacity: {
-                  value: 0.1
+                  value: 0.3
                 },
                 move: {
-                  speed: 1
+                  speed: 4
                 }
               },
               interactivity: {

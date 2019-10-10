@@ -95,13 +95,12 @@ const Category = props => {
       <CategoryContainer>
         <div className="categoryTitle">
           <img
-            className="rotate"
+            // className="rotate"
             src={category[0].acf.image.sizes.medium}
             alt="placeholder"
           />
           <div className="category">
             <h1 className="categoryHead">{category[0].name}</h1>
-            <span>{category[0].description}</span>
           </div>
         </div>
         <div>

@@ -7,6 +7,7 @@ const FooterNav = styled.footer`
     text-decoration: none;
     text-transform: uppercase;
     color: #000;
+    font-size: 1.2rem;
   }
   a:hover {
     color: rgba(0, 0, 0, 0.6);

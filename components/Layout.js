@@ -6,11 +6,14 @@ import Nav from './Nav';
 import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
-  font-family: courier, sans-serif;
+  font-family: 'Josefin Slab', serif;
   margin: 0 2rem;
 
-  p {
-    line-height: 1.6;
+  p,
+  ol,
+  ul {
+    line-height: 3rem;
+    font-size: 1.1rem;
   }
 
   a {
@@ -22,7 +25,7 @@ const LayoutStyle = styled.div`
   }
 
   input::placeholder {
-    font-family: courier, sans-serif;
+    font-family: 'Josefin Slab', serif;
   }
 `;
 
