@@ -37,10 +37,12 @@ export const CategoryNav = props => {
 
     .category-title {
       margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: 800;
     }
     .category-subtitle {
       margin-left: 1rem;
-      font-size: 0.75rem;
+      font-size: 0.9rem;
     }
 
     .rotate {
@@ -68,7 +70,6 @@ export const CategoryNav = props => {
         setSubtitle(true);
       });
     }
-    console.log(category);
 
     return (
       <Link href={`/category/${category.slug}`} key={category.id}>

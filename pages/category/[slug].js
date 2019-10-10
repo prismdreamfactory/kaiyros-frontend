@@ -19,6 +19,16 @@ const CategoryContainer = styled.div`
     text-decoration: none;
     color: #000;
   }
+  .categoryContainer {
+    flex-direction: column;
+    margin-left: 1rem;
+
+    a {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+
   .categoryTitle {
     margin-bottom: 2rem;
     display: flex;
@@ -39,7 +49,6 @@ const CategoryContainer = styled.div`
   }
 
   .category {
-    margin-left: 1rem;
     text-transform: capitalize;
   }
   .categoryHead {
@@ -79,7 +88,7 @@ const CategoryContainer = styled.div`
 `;
 
 const Category = props => {
-  const { category, posts } = props;
+  const { category, posts, pages } = props;
 
   if (category.length === 0) return <Error statusCode={404} />;
 
@@ -89,18 +98,23 @@ const Category = props => {
   // // make array of non-sticky posts
   const regPosts = posts.filter(regPost => regPost.sticky !== true);
 
+  console.log(props);
+
   return (
     <Layout {...props}>
       <h1>{props.slug}</h1>
-      <CategoryContainer>
+      <CategoryContainer {...props}>
         <div className="categoryTitle">
           <img
             // className="rotate"
             src={category[0].acf.image.sizes.medium}
             alt="placeholder"
           />
-          <div className="category">
-            <h1 className="categoryHead">{category[0].name}</h1>
+          <div className="categoryContainer">
+            <div className="category">
+              <h1 className="categoryHead">{category[0].name}</h1>
+            </div>
+            <a className="learnMore">Learn More</a>
           </div>
         </div>
         <div>

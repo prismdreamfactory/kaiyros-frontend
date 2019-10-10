@@ -113,7 +113,11 @@ class Index extends Component {
     return (
       <Link href={`/category/${category.slug}`} key={category.id}>
         <a>
-          <img src={category.acf.image.sizes.thumbnail} alt="placeholder" />
+          <img
+            className="rotate"
+            src={category.acf.image.sizes.thumbnail}
+            alt="placeholder"
+          />
           <span className="category-title">{category.name}</span>
         </a>
       </Link>

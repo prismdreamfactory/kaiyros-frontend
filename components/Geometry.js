@@ -38,7 +38,7 @@ const GeometryStyles = styled.div`
 
   a {
     text-decoration: none;
-    font-size: 1.23rem;
+    font-size: 1.12rem;
     font-weight: 1000;
     color: #000;
 

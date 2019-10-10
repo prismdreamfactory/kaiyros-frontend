@@ -15,7 +15,6 @@ const FooterNav = styled.footer`
 
   div {
     display: flex;
-    padding: 1rem 0;
   }
 
   span {
