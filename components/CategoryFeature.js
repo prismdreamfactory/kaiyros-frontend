@@ -2,22 +2,18 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
+import AuthorLabel from '../microcomponents/AuthorLabel';
 
 const CategoryFeatureStyles = styled.div`
   max-width: 1100px;
   margin: 1.5rem auto;
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
   .title {
     font-size: 1.5rem;
     text-transform: uppercase;
     margin: 1rem 0;
     display: block;
+    width: 80%;
   }
 
   img {
@@ -42,6 +38,13 @@ const CategoryFeatureStyles = styled.div`
   }
 `;
 
+const TitleInfo = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const CategoryFeature = props => {
   const { posts } = props;
 
@@ -61,13 +64,14 @@ const CategoryFeature = props => {
             <img src={stickyImage} alt="" />
           </a>
         </Link>
-        <div className="content">
-          <div>
+        <div>
+          <TitleInfo>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
               <a className="title">{post.title.rendered}</a>
             </Link>
-          </div>
-          <DatePost datesrc={post.date} />
+            <DatePost datesrc={post.date} />
+          </TitleInfo>
+          <AuthorLabel {...props} />
           <div
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{

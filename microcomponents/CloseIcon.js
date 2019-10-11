@@ -11,9 +11,9 @@ const CloseIconStyles = styled.a`
     }
   }
   .close {
+    position: fixed;
     width: 36px;
     height: 36px;
-    position: absolute;
     right: 2rem;
     top: 2rem;
     cursor: pointer;

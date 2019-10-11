@@ -8,6 +8,7 @@ import Layout from '../../components/Layout';
 import PageWrapper from '../../components/PageWrapper';
 import CategoryFeature from '../../components/CategoryFeature';
 import CategoryPosts from '../../components/CategoryPosts';
+import LearnMore from '../../components/LearnMore';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -22,11 +23,6 @@ const CategoryContainer = styled.div`
   .categoryContainer {
     flex-direction: column;
     margin-left: 1rem;
-
-    a {
-      font-size: 1rem;
-      text-transform: capitalize;
-    }
   }
 
   .categoryTitle {
@@ -114,7 +110,7 @@ const Category = props => {
             <div className="category">
               <h1 className="categoryHead">{category[0].name}</h1>
             </div>
-            <a className="learnMore">Learn More</a>
+            <LearnMore {...props} />
           </div>
         </div>
         <div>

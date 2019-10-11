@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
+import AuthorLabel from '../microcomponents/AuthorLabel';
 
 const CategoryPostsStyles = styled.div`
   display: flex;
@@ -22,7 +23,15 @@ const CategoryPostsStyles = styled.div`
     text-transform: uppercase;
     margin: 1rem 0;
     display: block;
+    width: 80%;
   }
+`;
+
+const TitleInfo = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const CategoryPosts = props => {
@@ -47,10 +56,13 @@ const CategoryPosts = props => {
           </Link>
 
           <div>
-            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
-              <a className="title">{post.title.rendered}</a>
-            </Link>
-            <DatePost datesrc={post.date} />
+            <TitleInfo>
+              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+                <a className="title">{post.title.rendered}</a>
+              </Link>
+              <DatePost datesrc={post.date} />
+            </TitleInfo>
+            <AuthorLabel {...props} />
             <div
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{

@@ -12,6 +12,7 @@ import {
 const ShareStyle = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
   path {
     fill: #000;
@@ -39,6 +40,7 @@ export const ShareButtons = props => {
   });
   return (
     <ShareStyle>
+      <span>Share</span>
       <div className="button">
         <TwitterShareButton url={url}>
           <TwitterIcon size={45} />

@@ -16,7 +16,6 @@ const CategoryMenuDisplay = styled.div`
 
   .show {
     transform: translate3d(0, 0, 0);
-    overflow: hidden;
 
     @media (max-width: 1024px) {
       max-width: 100%;
@@ -32,7 +31,6 @@ const CategoryMenuStyles = styled.div`
   top: 0;
   right: 0;
   transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
-  overflow: scroll;
   display: flex;
   justify-content: center;
   max-width: 480px;
