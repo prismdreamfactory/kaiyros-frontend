@@ -50,13 +50,16 @@ const StyledLearnMore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
   box-sizing: border-box;
   z-index: 100;
 `;
 
 const StyledLearnMoreContent = styled.div`
   max-width: 900px;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
 `;
 
 const LearnMore = props => {

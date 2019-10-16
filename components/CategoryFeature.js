@@ -50,8 +50,7 @@ const CategoryFeature = props => {
 
   const featuredPosts = posts.map(post => {
     const stickyImage =
-      post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large
-        .source_url;
+      post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
 
     const stickyMedia =
       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
