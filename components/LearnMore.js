@@ -23,7 +23,7 @@ const LearnMoreDisplay = styled.div`
   }
 
   .show {
-    animation: show 0.3s;
+    animation: show 0s;
     animation-fill-mode: forwards;
     z-index: -100;
   }
