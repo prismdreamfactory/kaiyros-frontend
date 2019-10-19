@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 import AuthorLabel from '../microcomponents/AuthorLabel';
+import ImageCredit from '../microcomponents/ImageCredit';
 
 const CategoryFeatureStyles = styled.div`
   max-width: 1100px;
@@ -63,6 +64,7 @@ const CategoryFeature = props => {
             <img src={stickyImage} alt="" />
           </a>
         </Link>
+        <ImageCredit post={post} />
         <div>
           <TitleInfo>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 import AuthorLabel from '../microcomponents/AuthorLabel';
+import ImageCredit from '../microcomponents/ImageCredit';
 
 const CategoryPostsStyles = styled.div`
   display: flex;
@@ -54,6 +55,7 @@ const CategoryPosts = props => {
               <img width="450" height="280" src={featuredImage} alt="" />
             </a>
           </Link>
+          <ImageCredit post={post} />
 
           <div>
             <TitleInfo>

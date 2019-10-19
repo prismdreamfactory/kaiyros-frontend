@@ -11,8 +11,6 @@ const Author = styled.span`
 const AuthorLabel = props => {
   const { post } = props;
 
-  console.log(post);
-
   return (
     <Biblio>
       <Author>by {post._embedded.author[0].name}</Author>

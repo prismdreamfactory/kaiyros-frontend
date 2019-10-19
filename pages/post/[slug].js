@@ -9,6 +9,7 @@ import { DatePost } from '../../microcomponents/DatePost';
 import { ShareButtons } from '../../microcomponents/ShareButtons';
 import Disqus from 'disqus-react';
 import AuthorLabel from '../../microcomponents/AuthorLabel';
+import ImageCredit from '../../microcomponents/ImageCredit';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -72,6 +73,7 @@ const Post = props => {
     <Layout {...props}>
       <PostStyle>
         <img src={featuredImage} alt="" />
+        <ImageCredit post={post} />
 
         <h1>{post.title.rendered}</h1>
         <AuthorLabel {...props} />
