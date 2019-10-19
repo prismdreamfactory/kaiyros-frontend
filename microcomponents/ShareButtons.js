@@ -14,7 +14,6 @@ const ShareStyle = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-
   path {
     fill: #000;
   }
@@ -36,9 +35,14 @@ const ShareStyle = styled.div`
 
   .shareTitle {
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 800;
     padding: 1rem 0 0 0;
+  }
+
+  .cancelButton {
+    justify-content: center;
+    padding-bottom: 1rem;
   }
 
   width: 100%;
@@ -89,6 +93,7 @@ const ShareButtonContainer = styled.div`
 const ShareButton = styled.div`
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 2rem;
   svg {
     cursor: pointer;
   }
@@ -121,26 +126,20 @@ export const ShareButtons = props => {
       <ShareStyle className={isOpen ? 'hide' : 'show'}>
         <StyledButtonContainer>
           <span className="button shareTitle">Share</span>
-          <div className="button">
-            <TwitterShareButton url={url}>
-              <TwitterIcon size={45} />
-            </TwitterShareButton>
-            <span>Share to Twitter</span>
-          </div>
-          <div className="button">
-            <PinterestShareButton url={url} media={media}>
-              <PinterestIcon size={45} />
-            </PinterestShareButton>
-            <span>Share to Pinterest</span>
-          </div>
-          <div className="button">
-            <EmailShareButton url={href} openWindow={true}>
-              <EmailIcon size={45} />
-            </EmailShareButton>
-            <span>Share to Email</span>
-          </div>
-          <div className="button" onClick={() => setOpen(false)}>
-            <SpacerIcon />
+          <TwitterShareButton className="button" url={url}>
+            <TwitterIcon size={45} />
+            <span>Twitter</span>
+          </TwitterShareButton>
+          <PinterestShareButton className="button" url={url} media={media}>
+            <PinterestIcon size={45} />
+            <span>Pinterest</span>
+          </PinterestShareButton>
+          <EmailShareButton className="button" url={href} openWindow={true}>
+            <EmailIcon size={45} />
+            <span>Email</span>
+          </EmailShareButton>
+
+          <div className="button cancelButton" onClick={() => setOpen(false)}>
             <span>Cancel</span>
           </div>
         </StyledButtonContainer>

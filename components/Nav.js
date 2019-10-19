@@ -19,6 +19,7 @@ const NavStyles = styled.div`
     text-transform: capitalize;
     margin: 0;
     margin-bottom: 0.3rem;
+    margin-left: 0.5rem;
     color: #000;
   }
   h1:hover {
@@ -26,8 +27,10 @@ const NavStyles = styled.div`
   }
 
   h4 {
+    display: flex;
+    justify-content: center;
     font-size: 1.1rem;
-    margin: 0.5rem 0 0.5rem 9rem;
+    margin: 0.5rem 0;
   }
   .title {
     display: flex;

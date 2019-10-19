@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import CloseIcon from '../microcomponents/CloseIcon';
 
 const LearnMoreDisplay = styled.div`
-  margin-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+
   a {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-transform: capitalize;
   }
 
   .hide {
@@ -65,8 +69,6 @@ const StyledLearnMoreContent = styled.div`
 const LearnMore = props => {
   const [isOpen, setOpen] = useState(false);
   const { category } = props;
-
-  console.log(props);
 
   return (
     <LearnMoreDisplay>

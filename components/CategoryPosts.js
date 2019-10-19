@@ -62,7 +62,7 @@ const CategoryPosts = props => {
               </Link>
               <DatePost datesrc={post.date} />
             </TitleInfo>
-            <AuthorLabel {...props} />
+            <AuthorLabel post={post} />
             <div
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{

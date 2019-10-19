@@ -8,6 +8,7 @@ import PageWrapper from '../../components/PageWrapper';
 import { DatePost } from '../../microcomponents/DatePost';
 import { ShareButtons } from '../../microcomponents/ShareButtons';
 import Disqus from 'disqus-react';
+import AuthorLabel from '../../microcomponents/AuthorLabel';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -73,6 +74,7 @@ const Post = props => {
         <img src={featuredImage} alt="" />
 
         <h1>{post.title.rendered}</h1>
+        <AuthorLabel {...props} />
 
         <div className="sub">
           <DatePost datesrc={post.date} />

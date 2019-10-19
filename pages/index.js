@@ -91,7 +91,7 @@ class Index extends Component {
                   value: 0.3
                 },
                 move: {
-                  speed: 4
+                  speed: 8
                 }
               },
               interactivity: {

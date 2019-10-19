@@ -8,12 +8,17 @@ import Favicon from 'react-favicon';
 const LayoutStyle = styled.div`
   font-family: 'Josefin Slab', serif;
   margin: 0 2rem;
+  letter-spacing: 0.02rem;
+
+  h1 {
+    font-size: 2.3rem;
+  }
 
   p,
   ol,
   ul {
     line-height: 3rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   a {

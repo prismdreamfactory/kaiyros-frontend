@@ -38,7 +38,7 @@ const GeometryStyles = styled.div`
 
   a {
     text-decoration: none;
-    font-size: 1.12rem;
+    font-size: 1.32rem;
     font-weight: 1000;
     color: #000;
 
@@ -109,7 +109,7 @@ const GeometryStyles = styled.div`
     text-align: center;
     background-color: #fff;
     width: 100%;
-    margin-top: 1.1rem;
+    margin-top: 0.5rem;
 
     @media (max-width: 767px) {
       display: none;
@@ -148,7 +148,7 @@ const LightTooltip = withStyles(theme => ({
     backgroundColor: theme.palette.common.white,
     color: 'rgba(0, 0, 0, 0.87)',
     boxShadow: theme.shadows[1],
-    fontSize: 11
+    fontSize: 16
   }
 }))(Tooltip);
 
@@ -165,11 +165,10 @@ export const Geometry = props => {
         hideWhenDone: true,
         hideWhenDoneDelay: 100
       };
-      const text = (
-        <Typist avgTypingDelay={0} stdTypingDelay={0} cursor={cursor}>
-          {category.acf.text}
-        </Typist>
-      );
+      const text =
+        // <Typist avgTypingDelay={0} stdTypingDelay={0} cursor={cursor}>
+        category.acf.text;
+      // </Typist>
 
       const [playAudio, renderAudio] = useState(false);
       let audio;
@@ -192,7 +191,7 @@ export const Geometry = props => {
           <Link href={`/category/${slug}`}>
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
-                <LightTooltip title={text} placement={placement}>
+                <LightTooltip title={text} placement="top">
                   <img
                     className={index === 6 ? '' : 'rotate'}
                     src={image}
