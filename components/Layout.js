@@ -21,6 +21,10 @@ const LayoutStyle = styled.div`
     font-size: 1.3rem;
   }
 
+  p {
+    margin: 3rem 0;
+  }
+
   a {
     transition: 0.4s ease;
 
