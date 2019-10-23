@@ -14,7 +14,11 @@ const CategoryFeatureStyles = styled.div`
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     display: block;
-    width: 80%;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      width: 80%;
+    }
   }
 
   img {
