@@ -144,7 +144,7 @@ const ShareStyle = styled.div`
 const ShareIcon = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 2rem;
+
   svg {
     cursor: pointer;
   }

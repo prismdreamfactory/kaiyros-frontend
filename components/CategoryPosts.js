@@ -25,6 +25,21 @@ const CategoryPostsStyles = styled.div`
     margin: 1rem 0;
     display: block;
     width: 80%;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .post-content {
+    /* margin: 20px 0; */
   }
 `;
 
@@ -57,14 +72,18 @@ const CategoryPosts = props => {
           </Link>
           <ImageCredit post={post} />
 
-          <div>
+          <div className="post-content">
             <TitleInfo>
               <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
                 <a className="title">{post.title.rendered}</a>
               </Link>
-              <DatePost datesrc={post.date} />
             </TitleInfo>
-            <AuthorLabel post={post} />
+
+            <div className="post-meta">
+              <AuthorLabel post={post} />
+              <DatePost datesrc={post.date} />
+            </div>
+
             <div
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
@@ -72,8 +91,8 @@ const CategoryPosts = props => {
               }}
             />
           </div>
+          <ShareButtons url={post.link} media={featuredMedia} />
         </div>
-        <ShareButtons url={post.link} media={featuredMedia} />
       </CategoryPostsStyles>
     );
   });

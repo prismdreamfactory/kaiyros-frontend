@@ -6,6 +6,7 @@ const Biblio = styled.div``;
 const Author = styled.span`
   background-color: #3debcb;
   padding: 0.4rem;
+  display: inline-block;
 `;
 
 const AuthorLabel = props => {

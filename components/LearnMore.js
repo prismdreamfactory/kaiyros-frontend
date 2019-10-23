@@ -60,6 +60,9 @@ const StyledLearnMore = styled.div`
 
 const StyledLearnMoreContent = styled.div`
   max-width: 900px;
+  height: 80%;
+  overflow-y: scroll;
+  padding: 20px;
 
   @media (max-width: 768px) {
     max-width: 300px;
@@ -70,11 +73,23 @@ const LearnMore = props => {
   const [isOpen, setOpen] = useState(false);
   const { category } = props;
 
+  const openModal = () => {
+    setOpen(true);
+
+    document.querySelector('body').style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+
+    document.querySelector('body').style.overflow = '';
+  };
+
   return (
     <LearnMoreDisplay>
-      <a onClick={() => setOpen(true)}>Learn More</a>
+      <a onClick={openModal}>Learn More</a>
       <StyledLearnMore className={isOpen ? 'hide' : 'show'}>
-        <CloseIcon onClick={() => setOpen(false)} />
+        <CloseIcon onClick={closeModal} />
         <StyledLearnMoreContent
           dangerouslySetInnerHTML={{
             __html: category[0].acf.learn_more

@@ -28,8 +28,27 @@ const CategoryFeatureStyles = styled.div`
     }
   }
 
+  p {
+    margin: 0;
+  }
+
+  .post-content {
+    margin: 20px 0;
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
   @media (max-width: 1024px) {
     flex-direction: column;
+
+    .title {
+      width: 100%;
+    }
     img {
       width: 100%;
     }
@@ -65,14 +84,18 @@ const CategoryFeature = props => {
           </a>
         </Link>
         <ImageCredit post={post} />
-        <div>
+        <div className="post-content">
           <TitleInfo>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
               <a className="title">{post.title.rendered}</a>
             </Link>
-            <DatePost datesrc={post.date} />
           </TitleInfo>
-          <AuthorLabel post={post} />
+
+          <div className="post-meta">
+            <AuthorLabel post={post} />
+            <DatePost datesrc={post.date} />
+          </div>
+
           <div
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
