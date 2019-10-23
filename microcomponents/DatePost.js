@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const DateStyle = styled.span`
   font-size: 1rem;
+
+  padding: 0.4rem;
+  display: inline-block;
 `;
 
 export const DatePost = props => {

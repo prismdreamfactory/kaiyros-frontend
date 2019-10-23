@@ -8,7 +8,7 @@ import ImageCredit from '../microcomponents/ImageCredit';
 const CategoryPostsStyles = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   img {
     width: 100%;
@@ -64,35 +64,33 @@ const CategoryPosts = props => {
 
     return (
       <CategoryPostsStyles key={post.id}>
-        <div className="postContent">
-          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
-            <a>
-              <img width="450" height="280" src={featuredImage} alt="" />
-            </a>
-          </Link>
-          <ImageCredit post={post} />
+        <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+          <a>
+            <img width="450" height="280" src={featuredImage} alt="" />
+          </a>
+        </Link>
+        <ImageCredit post={post} />
 
-          <div className="post-content">
-            <TitleInfo>
-              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
-                <a className="title">{post.title.rendered}</a>
-              </Link>
-            </TitleInfo>
+        <div className="post-content">
+          <TitleInfo>
+            <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+              <a className="title">{post.title.rendered}</a>
+            </Link>
+          </TitleInfo>
 
-            <div className="post-meta">
-              <AuthorLabel post={post} />
-              <DatePost datesrc={post.date} />
-            </div>
-
-            <div
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{
-                __html: post.excerpt.rendered
-              }}
-            />
+          <div className="post-meta">
+            <AuthorLabel post={post} />
+            <DatePost datesrc={post.date} />
           </div>
-          <ShareButtons url={post.link} media={featuredMedia} />
+
+          <div
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: post.excerpt.rendered
+            }}
+          />
         </div>
+        <ShareButtons url={post.link} media={featuredMedia} />
       </CategoryPostsStyles>
     );
   });

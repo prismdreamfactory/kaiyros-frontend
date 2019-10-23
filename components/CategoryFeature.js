@@ -83,7 +83,7 @@ const CategoryFeature = props => {
             <img src={stickyImage} alt="" />
           </a>
         </Link>
-        <ImageCredit post={post} />
+
         <div className="post-content">
           <TitleInfo>
             <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>

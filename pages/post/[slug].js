@@ -24,7 +24,7 @@ const PostStyle = styled.div`
     text-decoration: none;
   }
   h1 {
-    margin: 3rem 0;
+    margin: 2rem 0;
     display: flex;
     justify-content: center;
   }
@@ -44,6 +44,13 @@ const PostStyle = styled.div`
   }
   .disqus {
     margin: 2rem 0;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #3debcb;
   }
 `;
 
@@ -84,10 +91,13 @@ const Post = props => {
         <ImageCredit post={post} />
 
         <h1>{post.title.rendered}</h1>
-        <AuthorLabel {...props} />
 
         <div className="sub">
-          <DatePost datesrc={post.date} />
+          <div className="post-meta">
+            <AuthorLabel {...props} />
+            <span>x</span>
+            <DatePost datesrc={post.date} />
+          </div>
           <ShareButtons url={post.link} media={shareImage} />
         </div>
         <div
