@@ -112,8 +112,8 @@ const GeometryStyles = styled.div`
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     margin-top: 0.75rem;
-    width: 125%;
-    left: -12.5%;
+    width: 110%;
+    left: -5%;
 
     @media (max-width: 767px) {
       display: none;
@@ -154,7 +154,8 @@ const LightTooltip = withStyles(theme => ({
     boxShadow: theme.shadows[1],
     fontSize: 16,
     minWidth: 350,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: `Georgia, 'Times New Roman', Times, serif, serif`
   }
 }))(Tooltip);
 

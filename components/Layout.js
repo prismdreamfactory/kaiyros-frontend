@@ -35,7 +35,8 @@ const LayoutStyle = styled.div`
   }
 
   input::placeholder {
-    font-family: 'Josefin Slab', serif;
+    /* font-family: 'Josefin Slab', serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif, serif;
   }
 `;
 

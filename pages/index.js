@@ -94,10 +94,10 @@ class Index extends Component {
                   width: 1
                 },
                 opacity: {
-                  value: 0.2
+                  value: 0.1
                 },
                 move: {
-                  speed: 2
+                  speed: 0.75
                 }
               },
               interactivity: {

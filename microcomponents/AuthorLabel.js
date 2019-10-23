@@ -14,7 +14,7 @@ const AuthorLabel = props => {
 
   return (
     <Biblio>
-      <Author>by {post._embedded.author[0].name}</Author>
+      <Author>/{post._embedded.author[0].name}</Author>
     </Biblio>
   );
 };
