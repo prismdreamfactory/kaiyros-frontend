@@ -24,11 +24,6 @@ const CategoryPostsStyles = styled.div`
     text-transform: uppercase;
     margin: 1rem 0;
     display: block;
-    width: 80%;
-
-    @media (max-width: 1024px) {
-      width: 100%;
-    }
   }
 
   .post-meta {

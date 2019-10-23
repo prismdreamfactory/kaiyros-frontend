@@ -39,8 +39,12 @@ const PostStyle = styled.div`
   }
   .sub {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin: 10px 0;
+  }
+  .share {
+    display: flex;
+    justify-content: flex-end;
   }
   .disqus {
     margin: 2rem 0;
@@ -98,6 +102,7 @@ const Post = props => {
             <span>x</span>
             <DatePost datesrc={post.date} />
           </div>
+
           <ShareButtons url={post.link} media={shareImage} />
         </div>
         <div

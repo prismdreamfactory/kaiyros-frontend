@@ -19,7 +19,7 @@ const LayoutStyle = styled.div`
   ol,
   ul {
     line-height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   p {
