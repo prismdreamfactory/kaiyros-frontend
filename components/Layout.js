@@ -6,7 +6,8 @@ import Nav from './Nav';
 import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
-  font-family: 'Josefin Slab', serif;
+  /* font-family: 'Josefin Slab', serif; */
+  font-family: Georgia, 'Times New Roman', Times, serif, serif;
   margin: 0 2rem;
   letter-spacing: 0.02rem;
 
@@ -22,7 +23,7 @@ const LayoutStyle = styled.div`
   }
 
   p {
-    margin: 2rem 0;
+    margin-bottom: 2em;
   }
 
   a {

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const FooterNav = styled.footer`
+  padding: 20px 0;
+
   a {
     text-decoration: none;
     text-transform: uppercase;

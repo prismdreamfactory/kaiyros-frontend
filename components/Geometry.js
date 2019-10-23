@@ -38,12 +38,12 @@ const GeometryStyles = styled.div`
 
   a {
     text-decoration: none;
-    font-size: 1.32rem;
+    font-size: 1.25rem;
     font-weight: 1000;
     color: #000;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
@@ -53,7 +53,7 @@ const GeometryStyles = styled.div`
     /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
     /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
     /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
-    box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082;
+    box-shadow: 0 0 2px 4px #fff, 0 0 5px 10px #2b9985, 0 0 18px 13px #4b0082;
 
     border-radius: 50%;
   }
@@ -76,6 +76,9 @@ const GeometryStyles = styled.div`
     top: 0%;
     left: 40.7%;
     width: 18.5%;
+    span {
+      background: #fff;
+    }
   }
   .shape2 {
     top: 21.3%;
@@ -107,9 +110,10 @@ const GeometryStyles = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #fff;
-    width: 100%;
-    margin-top: 0.5rem;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 0.75rem;
+    width: 125%;
+    left: -12.5%;
 
     @media (max-width: 767px) {
       display: none;
@@ -145,10 +149,12 @@ const theme = createMuiTheme({
 
 const LightTooltip = withStyles(theme => ({
   tooltip: {
-    backgroundColor: theme.palette.common.white,
-    color: 'rgba(0, 0, 0, 0.87)',
+    backgroundColor: 'rgba(255,255,255, 0.8)',
+    color: 'rgba(0, 0, 0, 0.95)',
     boxShadow: theme.shadows[1],
-    fontSize: 16
+    fontSize: 16,
+    minWidth: 350,
+    textAlign: 'center'
   }
 }))(Tooltip);
 
@@ -165,10 +171,11 @@ export const Geometry = props => {
         hideWhenDone: true,
         hideWhenDoneDelay: 100
       };
-      const text =
-        // <Typist avgTypingDelay={0} stdTypingDelay={0} cursor={cursor}>
-        category.acf.text;
-      // </Typist>
+      const text = (
+        <Typist avgTypingDelay={35} stdTypingDelay={0} cursor={cursor}>
+          {category.acf.text}
+        </Typist>
+      );
 
       const [playAudio, renderAudio] = useState(false);
       let audio;

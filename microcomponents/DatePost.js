@@ -9,7 +9,7 @@ export const DatePost = props => {
   const { datesrc } = props;
   const event = new Date(datesrc);
   const options = {
-    year: 'numeric',
+    year: '2-digit',
     month: 'short',
     day: 'numeric',
     hour12: false,

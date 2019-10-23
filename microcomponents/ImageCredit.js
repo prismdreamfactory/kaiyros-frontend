@@ -5,8 +5,12 @@ const StyledImageCreditContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.4rem;
+  top: -7px;
+  position: relative;
+
   p {
+    font-size: 0.4rem;
     margin: 0 0.3rem;
   }
 `;

@@ -12,7 +12,7 @@ const CategoryFeatureStyles = styled.div`
   .title {
     font-size: 1.5rem;
     text-transform: uppercase;
-    margin: 1rem 0;
+    margin-bottom: 1.5rem;
     display: block;
     width: 80%;
   }
@@ -43,7 +43,7 @@ const TitleInfo = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 const CategoryFeature = props => {
