@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 // import Router from 'next/router';
 import WPAPI from 'wpapi';
 import styled from 'styled-components';
@@ -58,6 +59,11 @@ class Index extends Component {
   render() {
     return (
       <Layout {...this.props}>
+        <Head>
+          <title>Home</title>
+          <meta name="description" content="" />
+        </Head>
+
         <Geometry {...this.props} />
 
         <CategoryNavDisplay>

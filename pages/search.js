@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 import Error from 'next/error';
 import WPAPI from 'wpapi';
 import Config from '../config';
@@ -46,6 +47,11 @@ const Search = props => {
   const { search } = props;
   return (
     <Layout {...props}>
+      <Head>
+        <title>Search</title>
+        <meta name="description" content="" />
+      </Head>
+
       <SearchContainer>
         <h1 className="searchHead">
           Search results for

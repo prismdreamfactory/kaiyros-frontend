@@ -17,12 +17,12 @@ const LayoutStyle = styled.div`
   p,
   ol,
   ul {
-    line-height: 3rem;
-    font-size: 1.3rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
   }
 
   p {
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
 
   a {

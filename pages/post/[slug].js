@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 import Error from 'next/error';
 import WPAPI from 'wpapi';
 import Config from '../../config';
@@ -69,8 +70,15 @@ const Post = props => {
   const shareImage =
     post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
 
+  const postExcerpt = post.excerpt.rendered.replace(/(<([^>]+)>)/gi, '');
+
   return (
     <Layout {...props}>
+      <Head>
+        <title>{post.title.rendered}</title>
+        <meta name="description" content={postExcerpt} />
+      </Head>
+
       <PostStyle>
         <img src={featuredImage} alt="" />
         <ImageCredit post={post} />

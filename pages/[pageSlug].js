@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import Error from 'next/error';
 import WPAPI from 'wpapi';
@@ -30,11 +31,17 @@ const Page = props => {
 
   const pageTitle = page[0].title.rendered;
   const pageContent = page[0].content.rendered;
+  const pageExcerpt = page[0].excerpt.rendered.replace(/(<([^>]+)>)/gi, '');
 
   if (!pageTitle) return <Error statusCode={404} />;
 
   return (
     <Layout {...props}>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageExcerpt} />
+      </Head>
+
       <PageStyle>
         <h1>{pageTitle}</h1>
         <div

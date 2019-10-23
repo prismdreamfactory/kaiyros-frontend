@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
+import Head from 'next/head';
 import Error from 'next/error';
 import WPAPI from 'wpapi';
 import Config from '../../config';
@@ -94,10 +94,13 @@ const Category = props => {
   // // make array of non-sticky posts
   const regPosts = posts.filter(regPost => regPost.sticky !== true);
 
-  props;
-
   return (
     <Layout {...props}>
+      <Head>
+        <title>{category[0].name}</title>
+        <meta name="description" content={category[0].description} />
+      </Head>
+
       <h1>{props.slug}</h1>
       <CategoryContainer {...props}>
         <div className="categoryTitle">
