@@ -208,7 +208,11 @@ export const Geometry = props => {
                 </LightTooltip>
               </MuiThemeProvider>
               {audio}
-              <span>{title}</span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: category.name
+                }}
+              />
             </a>
           </Link>
         </div>
