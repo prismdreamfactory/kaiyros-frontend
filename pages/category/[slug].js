@@ -133,7 +133,12 @@ const Category = props => {
 
             <div className="category-container">
               <div className="category">
-                <h1 className="category-head">{category[0].name}</h1>
+                <h1
+                  className="category-head"
+                  dangerouslySetInnerHTML={{
+                    __html: category[0].name
+                  }}
+                />
               </div>
             </div>
           </div>

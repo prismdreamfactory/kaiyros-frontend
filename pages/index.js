@@ -124,7 +124,12 @@ class Index extends Component {
             src={category.acf.image.sizes.thumbnail}
             alt="placeholder"
           />
-          <span className="category-title">{category.name}</span>
+          <span
+            className="category-title"
+            dangerouslySetInnerHTML={{
+              __html: category.name
+            }}
+          />
         </a>
       </Link>
     );

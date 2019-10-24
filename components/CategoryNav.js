@@ -80,7 +80,12 @@ export const CategoryNav = props => {
             alt="placeholder"
           />
           <div>
-            <span className="category-title">{category.name}</span>
+            <span
+              className="category-title"
+              dangerouslySetInnerHTML={{
+                __html: category.name
+              }}
+            />
             {subtitle === true && (
               <span className="category-subtitle">{category.description}</span>
             )}
