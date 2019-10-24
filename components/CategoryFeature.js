@@ -11,7 +11,6 @@ const CategoryFeatureStyles = styled.div`
 
   .title {
     font-size: 1.5rem;
-    text-transform: uppercase;
     margin-bottom: 1.5rem;
     display: block;
     width: 100%;

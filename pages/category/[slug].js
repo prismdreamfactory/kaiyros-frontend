@@ -30,7 +30,6 @@ const CategoryContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
 
     img {
       width: 100%;

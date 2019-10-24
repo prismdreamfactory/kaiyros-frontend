@@ -56,6 +56,19 @@ const PostStyle = styled.div`
     align-items: center;
     background-color: #3debcb;
   }
+
+  ul,
+  ol {
+    margin: 1rem 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  article {
+    margin: 2rem 0;
+  }
 `;
 
 const Post = props => {
@@ -105,11 +118,14 @@ const Post = props => {
 
           <ShareButtons url={post.link} media={shareImage} />
         </div>
-        <div
+        <article
           dangerouslySetInnerHTML={{
             __html: post.content.rendered
           }}
         />
+
+        <ShareButtons url={post.link} media={shareImage} />
+
         <div className="disqus">
           <Disqus.DiscussionEmbed
             shortname={disqusShortname}

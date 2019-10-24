@@ -94,7 +94,7 @@ const LearnMore = props => {
         <CloseIcon onClick={closeModal} />
 
         <StyledLearnMoreContainer>
-          <h2>{props.category[0].description}</h2>
+          <h2 className="title">{props.category[0].description}</h2>
           <StyledLearnMoreContent
             dangerouslySetInnerHTML={{
               __html: category[0].acf.learn_more

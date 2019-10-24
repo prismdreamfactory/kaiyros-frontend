@@ -6,7 +6,6 @@ import Nav from './Nav';
 import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
-  /* font-family: 'Josefin Slab', serif; */
   font-family: Georgia, 'Times New Roman', Times, serif, serif;
   margin: 0 2rem;
   letter-spacing: 0.02rem;
@@ -17,6 +16,12 @@ const LayoutStyle = styled.div`
 
   h1 {
     font-size: 2.3rem;
+  }
+
+  h1,
+  .title {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
   }
 
   p,

@@ -25,9 +25,10 @@ const NavStyles = styled.div`
 
   h4 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: 1.1rem;
     margin: 0.5rem 0;
+    font-weight: 400;
   }
   .title {
     display: flex;

@@ -21,7 +21,6 @@ const CategoryPostsStyles = styled.div`
 
   .title {
     font-size: 1.5rem;
-    text-transform: uppercase;
     margin: 1rem 0;
     display: block;
   }
@@ -64,7 +63,6 @@ const CategoryPosts = props => {
             <img width="450" height="280" src={featuredImage} alt="" />
           </a>
         </Link>
-        <ImageCredit post={post} />
 
         <div className="post-content">
           <TitleInfo>
