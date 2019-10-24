@@ -104,11 +104,15 @@ export const Nav = props => {
   return (
     <NavStyles>
       <div className="kaiyros header">
-        <img
-          className="logo"
-          src="../static/images/KairosLogoSquare.svg"
-          alt=""
-        />
+        <Link href="/">
+          <a>
+            <img
+              className="logo"
+              src="../static/images/KairosLogoSquare.svg"
+              alt=""
+            />
+          </a>
+        </Link>
         <div className="header-text">
           <Link href="/">
             <a>
@@ -117,7 +121,7 @@ export const Nav = props => {
               </div>
             </a>
           </Link>
-          <h4>the Art of Human Experience</h4>
+          <h4>The Art of Human Experience</h4>
         </div>
       </div>
 
