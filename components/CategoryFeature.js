@@ -80,6 +80,8 @@ const CategoryFeature = props => {
       post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
         .source_url;
 
+    const excerpt = post.content.rendered;
+
     return (
       <CategoryFeatureStyles key={post.id}>
         <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>

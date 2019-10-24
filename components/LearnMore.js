@@ -58,7 +58,7 @@ const StyledLearnMore = styled.div`
   z-index: 100;
 `;
 
-const StyledLearnMoreContent = styled.div`
+const StyledLearnMoreContainer = styled.div`
   max-width: 900px;
   height: 80%;
   overflow-y: scroll;
@@ -68,6 +68,8 @@ const StyledLearnMoreContent = styled.div`
     max-width: 300px;
   }
 `;
+
+const StyledLearnMoreContent = styled.div``;
 
 const LearnMore = props => {
   const [isOpen, setOpen] = useState(false);
@@ -90,11 +92,15 @@ const LearnMore = props => {
       <a onClick={openModal}>Learn More</a>
       <StyledLearnMore className={isOpen ? 'hide' : 'show'}>
         <CloseIcon onClick={closeModal} />
-        <StyledLearnMoreContent
-          dangerouslySetInnerHTML={{
-            __html: category[0].acf.learn_more
-          }}
-        />
+
+        <StyledLearnMoreContainer>
+          <h2>{props.category[0].description}</h2>
+          <StyledLearnMoreContent
+            dangerouslySetInnerHTML={{
+              __html: category[0].acf.learn_more
+            }}
+          />
+        </StyledLearnMoreContainer>
       </StyledLearnMore>
     </LearnMoreDisplay>
   );

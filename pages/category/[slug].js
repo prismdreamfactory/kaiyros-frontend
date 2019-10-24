@@ -15,10 +15,10 @@ const wp = new WPAPI({ endpoint: Config.apiUrl });
 const CategoryContainer = styled.div`
   max-width: 1100px;
   margin: auto;
+
   a {
     font-size: 1.3rem;
     text-decoration: none;
-    color: #000;
   }
   .categoryContainer {
     flex-direction: column;
@@ -101,7 +101,6 @@ const Category = props => {
         <meta name="description" content={category[0].description} />
       </Head>
 
-      <h1>{props.slug}</h1>
       <CategoryContainer {...props}>
         <div className="categoryTitle">
           <img

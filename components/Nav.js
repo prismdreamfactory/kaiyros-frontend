@@ -22,9 +22,6 @@ const NavStyles = styled.div`
     margin-left: 0.5rem;
     color: #000;
   }
-  h1:hover {
-    color: #2b9985;
-  }
 
   h4 {
     display: flex;

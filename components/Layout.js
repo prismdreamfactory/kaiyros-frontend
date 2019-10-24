@@ -11,6 +11,10 @@ const LayoutStyle = styled.div`
   margin: 0 2rem;
   letter-spacing: 0.02rem;
 
+  main {
+    min-height: calc(100vh - 200px);
+  }
+
   h1 {
     font-size: 2.3rem;
   }
@@ -23,14 +27,20 @@ const LayoutStyle = styled.div`
   }
 
   p {
-    margin-bottom: 2em;
+    margin: 0 0 2.5em 0;
   }
 
   a {
+    color: #2b9985;
     transition: 0.4s ease;
 
     &:hover {
-      color: #2b9985;
+      opacity: 0.8;
+    }
+
+    &.logo,
+    &.title {
+      color: #000;
     }
   }
 
@@ -48,7 +58,7 @@ const Layout = props => {
       <Favicon url="../static/favicon.ico" />
       <Header />
       <Nav {...props} />
-      {children}
+      <main>{children}</main>
       <Footer {...props} />
     </LayoutStyle>
   );
