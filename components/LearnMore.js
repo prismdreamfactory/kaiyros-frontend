@@ -8,7 +8,7 @@ const LearnMoreDisplay = styled.div`
 
   .link {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-decoration: underline;
     text-transform: capitalize;
   }
@@ -88,7 +88,7 @@ const LearnMore = props => {
   };
 
   return (
-    <LearnMoreDisplay>
+    <LearnMoreDisplay style={props.style}>
       <a className="link" onClick={openModal}>
         Learn More
       </a>

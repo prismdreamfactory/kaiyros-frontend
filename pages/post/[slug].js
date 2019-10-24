@@ -40,6 +40,8 @@ const PostStyle = styled.div`
   .sub {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     margin: 10px 0;
   }
   .share {
@@ -51,10 +53,6 @@ const PostStyle = styled.div`
   }
 
   .post-meta {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #3debcb;
   }
 
   ul,
@@ -112,7 +110,6 @@ const Post = props => {
         <div className="sub">
           <div className="post-meta">
             <AuthorLabel {...props} />
-            <span>x</span>
             <DatePost datesrc={post.date} />
           </div>
 

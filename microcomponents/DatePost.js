@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const DateStyle = styled.span`
-  font-size: 1rem;
   padding: 0.4rem;
   display: inline-block;
+  font-size: 0.8rem;
 `;
 
 export const DatePost = props => {

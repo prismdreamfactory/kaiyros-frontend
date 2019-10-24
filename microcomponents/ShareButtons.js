@@ -57,8 +57,6 @@ export const ShareButtons = props => {
 };
 
 const ShareContainer = styled.div`
-  margin-top: auto;
-
   .hide {
     animation: opac 0.3s;
   }

@@ -20,20 +20,37 @@ const CategoryContainer = styled.div`
     font-size: 1.3rem;
     text-decoration: none;
   }
-  .categoryContainer {
+  .category-container {
     flex-direction: column;
     margin-left: 1rem;
   }
 
-  .categoryTitle {
-    margin-bottom: 2rem;
+  .category-image {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-title-wrapper {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .category-title {
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
     img {
       width: 100%;
-      max-width: 100px;
+      max-width: 50px;
       /* box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 8px 13px #4b0082;
       border-radius: 50%; */
 
@@ -41,17 +58,22 @@ const CategoryContainer = styled.div`
         max-width: 50px;
       }
     }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 1rem 0;
+    }
   }
 
   .category {
     text-transform: capitalize;
   }
-  .categoryHead {
-    font-size: 2rem;
+  .category-head {
+    font-size: 1.5rem;
     margin: 0.5rem 0;
     text-align: center;
   }
-  .postLayout {
+  .post-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto auto;
@@ -61,7 +83,7 @@ const CategoryContainer = styled.div`
 
   @media (max-width: 1024px) {
     margin-top: 5rem;
-    .postLayout {
+    .post-layout {
       grid-template-columns: 1fr;
     }
   }
@@ -101,23 +123,25 @@ const Category = props => {
       </Head>
 
       <CategoryContainer {...props}>
-        <div className="categoryTitle">
-          <img
-            // className="rotate"
-            src={category[0].acf.image.sizes.medium}
-            alt="placeholder"
-          />
-          <div className="categoryContainer">
-            <div className="category">
-              <h1 className="categoryHead">{category[0].name}</h1>
+        <div className="category-title-wrapper">
+          <div className="category-title">
+            <img
+              // className="rotate"
+              src={category[0].acf.image.sizes.medium}
+              alt="placeholder"
+            />
+
+            <div className="category-container">
+              <div className="category">
+                <h1 className="category-head">{category[0].name}</h1>
+              </div>
             </div>
-            <LearnMore {...props} />
           </div>
         </div>
+
         <div>
           <CategoryFeature posts={stickyPosts} />
-
-          <div className="postLayout">
+          <div className="post-layout">
             <CategoryPosts posts={regPosts} />
           </div>
         </div>
