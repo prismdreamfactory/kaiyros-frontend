@@ -25,7 +25,7 @@ const NavStyles = styled.div`
 
   h4 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 1.1rem;
     margin: 0.5rem 0;
     font-weight: 400;

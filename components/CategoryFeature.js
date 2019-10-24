@@ -11,13 +11,14 @@ const CategoryFeatureStyles = styled.div`
   margin: 1.5rem auto;
 
   .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     display: block;
     width: 100%;
+    text-align: center;
 
-    @media (min-width: 1024px) {
-      width: 80%;
+    @media (max-width: 1024px) {
+      text-align: left;
     }
   }
 
@@ -33,7 +34,7 @@ const CategoryFeatureStyles = styled.div`
   }
 
   p {
-    margin: 0;
+    /* margin: 0; */
   }
 
   .post-content {
@@ -45,6 +46,14 @@ const CategoryFeatureStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+  }
+
+  .read-more {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    margin-top: auto;
   }
 
   @media (max-width: 1024px) {
@@ -99,11 +108,14 @@ const CategoryFeature = props => {
 
           <div className="post-meta">
             <AuthorLabel post={post} />
-            <DatePost datesrc={post.date} />
+            {/* <DatePost datesrc={post.date} /> */}
           </div>
 
-          <Excerpt data={post.content.rendered} />
-          <ShareButtons url={post.link} media={stickyMedia} />
+          <Excerpt data={post.excerpt.rendered} />
+
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+            <a className="read-more">Continue reading...</a>
+          </Link>
         </div>
       </CategoryFeatureStyles>
     );

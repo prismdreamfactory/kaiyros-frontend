@@ -4,11 +4,11 @@ import CloseIcon from '../microcomponents/CloseIcon';
 
 const LearnMoreDisplay = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 
-  a {
+  .link {
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: underline;
     text-transform: capitalize;
   }
@@ -89,7 +89,9 @@ const LearnMore = props => {
 
   return (
     <LearnMoreDisplay>
-      <a onClick={openModal}>Learn More</a>
+      <a className="link" onClick={openModal}>
+        Learn More
+      </a>
       <StyledLearnMore className={isOpen ? 'hide' : 'show'}>
         <CloseIcon onClick={closeModal} />
 

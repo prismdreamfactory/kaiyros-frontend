@@ -11,8 +11,8 @@ const SearchInputStyles = styled.div`
 
   svg {
     margin-top: 6px;
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
   }
 
   button {
