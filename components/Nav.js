@@ -25,7 +25,7 @@ const NavStyles = styled.div`
 
   h4 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 1.1rem;
     margin: 0.5rem 0;
     font-weight: 400;
@@ -36,8 +36,17 @@ const NavStyles = styled.div`
     align-items: flex-end;
   }
   .logo {
-    width: 2.5rem;
-    padding: 0.3rem;
+    width: 5rem;
+    height: 4.2rem;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+  }
+  .header-text {
+    display: flex;
+    flex-direction: column;
   }
   .icons {
     display: flex;
@@ -94,20 +103,22 @@ const NavStyles = styled.div`
 export const Nav = props => {
   return (
     <NavStyles>
-      <div className="kaiyros">
-        <Link href="/">
-          <a>
-            <div className="title">
-              <img
-                className="logo"
-                src="../static/images/KairosLogoSquare.svg"
-                alt=""
-              />
-              <h1>Kaiyros Publications</h1>
-            </div>
-          </a>
-        </Link>
-        <h4>the Art of Human Experience</h4>
+      <div className="kaiyros header">
+        <img
+          className="logo"
+          src="../static/images/KairosLogoSquare.svg"
+          alt=""
+        />
+        <div className="header-text">
+          <Link href="/">
+            <a>
+              <div className="title">
+                <h1>Kaiyros Publications</h1>
+              </div>
+            </a>
+          </Link>
+          <h4>the Art of Human Experience</h4>
+        </div>
       </div>
 
       <div className="mobile--nav">
