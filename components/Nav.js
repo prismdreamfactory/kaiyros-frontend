@@ -85,7 +85,7 @@ const NavStyles = styled.div`
       top: 0;
       left: 0;
       justify-content: space-between;
-      padding: 1rem 2rem 1rem 1.25rem;
+      padding: 0.5rem 2rem 0.5rem 1.25rem;
       box-sizing: border-box;
     }
     .logo {
