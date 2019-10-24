@@ -4,6 +4,7 @@ import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 import AuthorLabel from '../microcomponents/AuthorLabel';
 import ImageCredit from '../microcomponents/ImageCredit';
+import Excerpt from '../microcomponents/Excerpt';
 
 const CategoryFeatureStyles = styled.div`
   max-width: 1100px;
@@ -101,12 +102,7 @@ const CategoryFeature = props => {
             <DatePost datesrc={post.date} />
           </div>
 
-          <div
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: post.excerpt.rendered
-            }}
-          />
+          <Excerpt data={post.content.rendered} />
           <ShareButtons url={post.link} media={stickyMedia} />
         </div>
       </CategoryFeatureStyles>

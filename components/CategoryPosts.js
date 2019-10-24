@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { DatePost } from '../microcomponents/DatePost';
 import { ShareButtons } from '../microcomponents/ShareButtons';
 import AuthorLabel from '../microcomponents/AuthorLabel';
-import ImageCredit from '../microcomponents/ImageCredit';
+import Excerpt from '../microcomponents/Excerpt';
 
 const CategoryPostsStyles = styled.div`
   display: flex;
@@ -76,12 +76,7 @@ const CategoryPosts = props => {
             <DatePost datesrc={post.date} />
           </div>
 
-          <div
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: post.excerpt.rendered
-            }}
-          />
+          <Excerpt data={post.content.rendered} />
         </div>
         <ShareButtons url={post.link} media={featuredMedia} />
       </CategoryPostsStyles>
