@@ -32,6 +32,14 @@ const CategoryPostsStyles = styled.div`
     margin-bottom: 1rem;
   }
 
+  .read-more {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    margin-top: auto;
+  }
+
   .post-content {
     /* margin: 20px 0; */
   }
@@ -40,8 +48,9 @@ const CategoryPostsStyles = styled.div`
 const TitleInfo = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 const CategoryPosts = props => {
@@ -73,12 +82,15 @@ const CategoryPosts = props => {
 
           <div className="post-meta">
             <AuthorLabel post={post} />
-            <DatePost datesrc={post.date} />
+            {/* <DatePost datesrc={post.date} /> */}
           </div>
 
-          <Excerpt data={post.content.rendered} />
+          <Excerpt data={post.excerpt.rendered} />
         </div>
-        <ShareButtons url={post.link} media={featuredMedia} />
+
+        <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+          <a className="read-more">Continue reading...</a>
+        </Link>
       </CategoryPostsStyles>
     );
   });

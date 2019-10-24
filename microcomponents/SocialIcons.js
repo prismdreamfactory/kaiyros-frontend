@@ -12,8 +12,8 @@ const SocialIconsStyles = styled.div`
   svg {
     color: #000;
     margin-right: 1.25rem;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 
   svg:hover {
@@ -27,8 +27,8 @@ const SocialIconsStyles = styled.div`
 
   @media (max-width: 768px) {
     svg {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
   }
 `;

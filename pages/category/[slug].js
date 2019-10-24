@@ -47,7 +47,7 @@ const CategoryContainer = styled.div`
     text-transform: capitalize;
   }
   .categoryHead {
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin: 0.5rem 0;
     text-align: center;
   }
