@@ -38,6 +38,7 @@ const NavStyles = styled.div`
   .logo {
     width: 5rem;
     height: 4.2rem;
+    margin-left: -1.4rem;
   }
   .header {
     display: flex;
