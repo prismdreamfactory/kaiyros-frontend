@@ -58,11 +58,41 @@ const StyledLearnMore = styled.div`
   z-index: 100;
 `;
 
+const StyledLearnMoreProfile = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0 2rem 0;
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-content {
+    border: 0.2px solid #000;
+    padding: 1rem;
+  }
+`;
+
 const StyledLearnMoreContainer = styled.div`
   max-width: 900px;
   height: 80%;
   overflow-y: scroll;
   padding: 20px;
+
+  h2 {
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+  }
 
   @media (max-width: 768px) {
     max-width: 300px;
@@ -95,6 +125,17 @@ const LearnMore = props => {
 
         <StyledLearnMoreContainer>
           <h2 className="title">{props.category[0].description}</h2>
+          <StyledLearnMoreProfile>
+            <div className="profile-content">
+              <h3>Profile</h3>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: category[0].acf.profile
+                }}
+              />
+            </div>
+          </StyledLearnMoreProfile>
+
           <StyledLearnMoreContent
             dangerouslySetInnerHTML={{
               __html: category[0].acf.learn_more
