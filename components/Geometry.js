@@ -156,7 +156,7 @@ const LightTooltip = withStyles(theme => ({
     fontSize: 16,
     minWidth: 350,
     textAlign: 'center',
-    fontFamily: `Georgia, 'Times New Roman', Times, serif, serif`
+    fontFamily: `'Lora', sans-serif`
   }
 }))(Tooltip);
 
