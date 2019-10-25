@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import Error from 'next/error';
@@ -9,6 +9,7 @@ import PageWrapper from '../../components/PageWrapper';
 import CategoryFeature from '../../components/CategoryFeature';
 import CategoryPosts from '../../components/CategoryPosts';
 import LearnMore from '../../components/LearnMore';
+import CategoryTitle from '../../microcomponents/CategoryTitle';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -20,64 +21,14 @@ const CategoryContainer = styled.div`
     font-size: 1.3rem;
     text-decoration: none;
   }
-  .category-container {
-    flex-direction: column;
-    margin-left: 1rem;
-  }
-
-  .category-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
   .category-title-wrapper {
-    margin: 3.5rem auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .subtitle {
-    font-size: 0.75rem;
-  }
-
-  .category-title {
-    padding: 0.75rem 2rem;
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      max-width: 50px;
-      /* box-shadow: 0 0 5px 6px #fff, 0 0 5px 10px #2b9985, 0 0 8px 13px #4b0082;
-      border-radius: 50%; */
-
-      @media (max-width: 768px) {
-        max-width: 50px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
-      padding: 1rem 0;
-    }
-  }
-
-  .category {
-    text-transform: capitalize;
-  }
-  .category-head {
-    font-size: 1.5rem;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif, serif;
-    font-weight: 400;
-  }
   .post-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -87,7 +38,7 @@ const CategoryContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin-top: 8rem;
+    margin-top: 4rem;
     .post-layout {
       grid-template-columns: 1fr;
     }
@@ -110,6 +61,20 @@ const CategoryContainer = styled.div`
 `;
 
 const Category = props => {
+  const [isOpen, setOpen] = useState(false);
+
+  const openModal = () => {
+    setOpen(true);
+
+    document.querySelector('body').style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+
+    document.querySelector('body').style.overflow = '';
+  };
+
   const { category, posts, pages } = props;
 
   if (category.length === 0) return <Error statusCode={404} />;
@@ -129,27 +94,14 @@ const Category = props => {
 
       <CategoryContainer {...props}>
         <div className="category-title-wrapper">
-          <div className="category-title">
-            <img
-              // className="rotate"
-              src={category[0].acf.image.sizes.medium}
-              alt="placeholder"
-            />
+          <CategoryTitle
+            title={category[0].name}
+            subtitle={category[0].description}
+            image={category[0].acf.image.sizes.medium}
+            openModal={openModal}
+          />
 
-            <div className="category-container">
-              <div className="category">
-                <div className="category-head">
-                  <LearnMore {...props} />
-                </div>
-                <span
-                  className="subtitle"
-                  dangerouslySetInnerHTML={{
-                    __html: category[0].description
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+          <LearnMore {...props} isOpen={isOpen} closeModal={closeModal} />
         </div>
 
         <div>

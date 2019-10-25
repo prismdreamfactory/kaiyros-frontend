@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CloseIcon from '../microcomponents/CloseIcon';
+import CategoryTitle from '../microcomponents/CategoryTitle';
 
 const LearnMoreDisplay = styled.div`
   text-align: left;
@@ -98,37 +99,40 @@ const StyledLearnMoreContainer = styled.div`
   }
 `;
 
-const StyledLearnMoreContent = styled.div``;
-
 const LearnMore = props => {
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
   const { category } = props;
 
-  const openModal = () => {
-    setOpen(true);
+  // const openModal = () => {
+  //   setOpen(true);
 
-    document.querySelector('body').style.overflow = 'hidden';
-  };
+  //   document.querySelector('body').style.overflow = 'hidden';
+  // };
 
-  const closeModal = () => {
-    setOpen(false);
+  // const closeModal = () => {
+  //   setOpen(false);
 
-    document.querySelector('body').style.overflow = '';
-  };
+  //   document.querySelector('body').style.overflow = '';
+  // };
 
   return (
     <LearnMoreDisplay>
-      <a
+      {/* <a
         onClick={openModal}
         dangerouslySetInnerHTML={{
           __html: category[0].name
         }}
-      />
-      <StyledLearnMore className={isOpen ? 'hide' : 'show'}>
-        <CloseIcon onClick={closeModal} />
+      /> */}
+      <StyledLearnMore className={props.isOpen ? 'hide' : 'show'}>
+        <CloseIcon onClick={props.closeModal} />
 
         <StyledLearnMoreContainer>
-          <h2 className="title">{props.category[0].description}</h2>
+          <CategoryTitle
+            title={props.category[0].name}
+            subtitle={category[0].description}
+            image={category[0].acf.image.sizes.medium}
+          />
+
           <StyledLearnMoreProfile>
             <div className="profile-content">
               <h3>Profile</h3>
@@ -140,7 +144,7 @@ const LearnMore = props => {
             </div>
           </StyledLearnMoreProfile>
 
-          <StyledLearnMoreContent
+          <div
             dangerouslySetInnerHTML={{
               __html: category[0].acf.learn_more
             }}
