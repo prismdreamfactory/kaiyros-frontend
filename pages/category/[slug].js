@@ -33,10 +33,15 @@ const CategoryContainer = styled.div`
   }
 
   .category-title-wrapper {
-    margin: 2rem auto;
+    margin: 3.5rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 0.8rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
   }
 
   .category-title {
@@ -136,6 +141,12 @@ const Category = props => {
                 <h1 className="category-head">
                   <LearnMore {...props} />
                 </h1>
+                <span
+                  className="tagline"
+                  dangerouslySetInnerHTML={{
+                    __html: category[0].description
+                  }}
+                />
               </div>
             </div>
           </div>

@@ -4,7 +4,6 @@ import CloseIcon from '../microcomponents/CloseIcon';
 
 const LearnMoreDisplay = styled.div`
   display: flex;
-  justify-content: flex-end;
 
   a {
     color: #000;
