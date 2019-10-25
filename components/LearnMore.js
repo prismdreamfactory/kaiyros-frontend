@@ -6,11 +6,10 @@ const LearnMoreDisplay = styled.div`
   display: flex;
   justify-content: flex-end;
 
-  .link {
+  a {
+    color: #000;
     cursor: pointer;
-    font-size: 0.8rem;
-    text-decoration: underline;
-    text-transform: capitalize;
+    font-size: 1.5rem;
   }
 
   .hide {
@@ -119,9 +118,12 @@ const LearnMore = props => {
 
   return (
     <LearnMoreDisplay style={props.style}>
-      <a className="link" onClick={openModal}>
-        Learn More
-      </a>
+      <a
+        onClick={openModal}
+        dangerouslySetInnerHTML={{
+          __html: category[0].name
+        }}
+      />
       <StyledLearnMore className={isOpen ? 'hide' : 'show'}>
         <CloseIcon onClick={closeModal} />
 
