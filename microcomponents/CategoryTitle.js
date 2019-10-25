@@ -8,7 +8,11 @@ export const CategoryTitle = props => {
 
       <div className="category__text">
         <a className="category__title" onClick={props.openModal}>
-          {props.title}
+          <span
+            dangerouslySetInnerHTML={{
+              __html: props.title
+            }}
+          />
         </a>
 
         <span
@@ -57,10 +61,9 @@ const StyledCategoryTitle = styled.div`
     cursor: pointer;
     font-size: 1.5rem;
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif, serif;
-    font-weight: 400;
     color: #000;
     border-bottom: 0.2px solid #000;
+    /* text-decoration: underline; */
     margin-bottom: 0.2rem;
 
     @media (max-width: 768px) {

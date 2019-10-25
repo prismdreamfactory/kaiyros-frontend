@@ -100,29 +100,10 @@ const StyledLearnMoreContainer = styled.div`
 `;
 
 const LearnMore = props => {
-  // const [isOpen, setOpen] = useState(false);
   const { category } = props;
-
-  // const openModal = () => {
-  //   setOpen(true);
-
-  //   document.querySelector('body').style.overflow = 'hidden';
-  // };
-
-  // const closeModal = () => {
-  //   setOpen(false);
-
-  //   document.querySelector('body').style.overflow = '';
-  // };
 
   return (
     <LearnMoreDisplay>
-      {/* <a
-        onClick={openModal}
-        dangerouslySetInnerHTML={{
-          __html: category[0].name
-        }}
-      /> */}
       <StyledLearnMore className={props.isOpen ? 'hide' : 'show'}>
         <CloseIcon onClick={props.closeModal} />
 
