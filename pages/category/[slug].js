@@ -37,7 +37,6 @@ const CategoryContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 0.8rem;
   }
 
   .subtitle {
@@ -75,7 +74,6 @@ const CategoryContainer = styled.div`
   }
   .category-head {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif, serif;
     font-weight: 400;
