@@ -20,7 +20,7 @@ export const ShareButtons = props => {
   });
 
   const renderShareButtons = () => (
-    <ShareStyle className={isOpen ? 'hide' : 'show'}>
+    <ShareStyle className={isOpen ? 'show' : 'hide'}>
       <ShareButtonsContainer>
         <span className="button shareTitle">Share</span>
 
@@ -58,30 +58,31 @@ export const ShareButtons = props => {
 
 const ShareContainer = styled.div`
   .hide {
+    display: none;
     animation: opac 0.3s;
   }
 
   @keyframes opac {
     from {
-      opacity: 0;
+      opacity: 1;
     }
     to {
-      opacity: 1;
+      opacity: 0;
     }
   }
 
   .show {
+    display: flex;
     animation: show 0s;
     animation-fill-mode: forwards;
-    z-index: -100;
   }
 
   @keyframes show {
     0% {
-      opacity: 1;
+      opacity: 0;
     }
     100% {
-      opacity: 0;
+      opacity: 1;
     }
   }
 

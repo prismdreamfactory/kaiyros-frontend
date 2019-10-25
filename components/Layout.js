@@ -7,6 +7,7 @@ import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
   font-family: 'Lora', serif;
+  line-height: 1.1;
   margin: 0 2rem;
   letter-spacing: 0.02rem;
 

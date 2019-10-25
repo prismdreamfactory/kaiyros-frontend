@@ -115,6 +115,7 @@ const GeometryStyles = styled.div`
     margin-top: 0.75rem;
     width: 110%;
     left: -5%;
+    font-weight: 400;
 
     @media (max-width: 767px) {
       display: none;
