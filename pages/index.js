@@ -13,29 +13,13 @@ import { CategoryNav } from '../components/CategoryNav';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-const ParticlesStyles = styled.div`
-  @media (max-width: 768px) {
-  }
-`;
-
-const CategoryNavDisplay = styled.div`
-  display: none;
-  padding: 2rem 0;
-
-  img {
-    position: relative;
-    z-index: 1;
-    /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
-    /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
-    /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
-    box-shadow: 0 0 5px 4px #fff, 0 0 4px 6px #2b9985, 0 0 10px 8px #4b0082;
-    border-radius: 50%;
-  }
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
+// function getWindowDimensions() {
+//   const { innerWidth: width, innerHeight: height } = window;
+//   return {
+//     width,
+//     height
+//   };
+// }
 
 class Index extends Component {
   static async getInitialProps() {
@@ -55,6 +39,21 @@ class Index extends Component {
     return null;
   }
 
+  // state = {
+  //   windowDimensions: null
+  // }
+
+  // componentDidMount() {
+  //   window.addEventListener('resize', handleResize);
+
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }
+
+ handleResize = () => {
+   this.setState(windowDimensions, getWindowDimensions());
+   
+ }
+
   render() {
     return (
       <Layout {...this.props}>
@@ -71,7 +70,8 @@ class Index extends Component {
 
         <ParticlesStyles>
           <Particles
-            style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
+            style={{ position: 'absolute', top: 0, left: 0, zIndex: -1, right: 0, bottom: 0 }}
+            width={}
             params={{
               particles: {
                 number: {
@@ -134,5 +134,29 @@ class Index extends Component {
     );
   };
 }
+
+const ParticlesStyles = styled.div`
+  @media (max-width: 768px) {
+  }
+`;
+
+const CategoryNavDisplay = styled.div`
+  display: none;
+  padding: 2rem 0;
+
+  img {
+    position: relative;
+    z-index: 1;
+    /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
+    /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
+    /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
+    box-shadow: 0 0 5px 4px #fff, 0 0 4px 6px #2b9985, 0 0 10px 8px #4b0082;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 
 export default PageWrapper(Index);
