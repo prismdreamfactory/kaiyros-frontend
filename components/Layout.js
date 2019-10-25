@@ -6,7 +6,7 @@ import Nav from './Nav';
 import Favicon from 'react-favicon';
 
 const LayoutStyle = styled.div`
-  font-family: Georgia, 'Times New Roman', Times, serif, serif;
+  font-family: 'Lora', serif;
   margin: 0 2rem;
   letter-spacing: 0.02rem;
 
@@ -55,7 +55,7 @@ const LayoutStyle = styled.div`
 
   input::placeholder {
     /* font-family: 'Josefin Slab', serif; */
-    font-family: Georgia, 'Times New Roman', Times, serif, serif;
+    font-family: 'Lora', serif;
   }
 `;
 
