@@ -108,11 +108,13 @@ const LearnMore = props => {
         <CloseIcon onClick={props.closeModal} />
 
         <StyledLearnMoreContainer>
-          <CategoryTitle
-            title={props.category[0].name}
-            subtitle={category[0].description}
-            image={category[0].acf.image.sizes.medium}
-          />
+          <div className="category-title-wrapper">
+            <CategoryTitle
+              title={props.category[0].name}
+              subtitle={category[0].description}
+              image={category[0].acf.image.sizes.medium}
+            />
+          </div>
 
           <StyledLearnMoreProfile>
             <div className="profile-content">

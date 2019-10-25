@@ -22,13 +22,6 @@ const CategoryContainer = styled.div`
     text-decoration: none;
   }
 
-  .category-title-wrapper {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .post-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -93,16 +86,14 @@ const Category = props => {
       </Head>
 
       <CategoryContainer {...props}>
-        <div className="category-title-wrapper">
-          <CategoryTitle
-            title={category[0].name}
-            subtitle={category[0].description}
-            image={category[0].acf.image.sizes.medium}
-            openModal={openModal}
-          />
+        <CategoryTitle
+          title={category[0].name}
+          subtitle={category[0].description}
+          image={category[0].acf.image.sizes.medium}
+          openModal={openModal}
+        />
 
-          <LearnMore {...props} isOpen={isOpen} closeModal={closeModal} />
-        </div>
+        <LearnMore {...props} isOpen={isOpen} closeModal={closeModal} />
 
         <div>
           <CategoryFeature posts={stickyPosts} />

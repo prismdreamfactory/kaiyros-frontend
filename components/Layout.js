@@ -14,7 +14,7 @@ const LayoutStyle = styled.div`
     min-height: calc(100vh - 200px);
 
     @media (max-width: 768px) {
-      min-height: calc(100vh - 220px);
+      min-height: calc(100vh - 280px);
     }
   }
 

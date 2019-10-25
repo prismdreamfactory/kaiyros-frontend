@@ -4,37 +4,46 @@ import styled from 'styled-components';
 export const CategoryTitle = props => {
   return (
     <StyledCategoryTitle>
-      <img className="category__image" src={props.image} alt="placeholder" />
+      <div className="container">
+        <img className="category__image" src={props.image} alt="placeholder" />
 
-      <div className="category__text">
-        <a className="category__title" onClick={props.openModal}>
+        <div className="category__text">
+          <a className="category__title" onClick={props.openModal}>
+            <span
+              dangerouslySetInnerHTML={{
+                __html: props.title
+              }}
+            />
+          </a>
+
           <span
+            className="category__subtitle"
             dangerouslySetInnerHTML={{
-              __html: props.title
+              __html: props.subtitle
             }}
           />
-        </a>
-
-        <span
-          className="category__subtitle"
-          dangerouslySetInnerHTML={{
-            __html: props.subtitle
-          }}
-        />
+        </div>
       </div>
     </StyledCategoryTitle>
   );
 };
 
 const StyledCategoryTitle = styled.div`
-  padding: 0.75rem 2rem;
-  margin: 2rem 0;
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  .container {
+    padding: 0.75rem 2rem;
+    margin: 2rem 0;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
   img {
     width: 100%;
@@ -72,7 +81,7 @@ const StyledCategoryTitle = styled.div`
   }
 
   .category__subtitle {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 `;
 

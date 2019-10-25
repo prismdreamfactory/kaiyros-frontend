@@ -16,11 +16,13 @@ const SearchContainer = styled.div`
   a {
     font-size: 1.3rem;
     text-decoration: none;
-    color: #000;
+    /* color: #000; */
   }
   h1 {
     display: flex;
     justify-content: center;
+    font-family: 'Courier New', Courier, 'Josefin Slab', monospace;
+    font-weight: 300;
   }
   .query {
     color: #2b9885;
@@ -40,6 +42,9 @@ const SearchContainer = styled.div`
   }
   .searchHead {
     text-align: center;
+    margin: 1rem auto 3rem auto;
+    display: inline-block;
+    width: 100%;
   }
 `;
 

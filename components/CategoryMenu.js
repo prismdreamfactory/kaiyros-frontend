@@ -72,10 +72,6 @@ const CategoryMenu = props => {
           <div className="search">
             <SearchInput />
           </div>
-
-          <div className="social-icons">
-            <SocialIcons />
-          </div>
         </CategoryNavStyles>
       </CategoryMenuStyles>
       <HamburgerMenuIcon onClick={() => openMenu(true)} />

@@ -63,7 +63,7 @@ const NavStyles = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
 
     h1 {
       font-size: 1.5rem;
