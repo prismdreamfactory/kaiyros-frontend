@@ -14,30 +14,32 @@ const LearnMoreDisplay = styled.div`
   }
 
   .hide {
+    display: none;
     animation: opac 0.3s;
   }
 
   @keyframes opac {
     from {
-      opacity: 0;
+      opacity: 1;
     }
     to {
-      opacity: 1;
+      opacity: 0;
     }
   }
 
   .show {
+    display: flex;
     animation: show 0s;
     animation-fill-mode: forwards;
-    z-index: -100;
+    /* z-index: -100; */
   }
 
   @keyframes show {
     0% {
-      opacity: 1;
+      opacity: 0;
     }
     100% {
-      opacity: 0;
+      opacity: 1;
     }
   }
 `;
@@ -104,7 +106,7 @@ const LearnMore = props => {
 
   return (
     <LearnMoreDisplay>
-      <StyledLearnMore className={props.isOpen ? 'hide' : 'show'}>
+      <StyledLearnMore className={props.isOpen ? 'show' : 'hide'}>
         <CloseIcon onClick={props.closeModal} />
 
         <StyledLearnMoreContainer>
