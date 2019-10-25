@@ -29,7 +29,7 @@ const CategoryNavDisplay = styled.div`
     /* box-shadow: 0 0 5px 10px #fff, 0 0 10px 7px #2b9985; */
     /* box-shadow: 0 0 5px 6px #fff, 0 0 10px 10px #2b9985, 0 0 2px 10px #4b0082; */
     /* box-shadow: 0 0 5px 5px #fff, 0 0 1px 9px #2b9985, 0 0 9px 11px #4b0082; */
-    box-shadow: 0 0 5px 4px #fff, 0 0 5px 6px #2b9985, 0 0 4px 8px #4b0082;
+    /* box-shadow: 0 0 5px 4px #fff, 0 0 5px 6px #2b9985, 0 0 4px 8px #4b0082; */
     border-radius: 50%;
   }
 

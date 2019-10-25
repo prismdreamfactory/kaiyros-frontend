@@ -38,7 +38,7 @@ export const CategoryNav = props => {
     .category-title {
       margin-left: 1rem;
       font-size: 1.2rem;
-      font-weight: 800;
+      /* font-weight: 700; */
     }
     .category-subtitle {
       margin-left: 1rem;

@@ -67,6 +67,12 @@ const PostStyle = styled.div`
   article {
     margin: 2rem 0;
   }
+
+  .share-bottom {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
 `;
 
 const Post = props => {
@@ -121,7 +127,9 @@ const Post = props => {
           }}
         />
 
-        <ShareButtons url={post.link} media={shareImage} />
+        <div className="share-bottom">
+          <ShareButtons url={post.link} media={shareImage} />
+        </div>
 
         <div className="disqus">
           <Disqus.DiscussionEmbed
