@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import SocialIcons from '../microcomponents/SocialIcons';
 
 const FooterNav = styled.footer`
   padding: 20px 0;
@@ -33,6 +34,22 @@ const FooterNav = styled.footer`
   @media (max-width: 1024px) {
     display: flex;
     justify-content: center;
+  }
+
+  .social {
+    display: none;
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .social {
+      display: flex;
+    }
   }
 `;
 
@@ -79,6 +96,10 @@ const Footer = props => {
             </div>
           );
         })}
+      </div>
+
+      <div className="social">
+        <SocialIcons />
       </div>
     </FooterNav>
   );
