@@ -18,7 +18,7 @@ const CategoryFeatureStyles = styled.div`
     text-align: center;
 
     @media (max-width: 1024px) {
-      text-align: left;
+      /* text-align: left; */
     }
   }
 

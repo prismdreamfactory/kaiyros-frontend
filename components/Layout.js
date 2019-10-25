@@ -12,6 +12,10 @@ const LayoutStyle = styled.div`
 
   main {
     min-height: calc(100vh - 200px);
+
+    @media (max-width: 768px) {
+      min-height: calc(100vh - 220px);
+    }
   }
 
   h1 {

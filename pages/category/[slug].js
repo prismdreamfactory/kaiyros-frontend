@@ -82,7 +82,7 @@ const CategoryContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin-top: 5rem;
+    margin-top: 6rem;
     .post-layout {
       grid-template-columns: 1fr;
     }

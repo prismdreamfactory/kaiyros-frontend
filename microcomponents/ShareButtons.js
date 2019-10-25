@@ -131,7 +131,7 @@ const ShareStyle = styled.div`
   .shareTitle {
     justify-content: center;
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 700;
     padding: 1rem 0 0 0;
   }
 

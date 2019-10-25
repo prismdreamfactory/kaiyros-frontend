@@ -27,13 +27,14 @@ const GeometryStyles = styled.div`
   }
 
   @media (max-width: 768px) {
-    position: fixed;
+    display: none;
+    /* position: fixed;
     top: 25vh;
     left: 0;
     right: 0;
     opacity: 0.05;
     pointer-events: none;
-    z-index: -1;
+    z-index: -1; */
   }
 
   a {

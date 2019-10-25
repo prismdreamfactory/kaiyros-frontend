@@ -38,11 +38,16 @@ export const CategoryNav = props => {
     .category-title {
       margin-left: 1rem;
       font-size: 1.2rem;
-      font-weight: 800;
+      text-decoration: underline;
+      /* font-weight: 700; */
     }
     .category-subtitle {
       margin-left: 1rem;
       font-size: 0.9rem;
+
+      @media (max-width: 1024px) {
+        font-size: 0.7rem;
+      }
     }
 
     .rotate {
