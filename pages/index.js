@@ -49,10 +49,9 @@ class Index extends Component {
   //   return () => window.removeEventListener('resize', handleResize);
   // }
 
- handleResize = () => {
-   this.setState(windowDimensions, getWindowDimensions());
-   
- }
+  handleResize = () => {
+    this.setState(windowDimensions, getWindowDimensions());
+  };
 
   render() {
     return (
@@ -70,8 +69,15 @@ class Index extends Component {
 
         <ParticlesStyles>
           <Particles
-            style={{ position: 'absolute', top: 0, left: 0, zIndex: -1, right: 0, bottom: 0 }}
-            width={}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              right: 0,
+              bottom: 0
+            }}
+            // width={}
             params={{
               particles: {
                 number: {
