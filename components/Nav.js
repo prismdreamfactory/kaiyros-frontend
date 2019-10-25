@@ -147,7 +147,7 @@ export const Nav = props => {
             />
             <div className="header-text">
               <h1 className="mobile--title">Kaiyros Publications</h1>
-              <h4 className="mobile--tagline">The Art of Human Experiences</h4>
+              <h4 className="mobile--tagline">The Art of Human Experience</h4>
             </div>
           </a>
         </Link>

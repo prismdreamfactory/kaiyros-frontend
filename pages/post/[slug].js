@@ -18,6 +18,7 @@ const PostStyle = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 900px;
+  margin: auto;
 
   a {
     color: #2b9985;
@@ -27,15 +28,16 @@ const PostStyle = styled.div`
     margin: 2rem 0;
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
-  margin: auto;
   img {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
     max-height: 500px;
+    margin-top: 4rem;
   }
   .sub {
     display: flex;
