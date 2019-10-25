@@ -40,8 +40,8 @@ const CategoryContainer = styled.div`
     line-height: 0.8rem;
   }
 
-  .tagline {
-    font-size: 0.8rem;
+  .subtitle {
+    font-size: 0.75rem;
   }
 
   .category-title {
@@ -75,8 +75,10 @@ const CategoryContainer = styled.div`
   }
   .category-head {
     font-size: 1.5rem;
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif, serif;
+    font-weight: 400;
   }
   .post-layout {
     display: grid;
@@ -138,11 +140,11 @@ const Category = props => {
 
             <div className="category-container">
               <div className="category">
-                <h1 className="category-head">
+                <div className="category-head">
                   <LearnMore {...props} />
-                </h1>
+                </div>
                 <span
-                  className="tagline"
+                  className="subtitle"
                   dangerouslySetInnerHTML={{
                     __html: category[0].description
                   }}

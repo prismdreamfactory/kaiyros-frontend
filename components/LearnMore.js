@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import CloseIcon from '../microcomponents/CloseIcon';
 
 const LearnMoreDisplay = styled.div`
-  display: flex;
+  text-align: left;
 
   a {
     color: #000;
     cursor: pointer;
     font-size: 1.5rem;
+    border-bottom: 0.2px solid #000;
   }
 
   .hide {
@@ -116,7 +117,7 @@ const LearnMore = props => {
   };
 
   return (
-    <LearnMoreDisplay style={props.style}>
+    <LearnMoreDisplay>
       <a
         onClick={openModal}
         dangerouslySetInnerHTML={{
