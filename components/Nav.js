@@ -89,8 +89,19 @@ const NavStyles = styled.div`
       padding: 0.5rem 2rem 0.5rem 1.25rem;
       box-sizing: border-box;
     }
+    .mobile--title {
+      border-bottom: 1px solid #000;
+      font-size: 1.5rem;
+      padding-top: 1rem;
+    }
+    .mobile--tagline {
+      display: flex;
+      justify-content: center;
+      color: #000;
+      font-size: 0.8rem;
+    }
     .logo {
-      width: 2rem;
+      width: 3rem;
       left: 1rem;
     }
     .menu {
@@ -134,7 +145,10 @@ export const Nav = props => {
               src="../static/images/KairosLogoSquare.svg"
               alt=""
             />
-            <h1>Kaiyros</h1>
+            <div className="header-text">
+              <h1 className="mobile--title">Kaiyros Publications</h1>
+              <h4 className="mobile--tagline">The Art of Human Experiences</h4>
+            </div>
           </a>
         </Link>
         <div className="menu">
