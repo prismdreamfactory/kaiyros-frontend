@@ -10,7 +10,7 @@ const NavStyles = styled.div`
   justify-content: space-between;
   position: relative;
   z-index: 100;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   a {
     text-decoration: none;
@@ -63,7 +63,7 @@ const NavStyles = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 7rem;
+    /* margin-bottom: 7rem; */
 
     h1 {
       font-size: 1.5rem;
@@ -78,7 +78,7 @@ const NavStyles = styled.div`
       align-items: center;
     }
     .mobile--nav {
-      position: fixed;
+      /* position: fixed; */
       display: flex;
       align-items: center;
       width: 100%;
@@ -86,7 +86,7 @@ const NavStyles = styled.div`
       top: 0;
       left: 0;
       justify-content: space-between;
-      padding: 0.5rem 2rem 0.5rem 1.25rem;
+      /* padding: 0.5rem 2rem 0.5rem 1.25rem; */
       box-sizing: border-box;
     }
     .mobile--title {

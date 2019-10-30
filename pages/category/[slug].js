@@ -31,7 +31,7 @@ const CategoryContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     .post-layout {
       grid-template-columns: 1fr;
     }

@@ -19,7 +19,7 @@ export const ShareButtons = props => {
     setHref(window.location.href);
   });
 
-  const renderShareButtons = () => (
+  const renderShareLinks = () => (
     <ShareStyle className={isOpen ? 'show' : 'hide'}>
       <ShareButtonsContainer>
         <span className="button shareTitle">Share</span>
@@ -47,11 +47,15 @@ export const ShareButtons = props => {
 
   return (
     <ShareContainer>
-      <ShareIcon>
-        <FiShare size={30} onClick={() => setOpen(true)} />
-      </ShareIcon>
+      <ShareButton onClick={() => setOpen(true)}>
+        <ShareText>Share</ShareText>
 
-      {renderShareButtons()}
+        <ShareIcon>
+          <FiShare size={25} />
+        </ShareIcon>
+      </ShareButton>
+
+      {renderShareLinks()}
     </ShareContainer>
   );
 };
@@ -85,13 +89,17 @@ const ShareContainer = styled.div`
       opacity: 1;
     }
   }
+`;
 
-  .share-icon-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 30px;
-  }
+const ShareButton = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  cursor: pointer;
+`;
+
+const ShareText = styled.span`
+  margin-right: 0.5rem;
 `;
 
 const ShareStyle = styled.div`
@@ -139,6 +147,13 @@ const ShareStyle = styled.div`
   .cancelButton {
     justify-content: center;
     padding-bottom: 1rem;
+  }
+
+  .share-icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
   }
 `;
 

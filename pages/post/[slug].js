@@ -25,7 +25,7 @@ const PostStyle = styled.div`
     text-decoration: none;
   }
   h1 {
-    margin: 2rem 0;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -37,7 +37,7 @@ const PostStyle = styled.div`
     margin-right: auto;
     object-fit: cover;
     max-height: 500px;
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
   .sub {
     display: flex;
