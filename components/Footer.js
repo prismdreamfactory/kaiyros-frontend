@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 
 const FooterNav = styled.footer`
-  padding: 20px 0;
-
   a {
     text-decoration: none;
     color: #000 !important;
