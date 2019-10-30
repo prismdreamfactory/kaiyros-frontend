@@ -47,6 +47,7 @@ const StyledCategoryTitle = styled.div`
     @media (max-width: 768px) {
       width: 100%;
       margin: 0;
+      padding: 0.75rem 0;
     }
   }
 
@@ -74,10 +75,9 @@ const StyledCategoryTitle = styled.div`
   .category__title {
     cursor: pointer;
     font-size: 1.5rem;
-    text-align: center;
     color: #000;
-    border-bottom: 0.2px solid #000;
-    /* text-decoration: underline; */
+    /* border-bottom: 0.2px solid #000; */
+    text-decoration: underline;
     margin-bottom: 0.2rem;
 
     @media (max-width: 768px) {

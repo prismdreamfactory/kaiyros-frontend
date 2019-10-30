@@ -1,48 +1,42 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import CloseIcon from '../microcomponents/CloseIcon';
 import CategoryTitle from '../microcomponents/CategoryTitle';
 
-const LearnMoreDisplay = styled.div`
-  text-align: left;
+const LearnMore = props => {
+  const { category, isOpen } = props;
 
-  a {
-    color: #000;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-bottom: 0.2px solid #000;
-  }
+  return (
+    <StyledLearnMore isOpen={isOpen}>
+      <CloseIcon onClick={props.closeModal} fixed />
 
-  .hide {
-    display: none;
-    animation: opac 0.3s;
-  }
+      <StyledLearnMoreContainer>
+        <CategoryTitle
+          title={props.category[0].name}
+          subtitle={category[0].description}
+          image={category[0].acf.image.sizes.medium}
+        />
 
-  @keyframes opac {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
+        <StyledLearnMoreProfile>
+          <div className="profile-content">
+            <h3>Profile</h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: category[0].acf.profile
+              }}
+            />
+          </div>
+        </StyledLearnMoreProfile>
 
-  .show {
-    display: flex;
-    animation: show 0s;
-    animation-fill-mode: forwards;
-    /* z-index: -100; */
-  }
-
-  @keyframes show {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-`;
+        <div
+          dangerouslySetInnerHTML={{
+            __html: category[0].acf.learn_more
+          }}
+        />
+      </StyledLearnMoreContainer>
+    </StyledLearnMore>
+  );
+};
 
 const StyledLearnMore = styled.div`
   width: 100%;
@@ -51,13 +45,24 @@ const StyledLearnMore = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
   overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   z-index: 100;
+  text-align: left;
+
+  display: ${props => (props.isOpen ? 'flex' : 'none')};
+  animation: ${props => (props.isOpen ? fadeIn : fadeOut)} 0.3s ease;
+  transition: 0.3s ease;
+
+  a {
+    color: #000;
+    cursor: pointer;
+    font-size: 1.5rem;
+    /* border-bottom: 0.2px solid #000; */
+  }
 `;
 
 const StyledLearnMoreProfile = styled.div`
@@ -85,13 +90,13 @@ const StyledLearnMoreProfile = styled.div`
 `;
 
 const StyledLearnMoreContainer = styled.div`
-  max-width: 900px;
-  height: 80%;
+  max-width: 850px;
+  height: 90%;
   overflow-y: scroll;
-  padding: 20px;
+  padding: 0 3rem;
 
   h2 {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     display: flex;
     justify-content: center;
   }
@@ -101,43 +106,24 @@ const StyledLearnMoreContainer = styled.div`
   }
 `;
 
-const LearnMore = props => {
-  const { category } = props;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
 
-  return (
-    <LearnMoreDisplay>
-      <StyledLearnMore className={props.isOpen ? 'show' : 'hide'}>
-        <CloseIcon onClick={props.closeModal} />
+  to {
+    opacity: 1;
+  }
+`;
 
-        <StyledLearnMoreContainer>
-          <div className="category-title-wrapper">
-            <CategoryTitle
-              title={props.category[0].name}
-              subtitle={category[0].description}
-              image={category[0].acf.image.sizes.medium}
-            />
-          </div>
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
 
-          <StyledLearnMoreProfile>
-            <div className="profile-content">
-              <h3>Profile</h3>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: category[0].acf.profile
-                }}
-              />
-            </div>
-          </StyledLearnMoreProfile>
-
-          <div
-            dangerouslySetInnerHTML={{
-              __html: category[0].acf.learn_more
-            }}
-          />
-        </StyledLearnMoreContainer>
-      </StyledLearnMore>
-    </LearnMoreDisplay>
-  );
-};
+  to {
+    opacity: 0;
+  }
+`;
 
 export default LearnMore;

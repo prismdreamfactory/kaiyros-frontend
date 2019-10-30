@@ -35,12 +35,22 @@ const CloseIconStyles = styled.a`
     transform: rotate(45deg);
     left: 28px;
   }
+
+  .fixed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 `;
 
-const CloseIcon = ({ onClick }) => {
+const CloseIcon = ({ onClick, fixed }) => {
+  console.log(fixed);
   return (
     <CloseIconStyles onClick={onClick}>
-      <div className="close" />
+      <div className={`close ${fixed ? 'fixed' : ''}`} />
     </CloseIconStyles>
   );
 };
