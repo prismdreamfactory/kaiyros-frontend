@@ -175,7 +175,7 @@ export const Geometry = props => {
         hideWhenDoneDelay: 100
       };
       const text = (
-        <Typist avgTypingDelay={35} stdTypingDelay={0} cursor={cursor}>
+        <Typist avgTypingDelay={28} stdTypingDelay={0} cursor={cursor}>
           {category.acf.text}
         </Typist>
       );

@@ -25,6 +25,10 @@ const FooterNav = styled.footer`
 
   .center {
     justify-content: center;
+
+    div {
+      align-items: center;
+    }
   }
 
   .end {

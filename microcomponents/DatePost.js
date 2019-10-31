@@ -11,7 +11,7 @@ export const DatePost = props => {
   const { datesrc } = props;
   const event = new Date(datesrc);
   const options = {
-    year: '2-digit',
+    year: 'numeric',
     month: 'short',
     day: 'numeric',
     hour12: false,

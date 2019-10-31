@@ -81,7 +81,7 @@ const Category = props => {
   return (
     <Layout {...props}>
       <Head>
-        <title>{category[0].name}</title>
+        <title>{category[0].name.replace(/&amp;/g, '&')}</title>
         <meta name="description" content={category[0].description} />
       </Head>
 

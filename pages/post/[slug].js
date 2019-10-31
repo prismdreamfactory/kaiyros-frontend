@@ -67,7 +67,7 @@ const PostStyle = styled.div`
   }
 
   article {
-    margin: 6rem 0;
+    margin: 6rem 0 2rem 0;
   }
 
   .share-bottom {

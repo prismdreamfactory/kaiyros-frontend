@@ -15,12 +15,13 @@ const NavStyles = styled.div`
   a {
     text-decoration: none;
   }
-  h1 {
+  a h1 {
     text-transform: capitalize;
     margin: 0;
     margin-bottom: 0.3rem;
     margin-left: 0.5rem;
     color: #000;
+    font-size: 2rem;
   }
 
   h4 {
@@ -28,7 +29,8 @@ const NavStyles = styled.div`
     justify-content: center;
     font-size: 1.1rem;
     margin: 0.5rem 0;
-    font-weight: 400;
+    font-weight: 700;
+    font-family: 'Josefin Slab', serif;
   }
   .title {
     display: flex;

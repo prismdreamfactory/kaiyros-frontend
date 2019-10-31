@@ -37,13 +37,18 @@ export const CategoryNav = props => {
 
     .category-title {
       margin-left: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-decoration: underline;
       /* font-weight: 700; */
+      margin-bottom: 0.2rem;
+
+      @media (max-width: 1024px) {
+        font-size: 1.2rem;
+      }
     }
     .category-subtitle {
       margin-left: 1rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       @media (max-width: 1024px) {
         font-size: 0.7rem;
@@ -55,6 +60,8 @@ export const CategoryNav = props => {
       animation-duration: 30s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
     @keyframes spin {

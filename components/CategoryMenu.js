@@ -4,7 +4,6 @@ import HamburgerMenuIcon from '../microcomponents/HamburgerMenuIcon';
 import CloseIcon from '../microcomponents/CloseIcon';
 import { CategoryNav } from './CategoryNav';
 import Footer from './Footer';
-import SocialIcons from '../microcomponents/SocialIcons';
 import SearchInput from '../microcomponents/SearchInput';
 
 const CategoryMenuDisplay = styled.div`
@@ -47,6 +46,7 @@ const CategoryNavStyles = styled.div`
     display: flex;
     justify-content: center;
     margin-left: 2rem;
+    margin-top: 2rem;
   }
 
   .social-icons {

@@ -69,7 +69,11 @@ const StyledLearnMoreProfile = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 1rem 0 2rem 0;
+  padding: 2rem 0 4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0 2rem 0;
+  }
 
   h3,
   p {
