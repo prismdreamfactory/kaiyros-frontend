@@ -32,8 +32,8 @@ const LayoutStyle = styled.div`
   p,
   ol,
   ul {
-    line-height: 2rem;
-    font-size: 1.2rem;
+    line-height: 2.1rem;
+    font-size: 1.27rem;
 
     @media (max-width: 768px) {
       font-size: 1.1rem;
@@ -61,6 +61,11 @@ const LayoutStyle = styled.div`
   input::placeholder {
     /* font-family: 'Josefin Slab', serif; */
     font-family: 'Lora', serif;
+  }
+
+  figcaption {
+    font-size: 0.4rem;
+    text-align: right;
   }
 `;
 
