@@ -62,10 +62,16 @@ const NavStyles = styled.div`
     display: none;
   }
 
+  @media (max-width: 1024px) {
+    a h1 {
+      font-size: 1.8rem;
+    }
+  }
+
   @media (max-width: 768px) {
     /* margin-bottom: 7rem; */
 
-    h1 {
+    a h1 {
       font-size: 1.5rem;
       margin: 0;
     }
@@ -88,6 +94,10 @@ const NavStyles = styled.div`
       justify-content: space-between;
       /* padding: 0.5rem 2rem 0.5rem 1.25rem; */
       box-sizing: border-box;
+
+      .header-text {
+        display: none;
+      }
     }
     .mobile--title {
       border-bottom: 1px solid #000;

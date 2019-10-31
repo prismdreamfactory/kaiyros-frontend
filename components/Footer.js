@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 
 const FooterNav = styled.footer`
+  padding: 2rem 0;
+
   a {
     text-decoration: none;
     color: #000 !important;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   a:hover {
     color: rgba(0, 0, 0, 0.6);

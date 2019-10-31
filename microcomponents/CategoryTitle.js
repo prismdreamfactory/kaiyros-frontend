@@ -8,13 +8,13 @@ export const CategoryTitle = props => {
         <img className="category__image" src={props.image} alt="placeholder" />
 
         <div className="category__text">
-          <a className="category__title" onClick={props.openModal}>
-            <span
-              dangerouslySetInnerHTML={{
-                __html: props.title
-              }}
-            />
-          </a>
+          <a
+            className="category__title"
+            onClick={props.openModal}
+            dangerouslySetInnerHTML={{
+              __html: props.title
+            }}
+          />
 
           <span
             className="category__subtitle"
@@ -43,11 +43,13 @@ const StyledCategoryTitle = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    min-width: 550px;
 
     @media (max-width: 768px) {
       width: 100%;
       margin: 0;
       padding: 0.75rem 0;
+      min-width: 0;
     }
   }
 
@@ -74,19 +76,19 @@ const StyledCategoryTitle = styled.div`
 
   .category__title {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #000;
     /* border-bottom: 0.2px solid #000; */
     text-decoration: underline;
     margin-bottom: 0.2rem;
 
     @media (max-width: 768px) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
 
   .category__subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 

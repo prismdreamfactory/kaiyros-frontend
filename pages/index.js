@@ -55,68 +55,70 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout {...this.props}>
-        <Head>
-          <title>Home</title>
-          <meta name="description" content="" />
-        </Head>
+      <StyledHome>
+        <Layout {...this.props}>
+          <Head>
+            <title>Home</title>
+            <meta name="description" content="" />
+          </Head>
 
-        <Geometry {...this.props} />
+          <Geometry {...this.props} />
 
-        <CategoryNavDisplay>
-          <CategoryNav {...this.props} displaySubtitle />
-        </CategoryNavDisplay>
+          <CategoryNavDisplay>
+            <CategoryNav {...this.props} displaySubtitle />
+          </CategoryNavDisplay>
 
-        <ParticlesStyles>
-          <Particles
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: -1,
-              right: 0,
-              bottom: 0
-            }}
-            // width={}
-            params={{
-              particles: {
-                number: {
-                  value: 70,
-                  density: {
-                    enable: true,
-                    value_area: 800
+          <ParticlesStyles>
+            <Particles
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: -1,
+                right: 0,
+                bottom: 0
+              }}
+              // width={}
+              params={{
+                particles: {
+                  number: {
+                    value: 70,
+                    density: {
+                      enable: true,
+                      value_area: 800
+                    }
+                  },
+                  color: {
+                    value: '#000000'
+                  },
+                  size: {
+                    value: 2
+                  },
+                  line_linked: {
+                    color: '#000000',
+                    opacity: 0.2,
+                    width: 1
+                  },
+                  opacity: {
+                    value: 0.15
+                  },
+                  move: {
+                    speed: 1.5
                   }
                 },
-                color: {
-                  value: '#000000'
-                },
-                size: {
-                  value: 2
-                },
-                line_linked: {
-                  color: '#000000',
-                  opacity: 0.2,
-                  width: 1
-                },
-                opacity: {
-                  value: 0.15
-                },
-                move: {
-                  speed: 1.5
-                }
-              },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: 'repulse'
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: true,
+                      mode: 'repulse'
+                    }
                   }
                 }
-              }
-            }}
-          />
-        </ParticlesStyles>
-      </Layout>
+              }}
+            />
+          </ParticlesStyles>
+        </Layout>
+      </StyledHome>
     );
   }
 
@@ -161,6 +163,12 @@ const CategoryNavDisplay = styled.div`
   }
 
   @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const StyledHome = styled.div`
+  .mobile--nav .header-text {
     display: block;
   }
 `;

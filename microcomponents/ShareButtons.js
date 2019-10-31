@@ -48,7 +48,7 @@ export const ShareButtons = props => {
   return (
     <ShareContainer>
       <ShareButton onClick={() => setOpen(true)}>
-        <ShareText>Share</ShareText>
+        {/* <ShareText>Share</ShareText> */}
 
         <ShareIcon>
           <FiShare size={25} />

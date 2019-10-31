@@ -47,7 +47,6 @@ const CloseIconStyles = styled.a`
 `;
 
 const CloseIcon = ({ onClick, fixed }) => {
-  console.log(fixed);
   return (
     <CloseIconStyles onClick={onClick}>
       <div className={`close ${fixed ? 'fixed' : ''}`} />
