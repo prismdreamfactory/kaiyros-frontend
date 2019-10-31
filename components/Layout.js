@@ -64,7 +64,7 @@ const LayoutStyle = styled.div`
   }
 
   figcaption {
-    font-size: 0.4rem;
+    font-size: 0.6rem;
     text-align: right;
   }
 `;

@@ -10,7 +10,7 @@ const StyledImageCreditContainer = styled.div`
   position: relative;
 
   p {
-    font-size: 0.4rem;
+    font-size: 0.6rem;
     margin: 0 0.3rem;
   }
 `;
