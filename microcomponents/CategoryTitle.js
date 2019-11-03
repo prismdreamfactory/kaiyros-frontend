@@ -10,7 +10,8 @@ export const CategoryTitle = props => {
 
         <div className="category__text">
           <a
-            className="category__title"
+            className={`category__title ${props.disableLinks &&
+              'mod--disable-link'}`}
             onClick={props.openModal}
             dangerouslySetInnerHTML={{
               __html: props.title
@@ -24,10 +25,12 @@ export const CategoryTitle = props => {
                 __html: props.subtitle
               }}
             />
-            <FaExternalLinkAlt
-              onClick={props.openModal}
-              style={{ cursor: 'pointer' }}
-            />
+            {!props.disableLinks && (
+              <FaExternalLinkAlt
+                onClick={props.openModal}
+                style={{ cursor: 'pointer' }}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -88,6 +91,10 @@ const StyledCategoryTitle = styled.div`
     /* border-bottom: 0.2px solid #000; */
     text-decoration: underline;
     margin-bottom: 0.2rem;
+
+    &.mod--disable-link {
+      cursor: default;
+    }
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
