@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export const CategoryTitle = props => {
   return (
@@ -16,12 +17,18 @@ export const CategoryTitle = props => {
             }}
           />
 
-          <span
-            className="category__subtitle"
-            dangerouslySetInnerHTML={{
-              __html: props.subtitle
-            }}
-          />
+          <div className="category__subtitle">
+            <span
+              className="category__subtitle-text"
+              dangerouslySetInnerHTML={{
+                __html: props.subtitle
+              }}
+            />
+            <FaExternalLinkAlt
+              onClick={props.openModal}
+              style={{ cursor: 'pointer' }}
+            />
+          </div>
         </div>
       </div>
     </StyledCategoryTitle>
@@ -88,7 +95,13 @@ const StyledCategoryTitle = styled.div`
   }
 
   .category__subtitle {
+    display: flex;
+    align-items: center;
+  }
+
+  .category__subtitle-text {
     font-size: 1rem;
+    margin-right: 0.4rem;
   }
 `;
 
