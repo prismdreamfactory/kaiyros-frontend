@@ -33,9 +33,11 @@ export const ShareButtons = props => {
             <PinterestIcon size={45} />
           </PinterestShareButton>
 
-          <EmailShareButton className="button" url={href} openWindow={true}>
-            <EmailIcon size={45} />
-          </EmailShareButton>
+          <a href="mailto:jaspr@kaiyros.net" target="_blank">
+            <div className="button">
+              <EmailIcon size={45} />
+            </div>
+          </a>
         </div>
 
         <div className="button cancelButton" onClick={() => setOpen(false)}>
