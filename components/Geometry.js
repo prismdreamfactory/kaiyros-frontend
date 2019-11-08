@@ -19,9 +19,11 @@ const GeometryStyles = styled.div`
   padding: 0 1rem;
   z-index: 0;
   opacity: 1;
+  position: relative;
+  top: -3vh;
 
-  @media (min-width: 1024px) {
-    max-width: 80vh;
+  @media (min-width: 769px) {
+    max-width: 88vh;
     margin: 0 auto;
     padding: 0 3rem;
   }
@@ -71,6 +73,25 @@ const GeometryStyles = styled.div`
   .shape {
     position: absolute;
     width: 17%;
+
+    img {
+      transform: scale(0.93);
+    }
+
+    span {
+      margin-top: 0.7rem;
+      font-size: 2vh;
+    }
+
+    @media (max-height: 650px) {
+      img {
+        transform: scale(0.85);
+      }
+      span {
+        margin-top: 0.5em;
+        font-size: 2vmin;
+      }
+    }
   }
   .shape1 {
     position: absolute;
@@ -112,7 +133,6 @@ const GeometryStyles = styled.div`
     justify-content: center;
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
-    margin-top: 0.75rem;
     width: 110%;
     left: -5%;
     font-weight: 400;

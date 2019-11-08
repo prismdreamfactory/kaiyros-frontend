@@ -71,6 +71,13 @@ const Footer = props => {
   const renderDivider = <span>•</span>;
 
   const [center, setCenter] = useState(false);
+  const [origin, setOrigin] = useState('');
+  const [href, setHref] = useState('');
+
+  useEffect(() => {
+    setOrigin(window.location.origin + '/');
+    setHref(window.location.href);
+  });
 
   if (props.isCenter === true) {
     useEffect(() => {
@@ -79,7 +86,9 @@ const Footer = props => {
   }
 
   return (
-    <FooterNav>
+    <FooterNav
+      style={href == origin && { position: 'fixed', right: 40, bottom: 0 }}
+    >
       <div className={center ? 'center' : 'end'}>
         {footerMenu.items.map((item, index) => {
           const slug = item.title.toLowerCase();
