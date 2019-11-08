@@ -6,10 +6,18 @@ import SocialIcons from '../microcomponents/SocialIcons';
 const FooterNav = styled.footer`
   padding: 2rem 0;
 
+  @media (max-height: 800px) {
+    padding: 1rem 0;
+  }
+
   a {
     text-decoration: none;
     color: #000 !important;
     font-size: 1.5rem;
+
+    @media (max-height: 800px) {
+      font-size: 1.2rem;
+    }
   }
   a:hover {
     color: rgba(0, 0, 0, 0.6);
@@ -21,14 +29,11 @@ const FooterNav = styled.footer`
 
   span {
     padding: 0 0.75rem;
+    margin-top: 0.1em;
   }
 
   .center {
     justify-content: center;
-
-    div {
-      align-items: center;
-    }
   }
 
   .end {
@@ -43,6 +48,10 @@ const FooterNav = styled.footer`
   .social {
     display: none;
     margin: 2rem 0;
+  }
+
+  .footer__link {
+    align-items: center;
   }
 
   @media (max-width: 768px) {
@@ -94,7 +103,7 @@ const Footer = props => {
           }
 
           return (
-            <div key={item.title}>
+            <div key={item.title} className="footer__link">
               {index ? renderDivider : ''}
               <FooterLinks />
             </div>

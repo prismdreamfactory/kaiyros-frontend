@@ -28,7 +28,7 @@ export const CategoryTitle = props => {
             {!props.disableLinks && (
               <FaExternalLinkAlt
                 onClick={props.openModal}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', height: '0.7rem' }}
               />
             )}
           </div>
@@ -108,7 +108,7 @@ const StyledCategoryTitle = styled.div`
 
   .category__subtitle-text {
     font-size: 1rem;
-    margin-right: 0.4rem;
+    margin-right: 0.25rem;
   }
 `;
 

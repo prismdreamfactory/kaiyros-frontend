@@ -23,11 +23,19 @@ export const CategoryNav = props => {
       @media (max-width: 812px) and (orientation: landscape) {
         width: 25%;
       }
+
+      @media (max-height: 700px) {
+        margin-bottom: 1rem;
+      }
     }
 
     img {
       width: 13%;
       padding: 0;
+
+      @media (max-height: 700px) {
+        width: 11%;
+      }
     }
 
     div {
@@ -45,12 +53,20 @@ export const CategoryNav = props => {
       @media (max-width: 1024px) {
         font-size: 1.2rem;
       }
+
+      @media (max-height: 700px) {
+        font-size: 1rem;
+      }
     }
     .category-subtitle {
       margin-left: 1rem;
       font-size: 1rem;
 
       @media (max-width: 1024px) {
+        font-size: 0.7rem;
+      }
+
+      @media (max-height: 700px) {
         font-size: 0.7rem;
       }
     }
@@ -65,10 +81,10 @@ export const CategoryNav = props => {
     }
 
     @keyframes spin {
-      from {
+      0% {
         transform: rotate3d(0deg);
       }
-      to {
+      100% {
         transform: rotate3d(0, 0, 1, 360deg);
       }
     }

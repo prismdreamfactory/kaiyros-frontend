@@ -89,11 +89,11 @@ const GeometryStyles = styled.div`
     top: 21.3%;
     left: 63.7%;
   }
-  .shape4 {
+  .shape5 {
     top: 40.5%;
     left: 0%;
   }
-  .shape5 {
+  .shape4 {
     top: 40.5%;
     left: 41.3%;
   }
@@ -180,23 +180,23 @@ export const Geometry = props => {
         </Typist>
       );
 
-      const [playAudio, renderAudio] = useState(false);
-      let audio;
-      if (playAudio) {
-        audio = (
-          <audio autoPlay={true} loop={true}>
-            <source src="" type="audio/mp3" />
-          </audio>
-        );
-      } else {
-        audio = '';
-      }
+      // const [playAudio, renderAudio] = useState(false);
+      // let audio;
+      // if (playAudio) {
+      //   audio = (
+      //     <audio autoPlay={true} loop={true}>
+      //       <source src="" type="audio/mp3" />
+      //     </audio>
+      //   );
+      // } else {
+      //   audio = '';
+      // }
 
       return (
         <div
           key={slug}
-          onMouseEnter={() => renderAudio(true)}
-          onMouseLeave={() => renderAudio(false)}
+          // onMouseEnter={() => renderAudio(true)}
+          // onMouseLeave={() => renderAudio(false)}
         >
           <Link href={`/category/${slug}`}>
             <a className={`shape shape${index + 1}`}>
@@ -209,7 +209,7 @@ export const Geometry = props => {
                   />
                 </LightTooltip>
               </MuiThemeProvider>
-              {audio}
+              {/* {audio} */}
               <span
                 dangerouslySetInnerHTML={{
                   __html: category.name

@@ -46,7 +46,7 @@ const CategoryNavStyles = styled.div`
     display: flex;
     justify-content: center;
     margin-left: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .social-icons {
