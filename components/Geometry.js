@@ -74,7 +74,7 @@ const GeometryStyles = styled.div`
     position: absolute;
     width: 17%;
 
-    img {
+    .image {
       transform: scale(0.93);
     }
 
@@ -84,7 +84,7 @@ const GeometryStyles = styled.div`
     }
 
     @media (max-height: 650px) {
-      img {
+      .image {
         transform: scale(0.85);
       }
       span {
@@ -222,11 +222,13 @@ export const Geometry = props => {
             <a className={`shape shape${index + 1}`}>
               <MuiThemeProvider theme={theme}>
                 <LightTooltip title={text} placement="top">
-                  <img
-                    className={index === 6 ? '' : 'rotate'}
-                    src={image}
-                    alt="{title}"
-                  />
+                  <div className="image">
+                    <img
+                      className={index === 6 ? '' : 'rotate'}
+                      src={image}
+                      alt="{title}"
+                    />
+                  </div>
                 </LightTooltip>
               </MuiThemeProvider>
               {/* {audio} */}
