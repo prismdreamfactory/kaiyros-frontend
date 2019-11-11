@@ -6,6 +6,12 @@ import SocialIcons from '../microcomponents/SocialIcons';
 const FooterNav = styled.footer`
   padding: 2rem 0;
 
+  .fixed {
+    position: fixed;
+    right: 40;
+    bottom: 0;
+  }
+
   @media (max-height: 800px) {
     padding: 1rem 0;
   }
@@ -86,9 +92,7 @@ const Footer = props => {
   }
 
   return (
-    <FooterNav
-      style={href == origin && { position: 'fixed', right: 40, bottom: 0 }}
-    >
+    <FooterNav className={href === origin && 'fixed'}>
       <div className={center ? 'center' : 'end'}>
         {footerMenu.items.map((item, index) => {
           const slug = item.title.toLowerCase();
