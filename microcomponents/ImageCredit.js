@@ -24,7 +24,6 @@ const ImageCredit = props => {
     <StyledImageCreditContainer>
       {credit && (
         <Fragment>
-          <span>Image by</span>
           <div
             dangerouslySetInnerHTML={{
               __html: credit
