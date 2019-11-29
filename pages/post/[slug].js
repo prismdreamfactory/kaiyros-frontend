@@ -31,14 +31,21 @@ const PostStyle = styled.div`
     text-align: center;
   }
 
+  .featured-image {
+    margin-top: 20px;
+    max-height: 500px;
+  }
+
   img {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
-    max-height: 500px;
-    margin-top: 2rem;
   }
+  figure {
+    margin-bottom: 3em;
+  }
+
   .sub {
     display: flex;
     justify-content: space-between;
@@ -97,8 +104,7 @@ const Post = props => {
 
   const featuredImage = post._embedded['wp:featuredmedia'][0].source_url;
 
-  const shareImage =
-    post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+  const shareImage = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
 
   const postExcerpt = post.excerpt.rendered.replace(/(<([^>]+)>)/gi, '');
 
@@ -110,7 +116,7 @@ const Post = props => {
       </Head>
 
       <PostStyle>
-        <img src={featuredImage} alt="" />
+        <img src={featuredImage} alt="" className="featured-image" />
         <ImageCredit post={post} />
 
         <h1>{post.title.rendered}</h1>
@@ -134,10 +140,7 @@ const Post = props => {
         </div>
 
         <div className="disqus">
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
+          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </div>
       </PostStyle>
     </Layout>
