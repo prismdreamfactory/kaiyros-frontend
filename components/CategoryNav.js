@@ -76,16 +76,14 @@ export const CategoryNav = props => {
       animation-duration: 30s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate3d(0deg);
+      from {
+        transform: rotate(0deg);
       }
-      100% {
-        transform: rotate3d(0, 0, 1, 360deg);
+      to {
+        transform: rotate(360deg);
       }
     }
   `;
@@ -114,9 +112,7 @@ export const CategoryNav = props => {
                 __html: category.name
               }}
             />
-            {subtitle === true && (
-              <span className="category-subtitle">{category.description}</span>
-            )}
+            {subtitle === true && <span className="category-subtitle">{category.description}</span>}
           </div>
         </a>
       </Link>

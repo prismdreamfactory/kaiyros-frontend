@@ -6,11 +6,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Tilt from 'react-tilt';
 import Tooltip from '@material-ui/core/Tooltip';
-import {
-  createMuiTheme,
-  MuiThemeProvider,
-  withStyles
-} from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import Typist from 'react-typist';
 
 const GeometryStyles = styled.div`
@@ -223,11 +219,7 @@ export const Geometry = props => {
               <MuiThemeProvider theme={theme}>
                 <LightTooltip title={text} placement="top">
                   <div className="image">
-                    <img
-                      className={index === 6 ? '' : 'rotate'}
-                      src={image}
-                      alt="{title}"
-                    />
+                    <img className={index === 6 ? '' : 'rotate'} src={image} alt="{title}" />
                   </div>
                 </LightTooltip>
               </MuiThemeProvider>
