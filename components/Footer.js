@@ -3,13 +3,74 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import SocialIcons from '../microcomponents/SocialIcons';
 
+const Footer = props => {
+  const { footerMenu } = props;
+  const renderDivider = <span>•</span>;
+
+  const [center, setCenter] = useState(false);
+  const [origin, setOrigin] = useState('');
+  const [href, setHref] = useState('');
+
+  useEffect(() => {
+    setOrigin(window.location.origin + '/');
+    setHref(window.location.href);
+  });
+
+  if (props.isCenter === true) {
+    useEffect(() => {
+      setCenter(true);
+    });
+  }
+
+  return (
+    <FooterNav className={href === origin && 'fixed'}>
+      <div className={center ? 'center' : 'end'}>
+        {footerMenu.items.map((item, index) => {
+          const slug = item.title.toLowerCase();
+          const url = item.url;
+
+          const isExternalLink = item.type === 'custom';
+
+          function FooterLinks() {
+            if (!isExternalLink) {
+              return (
+                <Link as={`/${slug}`} href={`/page/${slug}`}>
+                  <a>{item.title}</a>
+                </Link>
+              );
+            }
+            return (
+              <a href={url} target="_blank">
+                {item.title}
+              </a>
+            );
+          }
+
+          return (
+            <div key={item.title} className="footer__link">
+              {index ? renderDivider : ''}
+              <FooterLinks />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="social">
+        <SocialIcons />
+      </div>
+    </FooterNav>
+  );
+};
+
 const FooterNav = styled.footer`
   padding: 2rem 0;
 
-  .fixed {
-    position: fixed;
-    right: 40;
-    bottom: 0;
+  @media (min-width: 1024px) {
+    &.fixed {
+      position: fixed;
+      right: 40px;
+      bottom: 0;
+    }
   }
 
   @media (max-height: 800px) {
@@ -71,64 +132,5 @@ const FooterNav = styled.footer`
     }
   }
 `;
-
-const Footer = props => {
-  const { footerMenu } = props;
-  const renderDivider = <span>•</span>;
-
-  const [center, setCenter] = useState(false);
-  const [origin, setOrigin] = useState('');
-  const [href, setHref] = useState('');
-
-  useEffect(() => {
-    setOrigin(window.location.origin + '/');
-    setHref(window.location.href);
-  });
-
-  if (props.isCenter === true) {
-    useEffect(() => {
-      setCenter(true);
-    });
-  }
-
-  return (
-    <FooterNav className={href === origin && 'fixed'}>
-      <div className={center ? 'center' : 'end'}>
-        {footerMenu.items.map((item, index) => {
-          const slug = item.title.toLowerCase();
-          const url = item.url;
-
-          const isExternalLink = item.type === 'custom';
-
-          function FooterLinks() {
-            if (!isExternalLink) {
-              return (
-                <Link as={`/${slug}`} href={`/page/${slug}`}>
-                  <a>{item.title}</a>
-                </Link>
-              );
-            }
-            return (
-              <a href={url} target="_blank">
-                {item.title}
-              </a>
-            );
-          }
-
-          return (
-            <div key={item.title} className="footer__link">
-              {index ? renderDivider : ''}
-              <FooterLinks />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="social">
-        <SocialIcons />
-      </div>
-    </FooterNav>
-  );
-};
 
 export default Footer;
