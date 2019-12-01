@@ -16,7 +16,7 @@ const GeometryStyles = styled.div`
   z-index: 0;
   opacity: 1;
   position: relative;
-  top: -3vh;
+  top: -2vh;
 
   @media (min-width: 769px) {
     max-width: 88vh;
