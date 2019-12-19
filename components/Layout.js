@@ -8,7 +8,7 @@ import Favicon from 'react-favicon';
 const LayoutStyle = styled.div`
   font-family: 'Lora', serif;
   line-height: 1.1;
-  margin: 0 2rem;
+  margin: 0 1.5rem;
   letter-spacing: 0.02rem;
 
   main {
@@ -38,6 +38,11 @@ const LayoutStyle = styled.div`
     @media (max-width: 768px) {
       font-size: 1.1rem;
     }
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
   }
 
   p {

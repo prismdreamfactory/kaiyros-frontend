@@ -8,12 +8,16 @@ import {
   PinterestIcon,
   EmailIcon
 } from 'react-share';
-import { FiShare } from 'react-icons/fi';
+import { FiShare, FiLink } from 'react-icons/fi';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useAlert } from 'react-alert';
 
 export const ShareButtons = props => {
   const { url, media } = props;
   const [href, setHref] = useState('');
   const [isOpen, setOpen] = useState(false);
+
+  const alert = useAlert();
 
   useEffect(() => {
     setHref(window.location.href);
@@ -38,6 +42,19 @@ export const ShareButtons = props => {
               <EmailIcon size={45} />
             </div>
           </a>
+
+          <CopyToClipboard
+            text={url.replace(/^(https?:\/\/)\w*\.(\w*\.\w+\/)(.+)/, '$1$2post/$3')}
+            onCopy={() => {
+              setOpen(false);
+              alert.show('Link copied to clipboard');
+            }}
+            title="Copy link"
+          >
+            <div className="button copy">
+              <FiLink size={20} />
+            </div>
+          </CopyToClipboard>
         </div>
 
         <div className="button cancelButton" onClick={() => setOpen(false)}>
@@ -124,11 +141,23 @@ const ShareStyle = styled.div`
     fill: #000;
   }
 
+  .copy path {
+    fill: none;
+  }
+
+  .button.copy:hover {
+    path {
+      fill: none;
+      opacity: 0.8;
+    }
+  }
+
   .button {
     cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: 0.3s ease;
     rect {
       fill: #fff;
     }
